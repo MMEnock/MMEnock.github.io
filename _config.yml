@@ -1,5 +1,17 @@
-title: Mugabi Enock
-#logo
-description: Data/Bussiness Analyst | Machine learning Engineer
-#show_downloads: true
+title: Mugisha Enock
+description: Data/Business Analyst | Machine Learning Engineer
 theme: jekyll-theme-minimal
+show_downloads: true
+
+# Navigation links
+nav_links:
+  - name: Home
+    url: /
+  - name: Resume
+    url: /resume
+  - name: Projects
+    url: /projects
+  - name: Contact
+    url: /contact
+  - name: Others
+    url: /others
