@@ -1,4 +1,3 @@
-# <span style="color: #2c3e50;">**Mugisha Enock**</span>  
 ### <span style="color: #34495e;">Data/Business Analyst | Machine Learning Engineer</span>  
 
 I’m a **Data Analyst** and **Machine Learning Engineer** with expertise in transforming data into actionable insights and building predictive models. With a Master’s in **Computational Engineering** from Ruhr-Universität Bochum and a Bachelor’s in **Mechanical Engineering** from Budapest Technical University, I bring a unique blend of technical and analytical skills.  
