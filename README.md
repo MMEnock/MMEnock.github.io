@@ -13,4 +13,4 @@ I’ve worked on diverse projects, from predicting passenger volumes for airport
 
 I’m open to opportunities in **Data Analytics**, **Business Data Analytics**, and **Machine Learning**. Let’s connect and explore how we can collaborate!  
 
-📫 **Reach out**: mugisha@study-boundless.com | 
+📫 **Reach out**: mugisha@study-boundless.com 
