@@ -1,4 +1,3 @@
-### **Mugisha Enock**  
 #### Data/Bussiness Analyst | Machine Learning Engineer  
 
 I’m a **Data Analyst** with a strong foundation in **Machine Learning**, **Business Intelligence**, and **Data Visualization**. With a Master’s in **Computational Engineering** from Ruhr-Universität Bochum and a Bachelor’s in **Mechanical Engineering** from Budapest Technical University, I bring a unique blend of technical expertise and analytical thinking.  
