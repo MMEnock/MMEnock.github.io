@@ -1,53 +1,34 @@
-/* Dark Blue Headings */
-h1, h2, h3 {
-  color: #2c3e50;
-}
-
-/* Subheadings */
-h3 {
-  color: #34495e;
-}
-
-/* General Styles */
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  background: #f4f4f4;
-  color: #333;
-}
-
-.container {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-section {
-  margin-bottom: 2rem;
-}
-
-h2 {
-  border-bottom: 2px solid #1abc9c;
-  padding-bottom: 0.5rem;
-}
-
-/* Links */
-a {
-  color: #1abc9c;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1rem 0;
+/* Navigation Menu */
+header {
   background: #2c3e50;
   color: white;
-  margin-top: 2rem;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li {
+  margin: 0;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #1abc9c;
 }
