@@ -39,6 +39,7 @@
       overflow: hidden;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
+      text-align: center; /* Center-align text */
     }
 
     .portfolio-box:hover {
@@ -98,6 +99,23 @@
       opacity: 1;
     }
 
+    /* Project Title Under Box */
+    .portfolio-name {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #333;
+      margin-top: 0.5rem;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+      padding: 10px;
+      transition: color 0.3s ease;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .portfolio-name:hover {
+      color: #007BFF; /* Change color on hover for interactivity */
+    }
+
     /* Header */
     header {
       text-align: center;
@@ -134,38 +152,38 @@
   </header>
 
   <div class="portfolio-container">
-    <!-- Titanic End-to-End ML Project Box -->
+    <!-- Titanic ML Project Box -->
     <div class="portfolio-box">
       <a href="https://github.com/MMEnock/Titanic-end-to-end-ML-project" target="_blank" class="portfolio-link">
         <div class="portfolio-image-container">
-          <img src="https://raw.githubusercontent.com/MMEnock/Titanic-end-to-end-ML-project/main/titanic%20end%20to%20end%20project.jpg" alt="Titanic End to End Machine Learning Project" class="portfolio-image">
-          <div class="portfolio-text">
-            Titanic End-to-End ML Project
-          </div>
+          <img src="https://raw.githubusercontent.com/MMEnock/Titanic-end-to-end-ML-project/main/titanic%20end%20to%20end%20project.jpg" alt="Titanic ML Project" class="portfolio-image">
         </div>
         <div class="portfolio-overlay">
           <div class="portfolio-text">
-            Titanic End-to-End ML Project
+            Titanic ML Project
           </div>
         </div>
       </a>
+      <div class="portfolio-name">
+        Titanic ML Project
+      </div>
     </div>
 
-    <!-- Credit Score Evaluation ML Project Box -->
+    <!-- Credit Score ML Project Box -->
     <div class="portfolio-box">
       <a href="https://github.com/MMEnock/Credit-Score-Evaluation-Machine-leaning-Project" target="_blank" class="portfolio-link">
         <div class="portfolio-image-container">
-          <img src="https://raw.githubusercontent.com/MMEnock/Credit-Score-Evaluation-Machine-leaning-Project/refs/heads/main/credit%20score%20evaluation.jpg" alt="Credit Score Evaluation ML Project" class="portfolio-image">
-          <div class="portfolio-text">
-            Credit Score Evaluation ML Project
-          </div>
+          <img src="https://raw.githubusercontent.com/MMEnock/Credit-Score-Evaluation-Machine-leaning-Project/refs/heads/main/credit%20score%20evaluation.jpg" alt="Credit Score ML Project" class="portfolio-image">
         </div>
         <div class="portfolio-overlay">
           <div class="portfolio-text">
-            Credit Score Evaluation ML Project
+            Credit Score ML Project
           </div>
         </div>
       </a>
+      <div class="portfolio-name">
+        Credit Score ML Project
+      </div>
     </div>
   </div>
 </body>
