@@ -23,7 +23,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 2rem;
       max-width: 1200px;
       width: 100%;
       margin-top: 2rem;
@@ -33,20 +33,17 @@
     .portfolio-box {
       position: relative;
       width: 100%;
-      max-width: 250px; /* Smaller width */
+      max-width: 300px;
       margin: 1rem;
-      border: 2px solid #007BFF; /* Added boundary */
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease;
       text-align: center;
-      background-color: white; /* Background color for the box */
     }
 
     .portfolio-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+      transform: translateY(-10px);
     }
 
     .portfolio-link {
@@ -123,6 +120,29 @@
     header {
       text-align: center;
       margin-top: 2rem;
+      padding: 1rem;
+      background-color: #f8f9fa;
+      width: 100%;
+    }
+
+    header nav {
+      margin-bottom: 1rem;
+    }
+
+    .home-link {
+      text-decoration: none;
+      font-size: 1.2rem;
+      color: #007BFF;
+      font-weight: bold;
+      padding: 0.5rem;
+      border: 2px solid #007BFF;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .home-link:hover {
+      background-color: #007BFF;
+      color: white;
     }
 
     header h1 {
@@ -153,6 +173,9 @@
 </head>
 <body>
   <header>
+    <nav>
+      <a href="index.html" class="home-link">Back to Home</a>
+    </nav>
     <h1>My Portfolio</h1>
     <p>
       Hey there! 👋 I'm excited to share with you some of the current projects I'm working on. These projects represent my passion for creating innovative and impactful solutions in the field of machine learning and data analysis. Explore each project to dive into my work, learn about my skills, and see how I approach complex challenges with creativity and precision. If you're interested in collaborating or just want to chat about technology, feel free to reach out. Let’s get inspired together!
@@ -198,7 +221,7 @@
     <div class="portfolio-box">
       <a href="https://github.com/MMEnock/Flight-Enrichment-Project" target="_blank" class="portfolio-link">
         <div class="portfolio-image-container">
-          <img src="https://raw.githubusercontent.com/MMEnock/Flight-Enrichment-Project/refs/heads/main/Flight%20Enrichment%20project.jpg" alt="Flight Enrichment Project" class="portfolio-image">
+          <img src="https://raw.githubusercontent.com/MMEnock/Flight-Enrichment-Project/refs/heads/main/Flight%20Enrichment%20project.jpg" alt="Credit Score ML Project" class="portfolio-image">
         </div>
         <div class="portfolio-overlay">
           <div class="portfolio-text">
