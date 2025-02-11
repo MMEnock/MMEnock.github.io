@@ -23,7 +23,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
+      gap: 1.5rem;
       max-width: 1200px;
       width: 100%;
       margin-top: 2rem;
@@ -33,17 +33,20 @@
     .portfolio-box {
       position: relative;
       width: 100%;
-      max-width: 300px;
+      max-width: 250px; /* Smaller width */
       margin: 1rem;
+      border: 2px solid #007BFF; /* Added boundary */
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-align: center;
+      background-color: white; /* Background color for the box */
     }
 
     .portfolio-box:hover {
-      transform: translateY(-10px);
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
     }
 
     .portfolio-link {
@@ -188,6 +191,23 @@
       </a>
       <div class="portfolio-name">
         Credit Score ML Project
+      </div>
+    </div>
+
+    <!-- Flight Enrichment Box -->
+    <div class="portfolio-box">
+      <a href="https://github.com/MMEnock/Flight-Enrichment-Project" target="_blank" class="portfolio-link">
+        <div class="portfolio-image-container">
+          <img src="https://raw.githubusercontent.com/MMEnock/Flight-Enrichment-Project/refs/heads/main/Flight%20Enrichment%20project.jpg" alt="Flight Enrichment Project" class="portfolio-image">
+        </div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-text">
+            Flight Enrichment python
+          </div>
+        </div>
+      </a>
+      <div class="portfolio-name">
+         Flight Enrichment python
       </div>
     </div>
   </div>
