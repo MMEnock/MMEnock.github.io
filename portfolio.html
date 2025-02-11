@@ -5,246 +5,104 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
   <style>
-    /* General Body Styles */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f4f4f9;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      flex-direction: column;
+      text-align: center;
     }
 
-    /* Portfolio Container */
     .portfolio-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1.5rem;
       max-width: 1200px;
-      width: 100%;
-      margin-top: 2rem;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
 
-    /* Portfolio Box Styles */
     .portfolio-box {
       position: relative;
-      width: 100%;
-      max-width: 250px; /* Smaller width */
-      margin: 1rem;
-      border: 2px solid #007BFF; /* Added boundary */
+      border: 2px solid #007BFF;
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-align: center;
-      background-color: white; /* Background color for the box */
+      background-color: white;
     }
 
     .portfolio-box:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
 
     .portfolio-link {
-      display: block;
       text-decoration: none;
       color: inherit;
-    }
-
-    .portfolio-image-container {
-      position: relative;
-      width: 100%;
-      height: 100%;
+      display: block;
     }
 
     .portfolio-image {
       width: 100%;
       height: auto;
-      border-radius: 10px;
-      transition: opacity 0.3s ease;
+      border-radius: 10px 10px 0 0;
     }
 
-    .portfolio-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      font-size: 1.2rem;
-      font-weight: bold;
-      text-align: center;
-      padding: 1rem;
-      z-index: 1;
-      transition: opacity 0.3s ease;
-    }
-
-    /* Portfolio Overlay */
-    .portfolio-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      opacity: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: opacity 0.3s ease;
-      border-radius: 10px;
-    }
-
-    .portfolio-box:hover .portfolio-overlay {
-      opacity: 1;
-    }
-
-    /* Project Title Under Box */
     .portfolio-name {
       font-size: 1.2rem;
       font-weight: 600;
       color: #333;
-      margin-top: 0.5rem;
+      margin: 10px 0;
       text-transform: capitalize;
       letter-spacing: 1px;
       padding: 10px;
-      transition: color 0.3s ease;
-      font-family: 'Arial', sans-serif;
     }
 
-    .portfolio-name:hover {
-      color: #007BFF;
-    }
-
-    /* Header */
-    header {
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      color: #007BFF; /* Blue color */
-      text-decoration: underline;
-      margin-bottom: 1rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #555;
-      margin-top: 1rem;
-      max-width: 800px;
-      line-height: 1.6;
-    }
-
-    /* Responsiveness */
     @media (max-width: 768px) {
       .portfolio-container {
-        gap: 1rem;
-      }
-      .portfolio-box {
-        max-width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>My Portfolio</h1>
-    <p>
-      Hey there! 👋 I'm excited to share with you some of the current projects I'm working on. These projects represent my passion for creating innovative and impactful solutions in the field of machine learning and data analysis.
-    </p>
-  </header>
+  <h1 style="color: #007BFF; text-decoration: underline;">My Portfolio</h1>
+  <p>Check out my latest projects in machine learning and data analysis.</p>
 
   <div class="portfolio-container">
-    <!-- Titanic ML Project Box -->
     <div class="portfolio-box">
       <a href="https://github.com/MMEnock/Titanic-end-to-end-ML-project" target="_blank" class="portfolio-link">
-        <div class="portfolio-image-container">
-          <img src="https://raw.githubusercontent.com/MMEnock/Titanic-end-to-end-ML-project/main/titanic%20end%20to%20end%20project.jpg" alt="Titanic ML Project" class="portfolio-image">
-        </div>
-        <div class="portfolio-overlay">
-          <div class="portfolio-text">
-            Titanic ML Project
-          </div>
-        </div>
+        <img src="https://raw.githubusercontent.com/MMEnock/Titanic-end-to-end-ML-project/main/titanic%20end%20to%20end%20project.jpg" alt="Titanic ML Project" class="portfolio-image">
       </a>
-      <div class="portfolio-name">
-        Titanic ML Project
-      </div>
+      <div class="portfolio-name">Titanic ML Project</div>
     </div>
 
-    <!-- Credit Score ML Project Box -->
     <div class="portfolio-box">
       <a href="https://github.com/MMEnock/Credit-Score-Evaluation-Machine-leaning-Project" target="_blank" class="portfolio-link">
-        <div class="portfolio-image-container">
-          <img src="https://raw.githubusercontent.com/MMEnock/Credit-Score-Evaluation-Machine-leaning-Project/refs/heads/main/credit%20score%20evaluation.jpg" alt="Credit Score ML Project" class="portfolio-image">
-        </div>
-        <div class="portfolio-overlay">
-          <div class="portfolio-text">
-            Credit Score ML Project
-          </div>
-        </div>
+        <img src="https://raw.githubusercontent.com/MMEnock/Credit-Score-Evaluation-Machine-leaning-Project/refs/heads/main/credit%20score%20evaluation.jpg" alt="Credit Score ML Project" class="portfolio-image">
       </a>
-      <div class="portfolio-name">
-        Credit Score ML Project
-      </div>
+      <div class="portfolio-name">Credit Score ML Project</div>
     </div>
 
-    <!-- Flight Enrichment Box -->
     <div class="portfolio-box">
       <a href="https://github.com/MMEnock/Flight-Enrichment-Project" target="_blank" class="portfolio-link">
-        <div class="portfolio-image-container">
-          <img src="https://raw.githubusercontent.com/MMEnock/Flight-Enrichment-Project/refs/heads/main/Flight%20Enrichment%20project.jpg" alt="Flight Enrichment Project" class="portfolio-image">
-        </div>
-        <div class="portfolio-overlay">
-          <div class="portfolio-text">
-            Flight Enrichment python
-          </div>
-        </div>
+        <img src="https://raw.githubusercontent.com/MMEnock/Flight-Enrichment-Project/refs/heads/main/Flight%20Enrichment%20project.jpg" alt="Flight Enrichment Project" class="portfolio-image">
       </a>
-      <div class="portfolio-name">
-         Flight Enrichment python
-      </div>
+      <div class="portfolio-name">Flight Enrichment Python</div>
     </div>
 
-     <!-- Pax load ML Project Box -->
     <div class="portfolio-box">
       <a href="https://github.com/MMEnock/Passanger_load_prediction_ML-project" target="_blank" class="portfolio-link">
-        <div class="portfolio-image-container">
-          <img src="https://raw.githubusercontent.com/MMEnock/Passanger_load_prediction_ML-project/refs/heads/main/Airport%20Project.jpg" alt=" Pax load ML Project" class="portfolio-image">
-        </div>
-        <div class="portfolio-overlay">
-          <div class="portfolio-text">
-            Pax load ML Project
-          </div>
-        </div>
+        <img src="https://raw.githubusercontent.com/MMEnock/Passanger_load_prediction_ML-project/refs/heads/main/Airport%20Project.jpg" alt="Pax load ML Project" class="portfolio-image">
       </a>
-      <div class="portfolio-name">
-        Pax load ML Project
-      </div>
+      <div class="portfolio-name">Pax Load ML Project</div>
     </div>
 
-     <!-- Marvin pizza Power BI Dashboard Box -->
     <div class="portfolio-box">
-      <a href="<iframe title="Mavin Pizzas" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=d1078bfc-d9fd-42a6-864b-7c1af4bfa9ab&autoAuth=true&ctid=249465ce-18ae-4326-946f-875cc67d83d2" frameborder="0" allowFullScreen="true"></iframe>" target="_blank" class="portfolio-link">
-        <div class="portfolio-image-container">
-          <img src="https://raw.githubusercontent.com/MMEnock/Marvin-pizza-/refs/heads/main/Marvin%20pizza.png" alt=" Marvin pizza Power BI" class="portfolio-image">
-        </div>
-        <div class="portfolio-overlay">
-          <div class="portfolio-text">
-            Marvin pizza Power BI Dashboard
-          </div>
-        </div>
-      </a>
-      <div class="portfolio-name">
-          Marvin pizza Power BI Dashboard
-      </div>
+      <iframe title="Mavin Pizzas" width="100%" height="200" src="https://app.powerbi.com/reportEmbed?reportId=d1078bfc-d9fd-42a6-864b-7c1af4bfa9ab&autoAuth=true&ctid=249465ce-18ae-4326-946f-875cc67d83d2" frameborder="0" allowFullScreen="true"></iframe>
+      <div class="portfolio-name">Marvin Pizza Power BI Dashboard</div>
     </div>
-    
   </div>
 </body>
 </html>
