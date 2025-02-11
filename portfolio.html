@@ -64,6 +64,21 @@
       transition: opacity 0.3s ease;
     }
 
+    .portfolio-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+      padding: 1rem;
+      z-index: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Portfolio Overlay */
     .portfolio-overlay {
       position: absolute;
       top: 0;
@@ -81,14 +96,6 @@
 
     .portfolio-box:hover .portfolio-overlay {
       opacity: 1;
-    }
-
-    .portfolio-text {
-      color: white;
-      font-size: 1.2rem;
-      font-weight: bold;
-      text-align: center;
-      padding: 1rem;
     }
 
     /* Header */
@@ -132,6 +139,9 @@
       <a href="https://github.com/MMEnock/Titanic-end-to-end-ML-project" target="_blank" class="portfolio-link">
         <div class="portfolio-image-container">
           <img src="https://raw.githubusercontent.com/MMEnock/Titanic-end-to-end-ML-project/main/titanic%20end%20to%20end%20project.jpg" alt="Titanic End to End Machine Learning Project" class="portfolio-image">
+          <div class="portfolio-text">
+            Titanic End-to-End ML Project
+          </div>
         </div>
         <div class="portfolio-overlay">
           <div class="portfolio-text">
@@ -146,6 +156,9 @@
       <a href="https://github.com/MMEnock/Credit-Score-Evaluation-Machine-leaning-Project" target="_blank" class="portfolio-link">
         <div class="portfolio-image-container">
           <img src="https://raw.githubusercontent.com/MMEnock/Credit-Score-Evaluation-Machine-leaning-Project/refs/heads/main/credit%20score%20evaluation.jpg" alt="Credit Score Evaluation ML Project" class="portfolio-image">
+          <div class="portfolio-text">
+            Credit Score Evaluation ML Project
+          </div>
         </div>
         <div class="portfolio-overlay">
           <div class="portfolio-text">
