@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    /* General Body Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    /* Portfolio Container */
+    .portfolio-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 1200px;
+      width: 100%;
+      margin-top: 2rem;
+    }
+
+    /* Portfolio Box Styles */
+    .portfolio-box {
+      position: relative;
+      width: 100%;
+      max-width: 300px;
+      margin: 1rem;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-box:hover {
+      transform: translateY(-10px);
+    }
+
+    .portfolio-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .portfolio-image-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .portfolio-image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: opacity 0.3s ease;
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.3s ease;
+      border-radius: 10px;
+    }
+
+    .portfolio-box:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-text {
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #333;
+    }
+
+    /* Responsiveness */
+    @media (max-width: 768px) {
+      .portfolio-container {
+        gap: 1rem;
+      }
+      .portfolio-box {
+        max-width: 100%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+    <p>Welcome to my project portfolio. Explore my work and find out more about my skills!</p>
+  </header>
+
+  <div class="portfolio-container">
+    <!-- Titanic End-to-End ML Project Box -->
+    <div class="portfolio-box">
+      <a href="https://github.com/MMEnock/Titanic-end-to-end-ML-project" target="_blank" class="portfolio-link">
+        <div class="portfolio-image-container">
+          <img src="https://raw.githubusercontent.com/MMEnock/Titanic-end-to-end-ML-project/main/titanic%20end%20to%20end%20project.jpg" alt="Titanic End to End Machine Learning Project" class="portfolio-image">
+        </div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-text">
+            Titanic End-to-End ML Project
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Example for another project, replicate as needed -->
+    <!-- Add your next project box here following the same structure -->
+
+  </div>
+</body>
+</html>
