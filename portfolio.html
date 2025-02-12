@@ -6,35 +6,50 @@
   <title>Portfolio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f9;
+      background-color: #eef2f3;
       text-align: center;
+      color: #333;
+    }
+
+    h1 {
+      color: #007BFF;
+      font-size: 2.5rem;
+      margin: 20px 0;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+      padding: 0 15px;
     }
 
     .portfolio-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      max-width: 1200px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1300px;
       margin: 2rem auto;
-      padding: 0 1rem;
+      padding: 0 2rem;
     }
 
     .portfolio-box {
       position: relative;
-      border: 2px solid #007BFF;
-      border-radius: 10px;
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      background-color: white;
+      background: white;
     }
 
     .portfolio-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
     }
 
     .portfolio-link {
@@ -45,31 +60,34 @@
 
     .portfolio-image {
       width: 100%;
-      height: auto;
-      border-radius: 10px 10px 0 0;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px 12px 0 0;
     }
 
     .portfolio-name {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 600;
-      color: #333;
-      margin: 10px 0;
+      color: #007BFF;
+      margin: 12px 0;
       text-transform: capitalize;
-      letter-spacing: 1px;
-      padding: 10px;
+      letter-spacing: 0.5px;
+      padding: 15px;
     }
 
     @media (max-width: 768px) {
       .portfolio-container {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+      h1 {
+        font-size: 2rem;
       }
     }
   </style>
 </head>
 <body>
-  <h1 style="color: #007BFF; text-decoration: underline;">My Portfolio</h1>
-  <p>My latest projects in machine learning and Data analysis.I am also searching for Data/Bussiness Analytics and Machine learning roles . <strong>Home office , Hybrid or Office options </strong>
-  are absolutely okay with me . I am currently based in Germany | Nordrhein Westfahlen </p>
+  <h1>My Portfolio</h1>
+  <p>My latest projects in Machine Learning and Data Analysis. Open to <strong>remote, hybrid, or office roles</strong>. Currently based in Germany | Nordrhein Westfalen.</p>
 
   <div class="portfolio-container">
     <div class="portfolio-box">
@@ -78,14 +96,14 @@
       </a>
       <div class="portfolio-name">Titanic ML Project</div>
     </div>
-
+    
     <div class="portfolio-box">
       <a href="https://github.com/MMEnock/Credit-Score-Evaluation-Machine-leaning-Project" target="_blank" class="portfolio-link">
         <img src="https://raw.githubusercontent.com/MMEnock/Credit-Score-Evaluation-Machine-leaning-Project/refs/heads/main/credit%20score%20evaluation.jpg" alt="Credit Score ML Project" class="portfolio-image">
       </a>
       <div class="portfolio-name">Credit Score ML Project</div>
     </div>
-
+    
     <div class="portfolio-box">
       <a href="https://github.com/MMEnock/Flight-Enrichment-Project" target="_blank" class="portfolio-link">
         <img src="https://raw.githubusercontent.com/MMEnock/Flight-Enrichment-Project/refs/heads/main/Flight%20Enrichment%20project.jpg" alt="Flight Enrichment Project" class="portfolio-image">
@@ -113,6 +131,7 @@
       </a>
       <div class="portfolio-name">Exploratory Data Analysis</div>
     </div>
+    
     <div class="portfolio-box">
       <a href="https://github.com/MMEnock/Northwind-Analysis" target="_blank" class="portfolio-link">
         <img src="https://raw.githubusercontent.com/MMEnock/Northwind-Analysis/refs/heads/main/Northwind%20Data%20Analytics.png" alt="Sales & Revenue Analysis Dashboard" class="portfolio-image">
