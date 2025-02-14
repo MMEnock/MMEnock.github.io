@@ -14,8 +14,12 @@
     <nav>
       <ul>
         <li><a href="https://mmenock.github.io/">Home</a></li>
-      <li><a href="/resume.html" target="_blank">Resume</a></li>
-       <li><a href="/portfolio.html" target="_blank">Portfolio</a></li>
+        <li class="resume"><a href="/resume.html" target="_blank">Resume</a>
+          <ul class="submenu">
+            <li><a href="/coverletter.html" target="_blank">Cover Letter</a></li>
+          </ul>
+        </li>
+        <li><a href="/portfolio.html" target="_blank">Portfolio</a></li>
         <li><a href="#employ-me">Employ Me</a></li>
       </ul>
     </nav>
@@ -83,30 +87,32 @@
   </section>
 
   <!-- Employ Me Section -->
-<section id="employ-me" class="container">
-  <h2>Employ Me</h2>
-  <p>Have a project, job opportunity, or collaboration in mind? Let’s work together! Fill out the form below, and I’ll get back to you soon.</p>
+  <section id="employ-me" class="container">
+    <h2>Employ Me</h2>
+    <p>Have a project, job opportunity, or collaboration in mind? Let’s work together! Fill out the form below, and I’ll get back to you soon.</p>
 
-  <form action="https://formspree.io/f/xeoelqjp" method="POST">
-    <div class="form-group">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" placeholder="Enter your name" required>
-    </div>
-    <div class="form-group">
-      <label for="email">Your Email</label>
-      <input type="email" id="email" name="email" placeholder="Enter your email" required>
-    </div>
-    <div class="form-group">
-      <label for="message">Message</label>
-      <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
-    </div>
-    
-    <!-- Google reCAPTCHA -->
-    <div class="g-recaptcha" data-sitekey="6LdlSdQqAAAAAMqompFxPvvkYOMWuSl3vFiMlKRm"></div>
+    <form action="https://formspree.io/f/xeoelqjp" method="POST">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+      </div>
+      
+      <!-- Google reCAPTCHA -->
+      <div class="g-recaptcha" data-sitekey="6LdlSdQqAAAAAMqompFxPvvkYOMWuSl3vFiMlKRm"></div>
 
-    <button type="submit" class="btn">Send Message</button>
-  </form>
-</section>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
 
-<!-- Include Google reCAPTCHA API -->
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <!-- Include Google reCAPTCHA API -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</body>
+</html>
