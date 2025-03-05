@@ -1,42 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Primary Meta Tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mugisha Enock - Data Analyst & Machine Learning Engineer Portfolio. Explore my projects, resume, and contact me for collaboration.">
-  <meta name="keywords" content="Data Analyst, Machine Learning Engineer, Portfolio, Python, Power BI, Data Visualization">
+  <meta name="description" content="Mugisha Enock - Data Analyst & Machine Learning Engineer Portfolio. Expert in data analysis, machine learning, and data visualization.">
+  <meta name="keywords" content="Data Analyst, Machine Learning Engineer, Portfolio, Python, Power BI, Data Visualization, AI, Deep Learning">
   <meta name="author" content="Mugisha Enock">
+  <meta name="theme-color" content="#2563eb">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mmenock.github.io/">
+  <meta property="og:title" content="Mugisha Enock | Data Analyst & ML Engineer">
+  <meta property="og:description" content="Portfolio of Mugisha Enock - Data Analyst & Machine Learning Engineer specializing in data analysis and AI solutions.">
+  <meta property="og:image" content="assets/images/Resume-picture.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://mmenock.github.io/">
+  <meta property="twitter:title" content="Mugisha Enock | Data Analyst & ML Engineer">
+  <meta property="twitter:description" content="Portfolio of Mugisha Enock - Data Analyst & Machine Learning Engineer specializing in data analysis and AI solutions.">
+  <meta property="twitter:image" content="assets/images/Resume-picture.jpg">
   
   <!-- Favicon -->
-  <link rel="icon" href="assets/images/favicon.ico">
-  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   
   <title>Mugisha Enock | Data Analyst & ML Engineer</title>
   
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="assets/css/style.css" as="style">
+  <link rel="preload" href="assets/images/Resume-picture.jpg" as="image">
+  
   <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
   <!-- Your stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mugisha Enock",
+      "url": "https://mmenock.github.io/",
+      "image": "assets/images/Resume-picture.jpg",
+      "jobTitle": "Data Analyst & Machine Learning Engineer",
+      "description": "Data Analyst and Machine Learning Engineer passionate about transforming data into actionable insights.",
+      "sameAs": [
+        "https://linkedin.com/in/your-profile",
+        "https://github.com/mmenock"
+      ]
+    }
+  </script>
 </head>
 <body>
+  <!-- Skip to Main Content for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Navigation Menu -->
-  <header class="header">
+  <header class="header" role="banner">
     <div class="container header-container">
       <div class="logo">
-        <a href="https://mmenock.github.io/">ME</a>
+        <a href="https://mmenock.github.io/" aria-label="Home">
+          <span class="logo-text">ME</span>
+          <span class="logo-dot"></span>
+        </a>
       </div>
-      <nav class="main-nav">
-        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-list">
           <span class="hamburger"></span>
         </button>
-        <ul class="nav-list">
-          <li><a href="#home" class="nav-link active">Home</a></li>
+        <ul class="nav-list" id="nav-list">
+          <li><a href="#home" class="nav-link active" aria-current="page">Home</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
@@ -47,478 +94,578 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero section" id="home">
-    <div class="container hero-container">
-      <div class="hero-content">
-        <h1 class="hero-title">Mugisha Enock</h1>
-        <h2 class="hero-subtitle">Data Analyst | Machine Learning Engineer</h2>
-        <p class="hero-text">Transforming complex data into actionable insights and intelligent solutions</p>
-        <div class="hero-cta">
-          <a href="#portfolio" class="btn btn-primary">View My Work</a>
-          <a href="#employ-me" class="btn btn-secondary">Contact Me</a>
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero section" id="home" aria-label="Introduction">
+      <div class="hero-background">
+        <div class="hero-pattern"></div>
+      </div>
+      <div class="container hero-container">
+        <div class="hero-content" data-aos="fade-right">
+          <span class="hero-badge">Data Analyst & ML Engineer</span>
+          <h1 class="hero-title">Mugisha Enock</h1>
+          <h2 class="hero-subtitle">Transforming Data into Actionable Insights</h2>
+          <p class="hero-text">Passionate about leveraging data analytics and machine learning to solve complex problems and drive business value.</p>
+          <div class="hero-cta">
+            <a href="#portfolio" class="btn btn-primary" aria-label="View my portfolio">
+              <span>View My Work</span>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="#employ-me" class="btn btn-secondary" aria-label="Contact me">
+              <span>Contact Me</span>
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="hero-image" data-aos="fade-left">
+          <div class="image-wrapper">
+            <img src="assets/images/Resume-picture.jpg" alt="Mugisha Enock" class="profile-image" width="400" height="400">
+            <div class="image-overlay"></div>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-number">3+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">20+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">3+</span>
+              <span class="stat-label">Industries</span>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="hero-image">
-        <!-- Add a professional photo of yourself here -->
-        <img src="assets/images/Resume-picture.jpg" alt="Mugisha Enock" class="profile-image">
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- About Section -->
-  <section id="about" class="section about-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">About Me</h2>
-        <div class="section-underline"></div>
-      </div>
-      
-      <div class="about-content">
-        <div class="about-text">
-          <p>I'm a <strong>Data Analyst</strong> and <strong>Machine Learning Engineer</strong> passionate about transforming data into actionable insights and building predictive models using various machine learning libraries such as XGBoost and scikit-learn.</p>
+    <!-- About Section -->
+    <section id="about" class="section about-section" aria-label="About me">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-badge">About Me</span>
+          <h2 class="section-title">Who I Am</h2>
+          <div class="section-underline"></div>
+        </div>
+        
+        <div class="about-content">
+          <div class="about-text" data-aos="fade-right">
+            <p>I'm a <strong>Data Analyst</strong> and <strong>Machine Learning Engineer</strong> passionate about transforming data into actionable insights and building predictive models using various machine learning libraries such as XGBoost and scikit-learn.</p>
+            
+            <p>With a Master's in <strong>Computational Engineering</strong> from Ruhr-Universität Bochum and a Bachelor's in <strong>Mechanical Engineering</strong> from Budapest Technical University, I combine technical expertise with analytical thinking to solve complex problems.</p>
+            
+            <p>Currently seeking opportunities in Data Analysis and Machine Learning where I can leverage my skills to drive data-informed decisions and create business value.</p>
+          </div>
           
-          <p>With a Master's in <strong>Computational Engineering</strong> from Ruhr-Universität Bochum and a Bachelor's in <strong>Mechanical Engineering</strong> from Budapest Technical University, I combine technical expertise with analytical thinking to solve complex problems.</p>
+          <div class="about-stats" data-aos="fade-left">
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="fas fa-briefcase" aria-hidden="true"></i>
+              </div>
+              <span class="stat-number">3+</span>
+              <span class="stat-text">Years Experience</span>
+            </div>
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="fas fa-project-diagram" aria-hidden="true"></i>
+              </div>
+              <span class="stat-number">20+</span>
+              <span class="stat-text">Projects Completed</span>
+            </div>
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="fas fa-industry" aria-hidden="true"></i>
+              </div>
+              <span class="stat-number">3+</span>
+              <span class="stat-text">Industries Served</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section" aria-label="My skills">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-badge">My Skills</span>
+          <h2 class="section-title">What I Do</h2>
+          <div class="section-underline"></div>
+        </div>
+        
+        <div class="skills-container">
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="category-title">
+              <i class="fas fa-chart-line" aria-hidden="true"></i>
+              Data Analysis & Visualization
+            </h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <span class="skill-name">Power BI</span>
+                <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-level" style="width: 95%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Looker Studio</span>
+                <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-level" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Python (NumPy, Pandas)</span>
+                <div class="skill-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-level" style="width: 92%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">DAX & Power Query</span>
+                <div class="skill-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-level" style="width: 88%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
           
-          <p>Currently seeking opportunities in Data Analysis and Machine Learning where I can leverage my skills to drive data-informed decisions and create business value.</p>
-        </div>
-        
-        <div class="about-stats">
-          <div class="stat-item">
-            <span class="stat-number">3+</span>
-            <span class="stat-text">Years Experience</span>
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="category-title">
+              <i class="fas fa-robot" aria-hidden="true"></i>
+              Machine Learning
+            </h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <span class="skill-name">TensorFlow</span>
+                <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-level" style="width: 85%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">PyTorch</span>
+                <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-level" style="width: 80%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Scikit-learn</span>
+                <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-level" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">XGBoost</span>
+                <div class="skill-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-level" style="width: 88%"></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="stat-item">
-            <span class="stat-number">20+</span>
-            <span class="stat-text">Projects Completed</span>
+          
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+            <h3 class="category-title">
+              <i class="fas fa-globe" aria-hidden="true"></i>
+              Web Analytics
+            </h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <span class="skill-name">Google Analytics</span>
+                <div class="skill-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-level" style="width: 88%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Google Tag Manager</span>
+                <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-level" style="width: 85%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">A/B Testing</span>
+                <div class="skill-bar" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-level" style="width: 82%"></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="stat-item">
-            <span class="stat-number">3+</span>
-            <span class="stat-text">Industries Served</span>
+          
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+            <h3 class="category-title">
+              <i class="fas fa-code" aria-hidden="true"></i>
+              API Integration
+            </h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <span class="skill-name">Graph API</span>
+                <div class="skill-bar" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-level" style="width: 87%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">JSON</span>
+                <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-level" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Google Apps Script</span>
+                <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                  <div class="skill-level" style="width: 85%"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="section skills-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">My Skills</h2>
-        <div class="section-underline"></div>
-      </div>
-      
-      <div class="skills-container">
-        <div class="skill-category">
-          <h3 class="category-title"><i class="fas fa-chart-line"></i> Data Analysis & Visualization</h3>
-          <div class="skills-grid">
-            <div class="skill-item">
-              <span class="skill-name">Power BI</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 95%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Looker Studio</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 90%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Python (NumPy, Pandas)</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 92%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">DAX & Power Query</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 88%"></div>
-              </div>
-            </div>
-          </div>
+    <!-- Projects Section -->
+    <section id="portfolio" class="section portfolio-section" aria-label="My projects">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-badge">Portfolio</span>
+          <h2 class="section-title">Featured Projects</h2>
+          <div class="section-underline"></div>
         </div>
         
-        <div class="skill-category">
-          <h3 class="category-title"><i class="fas fa-robot"></i> Machine Learning</h3>
-          <div class="skills-grid">
-            <div class="skill-item">
-              <span class="skill-name">TensorFlow</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 85%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">PyTorch</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 80%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Scikit-learn</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 90%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">XGBoost</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 88%"></div>
-              </div>
-            </div>
-          </div>
+        <div class="portfolio-filters" role="group" aria-label="Project filters" data-aos="fade-up">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="Website Developer">Website Developer</button>
+          <button class="filter-btn" data-filter="Machine Learning">Machine Learning</button>
+          <button class="filter-btn" data-filter="Dashboards">Dashboards</button>
         </div>
         
-        <div class="skill-category">
-          <h3 class="category-title"><i class="fas fa-globe"></i> Web Analytics</h3>
-          <div class="skills-grid">
-            <div class="skill-item">
-              <span class="skill-name">Google Analytics</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 88%"></div>
+        <div class="portfolio-grid">
+          <!-- Project 1 -->
+          <article class="portfolio-item" data-category="Machine Learning" data-aos="fade-up">
+            <div class="portfolio-card">
+              <div class="portfolio-img">
+                <img src="assets/images/titanic-end-to-end-project.jpg" alt="Titanic Survival Prediction Project" width="350" height="220">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-links">
+                    <a href="#" class="portfolio-link" aria-label="View project on GitHub">
+                      <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="portfolio-link" aria-label="View live demo">
+                      <i class="fas fa-external-link-alt"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <h3 class="project-title">Titanic Survival Prediction</h3>
+                <p class="project-description">Built an ML model to predict survival rates with 85% accuracy using ensemble methods.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Scikit-learn</span>
+                  <span class="tech-tag">XGBoost</span>
+                </div>
               </div>
             </div>
-            <div class="skill-item">
-              <span class="skill-name">Google Tag Manager</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 85%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">A/B Testing</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 82%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="skill-category">
-          <h3 class="category-title"><i class="fas fa-code"></i> API Integration</h3>
-          <div class="skills-grid">
-            <div class="skill-item">
-              <span class="skill-name">Graph API</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 87%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">JSON</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 90%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Google Apps Script</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 85%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+          </article>
 
-  <!-- Projects Section -->
-  <section id="portfolio" class="section portfolio-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="section-underline"></div>
-      </div>
-      
-      <div class="portfolio-filters">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="Website Developer">Website Developer</button>
-        <button class="filter-btn" data-filter="Machine Learning">Machine Learning</button>
-        <button class="filter-btn" data-filter="Dashboards">Dashboards</button>
-      </div>
-      
-      <div class="portfolio-grid">
-        <!-- Project 1 -->
-        <div class="portfolio-item" data-category="Machine Learning">
-          <div class="portfolio-card">
-            <div class="portfolio-img">
-              <img src="assets/images/titanic-end-to-end-project.jpg" alt="Titanic Survival Prediction">
-            </div>
-            <div class="portfolio-content">
-              <h3 class="project-title">Titanic Survival Prediction</h3>
-              <p class="project-description">Built an ML model to predict survival rates with 85% accuracy using ensemble methods.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Scikit-learn</span>
-                <span class="tech-tag">XGBoost</span>
+          <!-- Project 2 -->
+          <article class="portfolio-item" data-category="Machine Learning" data-aos="fade-up" data-aos-delay="100">
+            <div class="portfolio-card">
+              <div class="portfolio-img">
+                <img src="assets/images/Flight-Enrichment-project.jpg" alt="Python Flight Enrichment Project" width="350" height="220">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-links">
+                    <a href="#" class="portfolio-link" aria-label="View case study">
+                      <i class="fas fa-file-alt"></i>
+                    </a>
+                    <a href="#" class="portfolio-link" aria-label="View on GitHub">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div class="project-links">
-                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+              <div class="portfolio-content">
+                <h3 class="project-title">Flight Enrichment</h3>
+                <p class="project-description">Developed Python scripts to optimize flight schedules, reducing delays by 15%.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Pandas</span>
+                  <span class="tech-tag">NumPy</span>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        
-        <!-- Project 2 -->
-        <div class="portfolio-item" data-category="Machine Learning">
-          <div class="portfolio-card">
-            <div class="portfolio-img">
-              <img src="assets/images/Flight-Enrichment-project.jpg" alt="Python Flight Enrichment">
-            </div>
-            <div class="portfolio-content">
-              <h3 class="project-title">Flight Enrichment</h3>
-              <p class="project-description">Developed Python scripts to optimize flight schedules, reducing delays by 15%.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Pandas</span>
-                <span class="tech-tag">NumPy</span>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="portfolio-item" data-category="Machine Learning" data-aos="fade-up" data-aos-delay="200">
+            <div class="portfolio-card">
+              <div class="portfolio-img">
+                <img src="assets/images/credit-score-evaluation.jpg" alt="Credit Score Evaluation Project" width="350" height="220">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-links">
+                    <a href="#" class="portfolio-link" aria-label="View case study">
+                      <i class="fas fa-file-alt"></i>
+                    </a>
+                    <a href="#" class="portfolio-link" aria-label="View on GitHub">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div class="project-links">
-                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Case Study</a>
-                <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Project 3 -->
-        <div class="portfolio-item" data-category="Machine Learning">
-          <div class="portfolio-card">
-            <div class="portfolio-img">
-              <img src="assets/images/credit-score-evaluation.jpg" alt="Credit Score Evaluation">
-            </div>
-            <div class="portfolio-content">
-              <h3 class="project-title">Credit Score Evaluation</h3>
-              <p class="project-description">Created a model to assess loan eligibility with 92% accuracy rate.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">TensorFlow</span>
-                <span class="tech-tag">Scikit-learn</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Case Study</a>
-                <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+              <div class="portfolio-content">
+                <h3 class="project-title">Credit Score Evaluation</h3>
+                <p class="project-description">Created a model to assess loan eligibility with 92% accuracy rate.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">TensorFlow</span>
+                  <span class="tech-tag">Scikit-learn</span>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        
-        <!-- Project 4 -->
-        <div class="portfolio-item" data-category="Dashboards">
-          <div class="portfolio-card">
-            <div class="portfolio-img">
-              <img src="assets/images/Marvin pizza.png" alt="Marvin Pizza ltd Dashboard">
-            </div>
-            <div class="portfolio-content">
-              <h3 class="project-title">Marvin Pizza ltd Dashboard</h3>
-              <p class="project-description">Designed a sales Dashboard for Marvin pizza ltd using Power BI, increasing operational efficiency by 20%.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Power BI</span>
-                <span class="tech-tag">DAX</span>
-                <span class="tech-tag">Power Query</span>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="portfolio-item" data-category="Dashboards" data-aos="fade-up" data-aos-delay="300">
+            <div class="portfolio-card">
+              <div class="portfolio-img">
+                <img src="assets/images/Marvin pizza.png" alt="Marvin Pizza Ltd Dashboard" width="350" height="220">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-links">
+                    <a href="https://app.powerbi.com/view?r=eyJrIjoiMTMzNzI4ZmQtMWU5Mi00MmJhLWExYWUtODdkMjJmZGIxMGMwIiwidCI6ImI0ODgzMDM1LTY4MTYtNDI2ZC1iZDhjLTg2MjU3MDcwYzY1ZSJ9" class="portfolio-link" aria-label="View dashboard demo">
+                      <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a href="https://app.powerbi.com/view?r=eyJrIjoiMTMzNzI4ZmQtMWU5Mi00MmJhLWExYWUtODdkMjJmZGIxMGMwIiwidCI6ImI0ODgzMDM1LTY4MTYtNDI2ZC1iZDhjLTg2MjU3MDcwYzY1ZSJ9" class="portfolio-link" aria-label="View report">
+                      <i class="fas fa-file-alt"></i>
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div class="project-links">
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiMTMzNzI4ZmQtMWU5Mi00MmJhLWExYWUtODdkMjJmZGIxMGMwIiwidCI6ImI0ODgzMDM1LTY4MTYtNDI2ZC1iZDhjLTg2MjU3MDcwYzY1ZSJ9" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiMTMzNzI4ZmQtMWU5Mi00MmJhLWExYWUtODdkMjJmZGIxMGMwIiwidCI6ImI0ODgzMDM1LTY4MTYtNDI2ZC1iZDhjLTg2MjU3MDcwYzY1ZSJ9" class="project-link"><i class="fas fa-file-alt"></i> Report</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Project 5 -->
-        <div class="portfolio-item" data-category="Machine Learning">
-          <div class="portfolio-card">
-            <div class="portfolio-img">
-              <img src="assets/images/Data-cleaning.jpg" alt="Exploratory Data Analysis">
-            </div>
-            <div class="portfolio-content">
-              <h3 class="project-title">Exploratory Data Analysis</h3>
-              <p class="project-description">Python script showcasing a typical Machine learning Exploratory Data Analysis procedure before algarithms are implemented.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">missingno</span>
-                <span class="tech-tag">NumPy</span>
-                <span class="tech-tag">Skicit-library</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Case Study</a>
-                <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+              <div class="portfolio-content">
+                <h3 class="project-title">Marvin Pizza ltd Dashboard</h3>
+                <p class="project-description">Designed a sales Dashboard for Marvin pizza ltd using Power BI, increasing operational efficiency by 20%.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">Power BI</span>
+                  <span class="tech-tag">DAX</span>
+                  <span class="tech-tag">Power Query</span>
+                </div>
               </div>
             </div>
-          </div>
+          </article>
+
+          <!-- Project 5 -->
+          <article class="portfolio-item" data-category="Machine Learning" data-aos="fade-up" data-aos-delay="400">
+            <div class="portfolio-card">
+              <div class="portfolio-img">
+                <img src="assets/images/Data-cleaning.jpg" alt="Exploratory Data Analysis Project" width="350" height="220">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-links">
+                    <a href="#" class="portfolio-link" aria-label="View case study">
+                      <i class="fas fa-file-alt"></i>
+                    </a>
+                    <a href="#" class="portfolio-link" aria-label="View on GitHub">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <h3 class="project-title">Exploratory Data Analysis</h3>
+                <p class="project-description">Python script showcasing a typical Machine learning Exploratory Data Analysis procedure before algorithms are implemented.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">missingno</span>
+                  <span class="tech-tag">NumPy</span>
+                  <span class="tech-tag">Scikit-library</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6 -->
+          <article class="portfolio-item" data-category="Website Developer" data-aos="fade-up" data-aos-delay="500">
+            <div class="portfolio-card">
+              <div class="portfolio-img">
+                <img src="assets/images/wordpress.jpg" alt="WordPress Website Development" width="350" height="220">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-links">
+                    <a href="https://www.study-boundless.com/" class="portfolio-link" aria-label="View website">
+                      <i class="fas fa-external-link-alt"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <h3 class="project-title">WordPress Website Developer</h3>
+                <p class="project-description">I design WordPress websites from scratch and customize them from private emails, GT4, GA and GTM based on a clients needs.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">WordPress</span>
+                  <span class="tech-tag">HTML</span>
+                  <span class="tech-tag">CSS</span>
+                  <span class="tech-tag">PHP</span>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
 
-        <!-- Project 6 -->
-        <div class="portfolio-item" data-category="Website Developer">
-          <div class="portfolio-card">
-            <div class="portfolio-img">
-              <img src="assets/images/wordpress.jpg" alt="Wordpress Website Developer">
-            </div>
-            <div class="portfolio-content">
-              <h3 class="project-title">Wordpress Website Developer</h3>
-              <p class="project-description">I design wordpress websites from scratch and customize them from private emails, GT4,GA and GTM based on a clients needs.</p>
-              <div class="project-tech">
-                <span class="tech-tag">wordpress</span>
-                <span class="tech-tag">html</span>
-                <span class="tech-tag">css</span>
-                <span class="tech-tag">php</span>
-              </div>
-              <div class="project-links">
-                <a href="https://www.study-boundless.com/" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="portfolio-cta">
-        <a href="/portfolio.html" class="btn btn-primary">View All Projects</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Resume Section -->
-  <section id="resume" class="section resume-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">My Resume</h2>
-        <div class="section-underline"></div>
-      </div>
-      
-      <div class="resume-content">
-        <div class="resume-text">
-          <p>Download my resume to learn more about my professional experience, education, certifications, and technical skills.</p>
-          <p>I'm always open to new opportunities and challenges in the fields of Data Analysis and Machine Learning.</p>
-        </div>
-        
-        <div class="resume-cta">
-          <a href="https://github.com/MMEnock/MMEnock.github.io/raw/main/Resume.pdf" download class="btn btn-primary">
-            <i class="fas fa-download"></i> Download Resume
+        <div class="portfolio-cta" data-aos="fade-up">
+          <a href="/portfolio.html" class="btn btn-primary" aria-label="View all projects">
+            <span>View All Projects</span>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
           </a>
-          <a href="/resume.html" class="btn btn-secondary">
-            <i class="fas fa-eye"></i> View Online
-          </a>
         </div>
       </div>
-      
-      <div class="resume-highlights">
-        <div class="highlight-item">
-          <div class="highlight-icon">
-            <i class="fas fa-graduation-cap"></i>
-          </div>
-          <div class="highlight-content">
-            <h3>Education</h3>
-            <p>Master's in Computational Engineering</p>
-            <p>Bachelor's in Mechanical Engineering</p>
-          </div>
-        </div>
-        
-        <div class="highlight-item">
-          <div class="highlight-icon">
-            <i class="fas fa-briefcase"></i>
-          </div>
-          <div class="highlight-content">
-            <h3>Experience</h3>
-            <p>Data Analyst & ML Engineer</p>
-            <p>Business Intelligence Specialist</p>
-          </div>
-        </div>
-        
-        <div class="highlight-item">
-          <div class="highlight-icon">
-            <i class="fas fa-certificate"></i>
-          </div>
-          <div class="highlight-content">
-            <h3>Certifications</h3>
-            <p>Data Science Professional</p>
-            <p>Machine Learning Specialist</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="employ-me" class="section contact-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Let's Work Together</h2>
-        <div class="section-underline"></div>
-        <p class="section-subtitle">Have a project, job opportunity, or collaboration in mind? I'd love to hear from you!</p>
+    <!-- Resume Section -->
+    <section id="resume" class="section resume-section" aria-label="My resume">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-badge">Resume</span>
+          <h2 class="section-title">My Experience</h2>
+          <div class="section-underline"></div>
+        </div>
+        
+        <div class="resume-content" data-aos="fade-up">
+          <div class="resume-text">
+            <p>Download my resume to learn more about my professional experience, education, certifications, and technical skills.</p>
+            <p>I'm always open to new opportunities and challenges in the fields of Data Analysis and Machine Learning.</p>
+          </div>
+          
+          <div class="resume-cta">
+            <a href="https://github.com/MMEnock/MMEnock.github.io/raw/main/Resume.pdf" download class="btn btn-primary" aria-label="Download resume">
+              <i class="fas fa-download" aria-hidden="true"></i>
+              <span>Download Resume</span>
+            </a>
+            <a href="/resume.html" class="btn btn-secondary" aria-label="View resume online">
+              <i class="fas fa-eye" aria-hidden="true"></i>
+              <span>View Online</span>
+            </a>
+          </div>
+        </div>
+        
+        <div class="resume-highlights">
+          <div class="highlight-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="highlight-icon">
+              <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+            </div>
+            <div class="highlight-content">
+              <h3>Education</h3>
+              <p>Master's in Computational Engineering</p>
+              <p>Bachelor's in Mechanical Engineering</p>
+            </div>
+          </div>
+          
+          <div class="highlight-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="highlight-icon">
+              <i class="fas fa-briefcase" aria-hidden="true"></i>
+            </div>
+            <div class="highlight-content">
+              <h3>Experience</h3>
+              <p>Data Analyst & ML Engineer</p>
+              <p>Business Intelligence Specialist</p>
+            </div>
+          </div>
+          
+          <div class="highlight-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="highlight-icon">
+              <i class="fas fa-certificate" aria-hidden="true"></i>
+            </div>
+            <div class="highlight-content">
+              <h3>Certifications</h3>
+              <p>Data Science Professional</p>
+              <p>Machine Learning Specialist</p>
+            </div>
+          </div>
+        </div>
       </div>
-      
-      <div class="contact-container">
-        <div class="contact-info">
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-envelope"></i>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="employ-me" class="section contact-section" aria-label="Contact me">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-badge">Contact</span>
+          <h2 class="section-title">Let's Work Together</h2>
+          <div class="section-underline"></div>
+          <p class="section-subtitle">Have a project, job opportunity, or collaboration in mind? I'd love to hear from you!</p>
+        </div>
+        
+        <div class="contact-container">
+          <div class="contact-info" data-aos="fade-right">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Email</h3>
+                <p><a href="mailto:mugisha@study-boundless.com">mugisha@study-boundless.com</a></p>
+              </div>
             </div>
-            <div class="contact-text">
-              <h3>Email</h3>
-              <p><a href="mailto:mugisha@study-boundless.com">mugisha@study-boundless.com</a></p>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Location</h3>
+                <p>Bochum, Germany</p>
+              </div>
             </div>
-          </div>
-          
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <div class="contact-text">
-              <h3>Location</h3>
-              <p>Bochum, Germany</p>
-            </div>
-          </div>
-          
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-link"></i>
-            </div>
-            <div class="contact-text">
-              <h3>Social Profiles</h3>
-              <div class="social-links">
-                <a href="https://www.linkedin.com/in/mugishaenock0/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.xing.com/profile/Mugabi_EnockMugisha078797/web_profiles?expandNeffi=true" target="_blank" class="social-link"><i class="fab fa-xing"></i></a>
-                <a href="https://github.com/MMEnock" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-link" aria-hidden="true"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Social Profiles</h3>
+                <div class="social-links">
+                  <a href="https://www.linkedin.com/in/mugishaenock0/" target="_blank" class="social-link" aria-label="LinkedIn Profile">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                  <a href="https://www.xing.com/profile/Mugabi_EnockMugisha078797/web_profiles?expandNeffi=true" target="_blank" class="social-link" aria-label="Xing Profile">
+                    <i class="fab fa-xing" aria-hidden="true"></i>
+                  </a>
+                  <a href="https://github.com/MMEnock" target="_blank" class="social-link" aria-label="GitHub Profile">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        
-        <div class="contact-form-container">
-          <form action="https://formspree.io/f/xeoelqjp" method="POST" class="contact-form">
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" placeholder="Enter your name" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="email">Your Email</label>
-              <input type="email" id="email" name="email" placeholder="Enter your email" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" placeholder="What is this regarding?" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
-            </div>
-            
-            <div class="g-recaptcha" data-sitekey="6LdlSdQqAAAAAMqompFxPvvkYOMWuSl3vFiMlKRm"></div>
-            
-            <button type="submit" class="btn btn-primary submit-btn">
-              <i class="fas fa-paper-plane"></i> Send Message
-            </button>
-          </form>
+          
+          <div class="contact-form-container" data-aos="fade-left">
+            <form action="https://formspree.io/f/xeoelqjp" method="POST" class="contact-form">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="What is this regarding?" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+              </div>
+              
+              <div class="g-recaptcha" data-sitekey="6LdlSdQqAAAAAMqompFxPvvkYOMWuSl3vFiMlKRm"></div>
+              
+              <button type="submit" class="btn btn-primary submit-btn" aria-label="Send message">
+                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-content">
         <div class="footer-logo">
@@ -540,21 +687,28 @@
         <div class="footer-social">
           <h4>Connect With Me</h4>
           <div class="social-icons">
-            <a href="https://www.linkedin.com/in/mugishaenock0/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.xing.com/profile/Mugabi_EnockMugisha078797/web_profiles?expandNeffi=true" target="_blank"><i class="fab fa-xing"></i></a>
-            <a href="https://github.com/MMEnock" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/mugishaenock0/" target="_blank" class="social-link" aria-label="LinkedIn Profile">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.xing.com/profile/Mugabi_EnockMugisha078797/web_profiles?expandNeffi=true" target="_blank" class="social-link" aria-label="Xing Profile">
+              <i class="fab fa-xing" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/MMEnock" target="_blank" class="social-link" aria-label="GitHub Profile">
+              <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
           </div>
         </div>
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; 2023 Mugisha Enock. All Rights Reserved.</p>
+        <p>&copy; 2024 Mugisha Enock. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
-  <!-- JavaScript -->
-  <script src="assets/js/script.js"></script>
+  <!-- Scripts -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/script.js" defer></script>
 </body>
 </html>
