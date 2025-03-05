@@ -4,557 +4,109 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Mugisha Enock - Data Analyst & Machine Learning Engineer Portfolio. Explore my projects, resume, and contact me for collaboration.">
-  <meta name="keywords" content="Data Analyst, Machine Learning Engineer, Portfolio, Python, Power BI, Data Visualization">
-  <meta name="author" content="Mugisha Enock">
   
-  <!-- Favicon -->
-  <link rel="icon" href="assets/images/favicon.ico">
-  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-  
-  <title>Mugisha Enock | Data Analyst & ML Engineer</title>
-  
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Your stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Mugisha Enock - Portfolio</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <!-- Navigation Menu -->
-  <header class="header">
-    <div class="container header-container">
-      <div class="logo">
-        <a href="https://mmenock.github.io/">ME</a>
-      </div>
-      <nav class="main-nav">
-        <button class="mobile-menu-toggle" aria-label="Toggle menu">
-          <span class="hamburger"></span>
-        </button>
-        <ul class="nav-list">
-          <li><a href="#home" class="nav-link active">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-          <li><a href="/resume.html" class="nav-link">Resume</a></li>
-          <li><a href="#employ-me" class="nav-link highlight">Hire Me</a></li>
-        </ul>
-      </nav>
-    </div>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="https://mmenock.github.io/">Home</a></li>
+      <li><a href="/resume.html" target="_blank">Resume</a></li>
+       <li><a href="/portfolio.html" target="_blank">Portfolio</a></li>
+        <li><a href="#employ-me">Employ Me</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero section" id="home">
-    <div class="container hero-container">
-      <div class="hero-content">
-        <h1 class="hero-title">Mugisha Enock</h1>
-        <h2 class="hero-subtitle">Data Analyst | Machine Learning Engineer</h2>
-        <p class="hero-text">Transforming complex data into actionable insights and intelligent solutions</p>
-        <div class="hero-cta">
-          <a href="#portfolio" class="btn btn-primary">View My Work</a>
-          <a href="#employ-me" class="btn btn-secondary">Contact Me</a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <!-- Add a professional photo of yourself here -->
-        <img src="assets/images/Resume-picture.jpg" alt="Mugisha Enock" class="profile-image">
-      </div>
-    </div>
-  </section>
+  <!-- Home Section -->
+  <section id="home" class="container">
+    <h1>Mugisha Enock</h1>
+    <h3>Data/Business Analyst | Machine Learning Engineer</h3>
 
-  <!-- About Section -->
-  <section id="about" class="section about-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">About Me</h2>
-        <div class="section-underline"></div>
-      </div>
-      
-      <div class="about-content">
-        <div class="about-text">
-          <p>I'm a <strong>Data Analyst</strong> and <strong>Machine Learning Engineer</strong> passionate about transforming data into actionable insights and building predictive models using various machine learning libraries such as XGBoost and scikit-learn.</p>
-          
-          <p>With a Master's in <strong>Computational Engineering</strong> from Ruhr-Universität Bochum and a Bachelor's in <strong>Mechanical Engineering</strong> from Budapest Technical University, I combine technical expertise with analytical thinking to solve complex problems.</p>
-          
-          <p>Currently seeking opportunities in Data Analysis and Machine Learning where I can leverage my skills to drive data-informed decisions and create business value.</p>
-        </div>
-        
-        <div class="about-stats">
-          <div class="stat-item">
-            <span class="stat-number">3+</span>
-            <span class="stat-text">Years Experience</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">20+</span>
-            <span class="stat-text">Projects Completed</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">3+</span>
-            <span class="stat-text">Industries Served</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <section>
+      <h2>About Me</h2>
+      <p>I’m a <strong>Data Analyst</strong> and <strong>Machine Learning Engineer</strong> with expertise in transforming data into actionable insights and building predictive models using various machine 
+        learning libraries such as xgboost,scikit-learn among others .With a Master’s in <strong>Computational Engineering</strong> from Ruhr-Universität Bochum and a Bachelor’s in <strong>Mechanical Engineering</strong> from Budapest Technical University,
+        I am currently searching for Data Analyst and Machine learning roles.</p>
+    </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="section skills-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">My Skills</h2>
-        <div class="section-underline"></div>
-      </div>
-      
-      <div class="skills-container">
-        <div class="skill-category">
-          <h3 class="category-title"><i class="fas fa-chart-line"></i> Data Analysis & Visualization</h3>
-          <div class="skills-grid">
-            <div class="skill-item">
-              <span class="skill-name">Power BI</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 95%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Looker Studio</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 90%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Python (NumPy, Pandas)</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 92%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">DAX & Power Query</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 88%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="skill-category">
-          <h3 class="category-title"><i class="fas fa-robot"></i> Machine Learning</h3>
-          <div class="skills-grid">
-            <div class="skill-item">
-              <span class="skill-name">TensorFlow</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 85%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">PyTorch</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 80%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Scikit-learn</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 90%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">XGBoost</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 88%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="skill-category">
-          <h3 class="category-title"><i class="fas fa-globe"></i> Web Analytics</h3>
-          <div class="skills-grid">
-            <div class="skill-item">
-              <span class="skill-name">Google Analytics</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 88%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Google Tag Manager</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 85%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">A/B Testing</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 82%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="skill-category">
-          <h3 class="category-title"><i class="fas fa-code"></i> API Integration</h3>
-          <div class="skills-grid">
-            <div class="skill-item">
-              <span class="skill-name">Graph API</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 87%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">JSON</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 90%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Google Apps Script</span>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 85%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <section>
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>Data Analysis & Visualization</strong>: Power BI, Looker Studio, Python (NumPy, Pandas, Plotly), DAX, Power Query</li>
+        <li><strong>Machine Learning</strong>: TensorFlow, PyTorch, Scikit-learn, XGBoost</li>
+        <li><strong>Web Analytics</strong>: Google Analytics, Google Tag Manager, A/B Testing</li>
+        <li><strong>API Integration</strong>: Graph API, JSON, Google Apps Script</li>
+      </ul>
+    </section>
 
-  <!-- Projects Section -->
-  <section id="portfolio" class="section portfolio-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="section-underline"></div>
-      </div>
-      
-      <div class="portfolio-filters">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="Website Developer">Website Developer</button>
-        <button class="filter-btn" data-filter="Machine Learning">Machine Learning</button>
-        <button class="filter-btn" data-filter="Dashboards">Dashboards</button>
-      </div>
-      
-      <div class="portfolio-grid">
-        <!-- Project 1 -->
-        <div class="portfolio-item" data-category="Machine Learning">
-          <div class="portfolio-card">
-            <div class="portfolio-img">
-              <img src="assets/images/titanic-end-to-end-project.jpg" alt="Titanic Survival Prediction">
-            </div>
-            <div class="portfolio-content">
-              <h3 class="project-title">Titanic Survival Prediction</h3>
-              <p class="project-description">Built an ML model to predict survival rates with 85% accuracy using ensemble methods.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Scikit-learn</span>
-                <span class="tech-tag">XGBoost</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Project 2 -->
-        <div class="portfolio-item" data-category="Machine Learning">
-          <div class="portfolio-card">
-            <div class="portfolio-img">
-              <img src="assets/images/Flight-Enrichment-project.jpg" alt="Python Flight Enrichment">
-            </div>
-            <div class="portfolio-content">
-              <h3 class="project-title">Flight Enrichment</h3>
-              <p class="project-description">Developed Python scripts to optimize flight schedules, reducing delays by 15%.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Pandas</span>
-                <span class="tech-tag">NumPy</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Case Study</a>
-                <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Project 3 -->
-        <div class="portfolio-item" data-category="Machine Learning">
-          <div class="portfolio-card">
-            <div class="portfolio-img">
-              <img src="assets/images/credit-score-evaluation.jpg" alt="Credit Score Evaluation">
-            </div>
-            <div class="portfolio-content">
-              <h3 class="project-title">Credit Score Evaluation</h3>
-              <p class="project-description">Created a model to assess loan eligibility with 92% accuracy rate.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">TensorFlow</span>
-                <span class="tech-tag">Scikit-learn</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Case Study</a>
-                <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Project 4 -->
-        <div class="portfolio-item" data-category="Dashboards">
-          <div class="portfolio-card">
-            <div class="portfolio-img">
-              <img src="assets/images/Marvin pizza.png" alt="Marvin Pizza ltd Dashboard">
-            </div>
-            <div class="portfolio-content">
-              <h3 class="project-title">Marvin Pizza ltd Dashboard</h3>
-              <p class="project-description">Designed a sales Dashboard for Marvin pizza ltd using Power BI, increasing operational efficiency by 20%.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Power BI</span>
-                <span class="tech-tag">DAX</span>
-                <span class="tech-tag">Power Query</span>
-              </div>
-              <div class="project-links">
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiMTMzNzI4ZmQtMWU5Mi00MmJhLWExYWUtODdkMjJmZGIxMGMwIiwidCI6ImI0ODgzMDM1LTY4MTYtNDI2ZC1iZDhjLTg2MjU3MDcwYzY1ZSJ9" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiMTMzNzI4ZmQtMWU5Mi00MmJhLWExYWUtODdkMjJmZGIxMGMwIiwidCI6ImI0ODgzMDM1LTY4MTYtNDI2ZC1iZDhjLTg2MjU3MDcwYzY1ZSJ9" class="project-link"><i class="fas fa-file-alt"></i> Report</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Project 5 -->
-        <div class="portfolio-item" data-category="Machine Learning">
-          <div class="portfolio-card">
-            <div class="portfolio-img">
-              <img src="assets/images/Data-cleaning.jpg" alt="Exploratory Data Analysis">
-            </div>
-            <div class="portfolio-content">
-              <h3 class="project-title">Exploratory Data Analysis</h3>
-              <p class="project-description">Python script showcasing a typical Machine learning Exploratory Data Analysis procedure before algarithms are implemented.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">missingno</span>
-                <span class="tech-tag">NumPy</span>
-                <span class="tech-tag">Skicit-library</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Case Study</a>
-                <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section>
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Flight Enrichment</strong>: Developed Python scripts to optimize flight schedules.</li>
+        <li><strong>Titanic Survival Prediction</strong>: Built an ML model to predict survival rates.</li>
+        <li><strong>Credit Score Evaluation</strong>: Created a model to assess loan eligibility.</li>
+        <li><strong>Interactive Dashboards</strong>: Designed dashboards for restaurants using Power BI.</li>
+        <li><strong>API Integration</strong>: Automated data retrieval from Facebook and Instagram using Graph API.</li>
+      </ul>
+    </section>
 
-        <!-- Project 6 -->
-        <div class="portfolio-item" data-category="Website Developer">
-          <div class="portfolio-card">
-            <div class="portfolio-img">
-              <img src="assets/images/wordpress.jpg" alt="Wordpress Website Developer">
-            </div>
-            <div class="portfolio-content">
-              <h3 class="project-title">Wordpress Website Developer</h3>
-              <p class="project-description">I design wordpress websites from scratch and customize them from private emails, GT4,GA and GTM based on a clients needs.</p>
-              <div class="project-tech">
-                <span class="tech-tag">wordpress</span>
-                <span class="tech-tag">html</span>
-                <span class="tech-tag">css</span>
-                <span class="tech-tag">php</span>
-              </div>
-              <div class="project-links">
-                <a href="https://www.study-boundless.com/" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="portfolio-cta">
-        <a href="/portfolio.html" class="btn btn-primary">View All Projects</a>
-      </div>
-    </div>
+    <section>
+      <h2>Connect With Me</h2>
+      <p>📫 <strong>Email</strong>: mugisha@study-boundless.com</p>
+      <p>🔗 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/mugishaenock0/" target="_blank">LinkedIn Profile</a></p>
+      <p>🔗 <strong>Xing</strong>: <a href="https://www.xing.com/profile/Mugabi_EnockMugisha078797/web_profiles?expandNeffi=true" target="_blank">Xing Profile</a></p>
+    </section>
   </section>
 
   <!-- Resume Section -->
-  <section id="resume" class="section resume-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">My Resume</h2>
-        <div class="section-underline"></div>
-      </div>
-      
-      <div class="resume-content">
-        <div class="resume-text">
-          <p>Download my resume to learn more about my professional experience, education, certifications, and technical skills.</p>
-          <p>I'm always open to new opportunities and challenges in the fields of Data Analysis and Machine Learning.</p>
-        </div>
-        
-        <div class="resume-cta">
-          <a href="https://github.com/MMEnock/MMEnock.github.io/raw/main/Resume.pdf" download class="btn btn-primary">
-            <i class="fas fa-download"></i> Download Resume
-          </a>
-          <a href="/resume.html" class="btn btn-secondary">
-            <i class="fas fa-eye"></i> View Online
-          </a>
-        </div>
-      </div>
-      
-      <div class="resume-highlights">
-        <div class="highlight-item">
-          <div class="highlight-icon">
-            <i class="fas fa-graduation-cap"></i>
-          </div>
-          <div class="highlight-content">
-            <h3>Education</h3>
-            <p>Master's in Computational Engineering</p>
-            <p>Bachelor's in Mechanical Engineering</p>
-          </div>
-        </div>
-        
-        <div class="highlight-item">
-          <div class="highlight-icon">
-            <i class="fas fa-briefcase"></i>
-          </div>
-          <div class="highlight-content">
-            <h3>Experience</h3>
-            <p>Data Analyst & ML Engineer</p>
-            <p>Business Intelligence Specialist</p>
-          </div>
-        </div>
-        
-        <div class="highlight-item">
-          <div class="highlight-icon">
-            <i class="fas fa-certificate"></i>
-          </div>
-          <div class="highlight-content">
-            <h3>Certifications</h3>
-            <p>Data Science Professional</p>
-            <p>Machine Learning Specialist</p>
-          </div>
-        </div>
-      </div>
-    </div>
+  <section id="resume" class="container">
+    <h2>Resume</h2>
+    <p>Download my resume to learn more about my professional experience and skills.</p>
+   <a href="https://github.com/MMEnock/MMEnock.github.io/raw/main/Resume.pdf" download>Download Resume</a>
   </section>
 
-  <!-- Contact Section -->
-  <section id="employ-me" class="section contact-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Let's Work Together</h2>
-        <div class="section-underline"></div>
-        <p class="section-subtitle">Have a project, job opportunity, or collaboration in mind? I'd love to hear from you!</p>
-      </div>
-      
-      <div class="contact-container">
-        <div class="contact-info">
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <div class="contact-text">
-              <h3>Email</h3>
-              <p><a href="mailto:mugisha@study-boundless.com">mugisha@study-boundless.com</a></p>
-            </div>
-          </div>
-          
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <div class="contact-text">
-              <h3>Location</h3>
-              <p>Bochum, Germany</p>
-            </div>
-          </div>
-          
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-link"></i>
-            </div>
-            <div class="contact-text">
-              <h3>Social Profiles</h3>
-              <div class="social-links">
-                <a href="https://www.linkedin.com/in/mugishaenock0/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.xing.com/profile/Mugabi_EnockMugisha078797/web_profiles?expandNeffi=true" target="_blank" class="social-link"><i class="fab fa-xing"></i></a>
-                <a href="https://github.com/MMEnock" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="contact-form-container">
-          <form action="https://formspree.io/f/xeoelqjp" method="POST" class="contact-form">
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" placeholder="Enter your name" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="email">Your Email</label>
-              <input type="email" id="email" name="email" placeholder="Enter your email" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" placeholder="What is this regarding?" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
-            </div>
-            
-            <div class="g-recaptcha" data-sitekey="6LdlSdQqAAAAAMqompFxPvvkYOMWuSl3vFiMlKRm"></div>
-            
-            <button type="submit" class="btn btn-primary submit-btn">
-              <i class="fas fa-paper-plane"></i> Send Message
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="container">
+    <h2>Portfolio</h2>
+    <p>Here are some of my projects:</p>
+    <ul>
+      <li><strong>Flight Enrichment</strong>: Python scripts for optimizing flight schedules.</li>
+      <li><strong>Titanic Survival Prediction</strong>: ML model to predict survival rates.</li>
+      <li><strong>Credit Score Evaluation</strong>: Model to assess loan eligibility.</li>
+      <li><strong>Interactive Dashboards</strong>: Dashboards for restaurants using Power BI.</li>
+      <li><strong>API Integration</strong>: Automated data retrieval from Facebook and Instagram.</li>
+    </ul>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo">
-          <h3>Mugisha Enock</h3>
-          <p>Data Analyst & Machine Learning Engineer</p>
-        </div>
-        
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#employ-me">Contact</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-social">
-          <h4>Connect With Me</h4>
-          <div class="social-icons">
-            <a href="https://www.linkedin.com/in/mugishaenock0/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.xing.com/profile/Mugabi_EnockMugisha078797/web_profiles?expandNeffi=true" target="_blank"><i class="fab fa-xing"></i></a>
-            <a href="https://github.com/MMEnock" target="_blank"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; 2023 Mugisha Enock. All Rights Reserved.</p>
-      </div>
-    </div>
-  </footer>
+  <!-- Employ Me Section -->
+<section id="employ-me" class="container">
+  <h2>Employ Me</h2>
+  <p>Have a project, job opportunity, or collaboration in mind? Let’s work together! Fill out the form below, and I’ll get back to you soon.</p>
 
-  <!-- JavaScript -->
-  <script src="assets/js/main.js"></script>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-</body>
-</html>
+  <form action="https://formspree.io/f/xeoelqjp" method="POST">
+    <div class="form-group">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+    </div>
+    
+    <!-- Google reCAPTCHA -->
+    <div class="g-recaptcha" data-sitekey="6LdlSdQqAAAAAMqompFxPvvkYOMWuSl3vFiMlKRm"></div>
+
+    <button type="submit" class="btn">Send Message</button>
+  </form>
+</section>
+
+<!-- Include Google reCAPTCHA API -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
