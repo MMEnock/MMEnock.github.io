@@ -462,7 +462,275 @@ strong {
   width: 24px;
   height: 2px;
   background-color: white;
+  position: relative;/* Update these styles in your CSS file */
+
+/* Header & Navigation - Mobile Responsive */
+.header {
+  background-color: var(--bg-dark);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+}
+
+.header.scrolled {
+  padding: 10px 0;
+  background-color: rgba(44, 62, 80, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) 0;
+}
+
+.logo a {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.logo a:hover {
+  color: var(--primary-color);
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  gap: var(--spacing-xl);
+}
+
+.nav-link {
+  color: white;
+  font-weight: 500;
   position: relative;
+  padding: var(--spacing-xs) 0;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary-color);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width var(--transition-normal);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.highlight {
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+}
+
+.nav-link.highlight:hover {
+  background-color: var(--primary-dark);
+}
+
+.nav-link.highlight::after {
+  display: none;
+}
+
+.mobile-menu-toggle {
+  display: none; /* Initially hidden, will be shown via JS on mobile */
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  z-index: 1001;
+}
+
+.hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: white;
+  position: relative;
+  transition: background-color var(--transition-fast);
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: white;
+  transition: all var(--transition-fast);
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  bottom: -8px;
+}
+
+.mobile-menu-toggle.active .hamburger {
+  background-color: transparent;
+}
+
+.mobile-menu-toggle.active .hamburger::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.mobile-menu-toggle.active .hamburger::after {
+  transform: rotate(-45deg);
+  bottom: 0;
+}
+
+/* Responsive Styles - Update these breakpoints */
+@media (max-width: 1024px) {
+  :root {
+    --container-padding: 1rem;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Mobile Navigation */
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .nav-list {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 400px;
+    height: 100vh;
+    background-color: var(--bg-dark);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-2xl) var(--spacing-md);
+    gap: var(--spacing-xl);
+    box-shadow: var(--shadow-lg);
+    transition: right var(--transition-normal);
+    z-index: 1000;
+  }
+  
+  .nav-list.active {
+    right: 0;
+  }
+  
+  .nav-list.mobile-nav {
+    overflow-y: auto;
+  }
+  
+  .nav-link {
+    font-size: var(--font-size-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  
+  .hero-cta {
+    justify-content: center;
+  }
+  
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+  
+  .resume-cta {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --font-size-4xl: 2rem;
+    --font-size-3xl: 1.75rem;
+    --font-size-2xl: 1.5rem;
+    --spacing-2xl: 2rem;
+  }
+  
+  .hero {
+    padding: 120px 0 60px;
+  }
+  
+  .profile-image {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .section {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .portfolio-filters {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .filter-btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .footer-social .social-icons {
+    justify-content: center;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
   transition: background-color var(--transition-fast);
 }
 
