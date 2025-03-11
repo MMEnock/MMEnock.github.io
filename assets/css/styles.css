@@ -302,26 +302,37 @@ strong {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .theme-toggle:hover {
     color: var(--primary-color);
 }
 
+.theme-toggle .fa-sun,
+.theme-toggle .fa-moon {
+    position: absolute;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
 .theme-toggle .fa-sun {
-    display: none;
+    transform: translateY(100%) rotate(45deg);
+    opacity: 0;
 }
 
 .theme-toggle .fa-moon {
-    display: block;
+    transform: translateY(0) rotate(0);
+    opacity: 1;
 }
 
 body.dark-theme .theme-toggle .fa-sun {
-    display: block;
+    transform: translateY(0) rotate(0);
+    opacity: 1;
 }
 
 body.dark-theme .theme-toggle .fa-moon {
-    display: none;
+    transform: translateY(-100%) rotate(-45deg);
+    opacity: 0;
 }
 
 .mobile-menu-toggle {
