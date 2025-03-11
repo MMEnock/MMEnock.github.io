@@ -1,241 +1,200 @@
-// Initialize AOS (Animate On Scroll)
-AOS.init({
-    duration: 800,
-    once: true,
-    offset: 100,
-    easing: 'ease-in-out'
+// Detect mobile/tablet devices
+const isTouchDevice = () => {
+    return (('ontouchstart' in window) ||
+        (navigator.maxTouchPoints > 0) ||
+        (navigator.msMaxTouchPoints > 0));
+};
+
+// Add touch device class to body if needed
+if (isTouchDevice()) {
+    document.body.classList.add('touch-device');
+}
+
+// Typed.js for typing animation
+const typed = new Typed('.typed', {
+    strings: ['Data Analyst', 'Machine Learning Engineer', 'Business Analyst'],
+    typeSpeed: 100,
+    backSpeed: 60,
+    loop: true
 });
 
-// DOM Elements
-const header = document.querySelector('.header');
-const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-const navList = document.querySelector('.nav-list');
-const navLinks = document.querySelectorAll('.nav-link');
-const portfolioFilters = document.querySelectorAll('.filter-btn');
-const portfolioItems = document.querySelectorAll('.portfolio-item');
-const sections = document.querySelectorAll('section[id]');
-
-// Header Scroll Effect
-const headerScroll = () => {
-    if (window.scrollY > 100) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-};
-
-// Mobile Menu Toggle
-const toggleMobileMenu = () => {
-    const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
-    mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
-    navList.classList.toggle('active');
-    
-    // Animate hamburger icon
-    const hamburger = document.querySelector('.hamburger');
-    hamburger.classList.toggle('active');
-};
-
-// Close mobile menu when clicking outside
-const closeMobileMenu = (e) => {
-    if (!navList.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-        navList.classList.remove('active');
-        mobileMenuToggle.setAttribute('aria-expanded', 'false');
-        document.querySelector('.hamburger').classList.remove('active');
-    }
-};
-
-// Smooth scroll for navigation links
-const smoothScroll = (e) => {
-    e.preventDefault();
-    const targetId = e.currentTarget.getAttribute('href');
-    const targetSection = document.querySelector(targetId);
-    
-    if (targetSection) {
-        const headerOffset = 80;
-        const elementPosition = targetSection.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-        window.scrollTo({
-            top: offsetPosition,
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
-
-        // Close mobile menu after clicking
-        if (navList.classList.contains('active')) {
-            toggleMobileMenu();
-        }
-    }
-};
-
-// Active navigation link on scroll
-const activeNavLink = () => {
-    const scrollY = window.pageYOffset;
-
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
-        const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLink?.classList.add('active');
-        } else {
-            navLink?.classList.remove('active');
-        }
     });
-};
-
-// Portfolio Filter
-const filterPortfolio = (e) => {
-    const filter = e.currentTarget.getAttribute('data-filter');
-    
-    // Update active filter button
-    portfolioFilters.forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.getAttribute('data-filter') === filter) {
-            btn.classList.add('active');
-        }
-    });
-
-    // Filter portfolio items with animation
-    portfolioItems.forEach(item => {
-        const category = item.getAttribute('data-category');
-        if (filter === 'all' || category === filter) {
-            item.style.display = 'block';
-            item.style.animation = 'fadeIn 0.5s ease-in-out';
-        } else {
-            item.style.display = 'none';
-        }
-    });
-};
-
-// Skill Bars Animation
-const animateSkillBars = () => {
-    const skillBars = document.querySelectorAll('.skill-bar');
-    
-    skillBars.forEach(bar => {
-        const level = bar.getAttribute('aria-valuenow');
-        bar.style.width = '0%';
-        
-        setTimeout(() => {
-            bar.style.width = `${level}%`;
-        }, 100);
-    });
-};
-
-// Form Validation and Submission
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const submitBtn = contactForm.querySelector('.submit-btn');
-        const originalBtnText = submitBtn.innerHTML;
-        
-        try {
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Sending...</span>';
-            submitBtn.disabled = true;
-
-            const formData = new FormData(contactForm);
-            const response = await fetch(contactForm.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            if (response.ok) {
-                showNotification('Message sent successfully!', 'success');
-                contactForm.reset();
-            } else {
-                throw new Error('Failed to send message');
-            }
-        } catch (error) {
-            showNotification('Failed to send message. Please try again.', 'error');
-        } finally {
-            submitBtn.innerHTML = originalBtnText;
-            submitBtn.disabled = false;
-        }
-    });
-}
-
-// Notification System
-const showNotification = (message, type = 'success') => {
-    const notification = document.createElement('div');
-    notification.className = `notification ${type}`;
-    notification.innerHTML = `
-        <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
-        <span>${message}</span>
-    `;
-
-    document.body.appendChild(notification);
-
-    // Trigger animation
-    setTimeout(() => notification.classList.add('show'), 100);
-
-    // Remove notification after 5 seconds
-    setTimeout(() => {
-        notification.classList.remove('show');
-        setTimeout(() => notification.remove(), 300);
-    }, 5000);
-};
-
-// Intersection Observer for Skill Bars
-const skillSection = document.querySelector('.skills-section');
-if (skillSection) {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateSkillBars();
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    observer.observe(skillSection);
-}
-
-// Event Listeners
-window.addEventListener('scroll', () => {
-    headerScroll();
-    activeNavLink();
 });
+
+// Navbar scroll effect
+const nav = document.querySelector('.header');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+});
+
+// Enhanced mobile menu toggle with touch support
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const navList = document.querySelector('.nav-list');
+const header = document.querySelector('.header');
+
+const toggleMobileMenu = (event) => {
+    event.stopPropagation();
+    mobileMenuToggle.classList.toggle('active');
+    navList.classList.toggle('active');
+    document.body.classList.toggle('menu-open');
+};
 
 mobileMenuToggle.addEventListener('click', toggleMobileMenu);
-document.addEventListener('click', closeMobileMenu);
+mobileMenuToggle.addEventListener('touchend', toggleMobileMenu);
 
-navLinks.forEach(link => {
-    link.addEventListener('click', smoothScroll);
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!navList.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+        mobileMenuToggle.classList.remove('active');
+        navList.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    }
 });
 
-portfolioFilters.forEach(filter => {
-    filter.addEventListener('click', filterPortfolio);
-});
+// Portfolio Filters
+document.addEventListener('DOMContentLoaded', () => {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
 
-// Initialize tooltips for portfolio items
-const initTooltips = () => {
-    portfolioItems.forEach(item => {
-        const links = item.querySelectorAll('.portfolio-link');
-        links.forEach(link => {
-            link.addEventListener('mouseenter', (e) => {
-                const tooltip = document.createElement('div');
-                tooltip.className = 'tooltip';
-                tooltip.textContent = e.currentTarget.getAttribute('aria-label');
-                e.currentTarget.appendChild(tooltip);
-            });
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            btn.classList.add('active');
 
-            link.addEventListener('mouseleave', () => {
-                const tooltip = link.querySelector('.tooltip');
-                if (tooltip) tooltip.remove();
+            const filterValue = btn.getAttribute('data-filter');
+
+            portfolioItems.forEach(item => {
+                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 10);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
             });
         });
     });
+});
+
+// Scroll reveal animation
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '80px',
+    duration: 2000,
+    reset: true
+});
+
+// Scroll reveal animations for different sections
+sr.reveal('.hero-content', {});
+sr.reveal('.hero-image', { delay: 200 });
+sr.reveal('.about-content', { delay: 200 });
+sr.reveal('.skills-container', { delay: 200 });
+sr.reveal('.portfolio-grid', { delay: 200 });
+sr.reveal('.contact-container', { delay: 200 });
+
+// Form submission handling
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Add your form submission logic here
+        // You can use fetch API or any other method to handle form submission
+        alert('Thank you for your message! I will get back to you soon.');
+        contactForm.reset();
+    });
+}
+
+// Enhanced theme toggle functionality
+const themeToggle = document.querySelector('.theme-toggle');
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+const toggleTheme = () => {
+    document.body.classList.toggle('dark-theme');
+    const isDarkTheme = document.body.classList.contains('dark-theme');
+    localStorage.setItem('darkTheme', isDarkTheme);
+    
+    // Update icon visibility
+    const moonIcon = themeToggle.querySelector('.fa-moon');
+    const sunIcon = themeToggle.querySelector('.fa-sun');
+    moonIcon.style.display = isDarkTheme ? 'none' : 'block';
+    sunIcon.style.display = isDarkTheme ? 'block' : 'none';
 };
 
-// Initialize all features
-document.addEventListener('DOMContentLoaded', () => {
-    initTooltips();
-    headerScroll();
-    activeNavLink();
-}); 
+// Initialize theme based on user preference or system preference
+const initializeTheme = () => {
+    const savedTheme = localStorage.getItem('darkTheme');
+    if (savedTheme !== null) {
+        document.body.classList.toggle('dark-theme', savedTheme === 'true');
+    } else if (prefersDarkScheme.matches) {
+        document.body.classList.add('dark-theme');
+    }
+    
+    // Initialize icon visibility
+    const isDarkTheme = document.body.classList.contains('dark-theme');
+    const moonIcon = themeToggle.querySelector('.fa-moon');
+    const sunIcon = themeToggle.querySelector('.fa-sun');
+    moonIcon.style.display = isDarkTheme ? 'none' : 'block';
+    sunIcon.style.display = isDarkTheme ? 'block' : 'none';
+};
+
+themeToggle.addEventListener('click', toggleTheme);
+initializeTheme();
+
+// Scroll to top functionality
+const scrollToTopBtn = document.querySelector('.scroll-to-top');
+let isScrolling = false;
+
+const toggleScrollToTopButton = () => {
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    scrollToTopBtn.classList.toggle('visible', scrollPosition > 300);
+};
+
+const scrollToTop = () => {
+    if (isScrolling) return;
+    
+    isScrolling = true;
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+    
+    // Reset isScrolling after animation
+    setTimeout(() => {
+        isScrolling = false;
+    }, 1000);
+};
+
+window.addEventListener('scroll', () => {
+    toggleScrollToTopButton();
+    
+    // Add scrolled class to header
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    header.classList.toggle('scrolled', scrollPosition > 100);
+});
+
+scrollToTopBtn.addEventListener('click', scrollToTop);
+if (isTouchDevice()) {
+    scrollToTopBtn.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        scrollToTop();
+    });
+} 
