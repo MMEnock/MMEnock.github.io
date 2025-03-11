@@ -1,252 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mugisha Enock - Resume</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
-  <style>
-    /* General Styles */
-    body {
-      font-family: 'Roboto', sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h1, h2, h3 {
-      color: #2c3e50;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      border-bottom: 2px solid #1abc9c;
-      padding-bottom: 0.5rem;
-      margin-top: 2rem;
-    }
-
-    h3 {
-      font-size: 1.4rem;
-      color: #34495e;
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      margin: 0.5rem 0;
-    }
-
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-
-    ul li {
-      margin-bottom: 1rem;
-      position: relative;
-      padding-left: 1.5rem;
-    }
-
-    ul li::before {
-      content: '•';
-      position: absolute;
-      left: 0;
-      color: #1abc9c;
-      font-size: 1.5rem;
-    }
-
-    a {
-      color: #1abc9c;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: #16a085;
-    }
-
-    .contact-info {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .contact-info a {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: #333;
-    }
-
-    .contact-info a:hover {
-      color: #1abc9c;
-    }
-
-    .section {
-      margin-bottom: 2rem;
-    }
-
-    .section ul li strong {
-      display: block;
-      font-size: 1.1rem;
-      color: #2c3e50;
-    }
-
-    .section ul li p {
-      margin: 0.25rem 0;
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .skills span {
-      background: #1abc9c;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      font-size: 0.9rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Mugisha Enock</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/typed.js@2.0.12"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
-  <div class="container">
-    <!-- Header Section -->
-    <header>
-      <h1>Mugisha Enock</h1>
-      <h3 class="title">Data Analyst <span>|</span> Machine Learning Engineer</h3>
-
-      <div class="contact-info">
-        <a href="tel:015753120993">📞 015 75312 0993</a>
-        <a href="mailto:mugisha@study-boundless.com">📧 mugisha@study-boundless.com</a>
-        <a href="https://www.linkedin.com/in/mugishaenock0//web_profiles?expandNeffi=true" target="_blank">🔗 linkedln Profile</a>
-      </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">Mugisha Enock</a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="#" class="nav-link active">Resume</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    <li>
+                        <button class="theme-toggle">
+                            <i class="fas fa-moon"></i>
+                            <i class="fas fa-sun"></i>
+                        </button>
+                    </li>
+                </ul>
+                <button class="mobile-menu-toggle">
+                    <span class="hamburger"></span>
+                </button>
+            </nav>
+        </div>
     </header>
 
-    <!-- About Me Section -->
-    <section class="section">
-      <h2>About Me</h2>
-      <p>Experienced in conducting comprehensive website performance using Google Analytics, GT4 property to evaluate Google Ads campaigns. Adept at implementing automatized interactive dashboards utilizing Looker Studio, Power BI, Python, and Graphs APIs. Bringing 2 years of Machine Learning algorithm implementation.</p>
+    <!-- Resume Section -->
+    <section class="resume-page section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My Resume</h2>
+                <div class="section-underline"></div>
+                <p class="section-subtitle">Data Analyst & Machine Learning Engineer based in Germany | Nordrhein Westfalen</p>
+            </div>
+
+            <div class="resume-content">
+                <div class="resume-actions">
+                    <a href="resume.pdf" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="resume-section">
+                    <div class="contact-info">
+                        <a href="tel:015753120993"><i class="fas fa-phone"></i> 015 75312 0993</a>
+                        <a href="mailto:mugisha@study-boundless.com"><i class="fas fa-envelope"></i> mugisha@study-boundless.com</a>
+                        <a href="https://www.linkedin.com/in/mugishaenock0//web_profiles?expandNeffi=true" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+                    </div>
+                </div>
+
+                <!-- About Me -->
+                <div class="resume-section">
+                    <h3>About Me</h3>
+                    <p>Experienced in conducting comprehensive website performance using Google Analytics, GT4 property to evaluate Google Ads campaigns. Adept at implementing automatized interactive dashboards utilizing Looker Studio, Power BI, Python, and Graphs APIs. Bringing 2 years of Machine Learning algorithm implementation.</p>
+                </div>
+
+                <!-- Work Experience -->
+                <div class="resume-section">
+                    <h3>Work Experience</h3>
+                    
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h4>Data Analyst | Aviation Consultant</h4>
+                            <span class="experience-date">11.2023 - 06.2024</span>
+                        </div>
+                        <p class="experience-company">Airport Research Centre | Aachen NRW</p>
+                        <p class="experience-description">My work involves the improvement of existing flight routes and the development of machine learning models to predict passenger volumes and behaviour to enable more efficient airport operations.</p>
+                        <ul class="experience-details">
+                            <li>Improved flight routes and developed machine learning models to predict passenger volumes, enhancing airport operations efficiency.</li>
+                            <li>Created forecasting models with RandomForesRegressor, XGBoost, and TensorFlow, integrating results into operational planning software CAST.</li>
+                            <li>Analysed passenger movements using Python, generating detailed behavioural reports.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h4>Business | Web Analyst Intern</h4>
+                            <span class="experience-date">12.2022 - 05.2023</span>
+                        </div>
+                        <p class="experience-company">Timeframe AG | Essen</p>
+                        <p class="experience-description">Conducted website performance analysis and Google Ads performance using GT4. Developed interactive dashboards using Locker Studio and integrated them using Graphs APIs to automate data retrieval from Google Sheets.</p>
+                        <ul class="experience-details">
+                            <li>Specialized in website performance analysis and Google Ads performance evaluation using Google Analytics.</li>
+                            <li>Created Looker Studio-based interactive dashboards, automating data fetches and visualizations using Json, google sheets and Google apps script.</li>
+                            <li>Created customized google Tags and triggers into Events and conversions using google Tag manager and assistant.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h4>Sales Analyst | Data Analyst Intern</h4>
+                            <span class="experience-date">04.2022 - 07.2022</span>
+                        </div>
+                        <p class="experience-company">Make It Tetten GmbH | Düsseldorf NRW</p>
+                        <p class="experience-description">Analysed data for customers such as Harley Davidson regarding package design performance, Product sales and use KPIs.</p>
+                        <ul class="experience-details">
+                            <li>Produced and sent weekly reports stakeholders regarding product performance.</li>
+                            <li>Automated data harvesting from Amazon and eBay, integrating it into Google Data Studio.</li>
+                            <li>Performed data cleansing, aggregation, and investigation in Power BI using DAX and Power queries.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h4>Junior Data Analyst Intern</h4>
+                            <span class="experience-date">11.2021 - 01.2022</span>
+                        </div>
+                        <p class="experience-company">Gelsenwasser AG | Gelsenkirchen NRW</p>
+                        <p class="experience-description">Analysed weather household electricity and wind energy data in the southern German region.</p>
+                        <ul class="experience-details">
+                            <li>Analyzed weather, household electricity, and wind energy data for the southern German region.</li>
+                            <li>Built reusable dashboards in Power BI to facilitate data-driven decision-making.</li>
+                            <li>Generated insights using Excel, DAX, Pandas, and NumPy.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="resume-section">
+                    <h3>Education</h3>
+                    <div class="education-item">
+                        <div class="education-header">
+                            <h4>MSc, Computational Engineering</h4>
+                            <span class="education-date">2019 - 2023</span>
+                        </div>
+                        <p class="education-school">Ruhr-Universität Bochum</p>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-header">
+                            <h4>BSc, Mechanical Engineering</h4>
+                            <span class="education-date">2015 - 2019</span>
+                        </div>
+                        <p class="education-school">Budapest Technical University</p>
+                    </div>
+                </div>
+
+                <!-- Expertise/Skills -->
+                <div class="resume-section">
+                    <h3>Expertise</h3>
+                    <div class="skills-grid">
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Google Data Studio</span>
+                        <span class="skill-tag">Microsoft Package</span>
+                        <span class="skill-tag">Microsoft SQL Server</span>
+                        <span class="skill-tag">Python Visualization</span>
+                        <span class="skill-tag">NumPy, Pandas & Plotly</span>
+                        <span class="skill-tag">XGBoost and TensorFlow</span>
+                        <span class="skill-tag">DAX & Power Queries</span>
+                        <span class="skill-tag">A/B Testing</span>
+                        <span class="skill-tag">Customer Segmentation</span>
+                        <span class="skill-tag">Graph API Development</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">Exploratory Data Analysis</span>
+                        <span class="skill-tag">Model Forecasting</span>
+                        <span class="skill-tag">ad-hoc Analysis</span>
+                        <span class="skill-tag">GA4</span>
+                        <span class="skill-tag">GTM & GA</span>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="resume-section">
+                    <h3>Languages</h3>
+                    <ul class="language-list">
+                        <li>English: Mother tongue</li>
+                        <li>Deutsch: B2</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Work Experience Section -->
-    <section class="section">
-      <h2>Work Experience</h2>
-      <ul>
-        <li>
-          <strong>Data Analyst | Aviation Consultant</strong>
-          <p>Airport Research Centre | Aachen NRW (11.2023 - 06.2024)</p>
-          <p style="font-style: italic; color: darkblue;">
-          My work involves the improvement of existing flight routes and the development of machine learning models to predict passenger volumes and behaviour to enable more efficient airport operations.
-           </p>
-          <ul>
-            <li>AnalystImproved flight routes and developed machine learning models to predictpassenger volumes, enhancing airport operations efficiency.</li>
-            <li>Created forecasting models with RandomForesRegressor, XGBoost, andTensorFlow, integrating results into operational planning softwareCAST.</li>
-            <li>Analysed passenger movements using Python, generating detailedbehavioural reports.</li>
-          </ul>
-        </li>
-        <li>
-          <strong>Business | Web Analyst Intern</strong>
-          <p>Timeframe AG | Essen (12.2022 - 05.2023)</p>
-          <p style="font-style: italic; color: darkblue;">Conducted website performance analysis and  Google Ads performance using GT4.
-            Developed interactive dashboards using Locker Studio and integrated them using Graphs APIs to automate data retrieval from Google Sheets, streamlining data visualization and analysis processes.</p>
-          <ul>
-            <li>Specialized in website performance analysis and Google Adsperformance evaluation using Google Analytics.</li>
-            <li>Created Looker Studio-based interactive dashboards, automating datafetches and visualizations using Json, google sheets and Google appsscript.</li>
-            <li>Created customized google Tags and triggers into Events andconversions using google Tag manager and assistant and then get themembedded into various landing pages to achieve tailored results.</li>
-          </ul>
-        </li>
-        <li>
-          <strong>Sales Analyst | Data Analyst Intern</strong>
-          <p>Make It Tetten GmbH | Düsseldorf NRW (04.2022 - 07.2022)</p>
-          <p style="font-style: italic; color: darkblue;">Analysed data for our customers such as Harley Davidson regarding packagedesign performance, Product sales and use KPIs such as visitor Total,
-            advertise influence on our weekly, monthly, and yearly sales to make market decisions.</p>
-          <ul>
-            <li>Produced and sent weekly reports stakeholders regarding productperformance.</li>
-            <li>Automated data harvesting from Amazon and eBay, integrating it intoGoogle Data Studio for interactive dashboards and sales reporting.</li>
-            <li>Performed data cleansing, aggregation, and investigation in Power BI usingDAX and Power queries.</li>
-          </ul>
-        </li>
-        <li>
-          <strong>Junior Data Analyst Intern</strong>
-          <p>Gelsenwasser AG | Gelsenkirchen NRW (11.2021 - 01.2022)</p>
-          <p style="font-style: italic; color: darkblue;">Analysed weather household electricity and wind energy data in the southern German region. 
-            cleaning, aggregating large data sets, forecasts, and trends forthe market Analysed.</p>
-          <ul>
-            <li>Analyzed weather, household electricity, and wind energy data for the southern German region.</li>
-            <li>Built reusable dashboards in Power BI to facilitate data-driven decision-making.</li>
-            <li>Generated insights using Excel, DAX, Pandas, and NumPy.</li>
-          </ul>
-        </li>
-      </ul>
-    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Mugisha Enock</h3>
+                    <p>Data Analyst & Machine Learning Engineer</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Resume</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mugisha Enock. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-    <!-- Education Section -->
-    <section class="section">
-      <h2>Education</h2>
-      <ul>
-        <li>
-          <strong>MSc, Computational Engineering</strong>
-          <p>Ruhr-Universität Bochum (2019 - 2023)</p>
-        </li>
-        <li>
-          <strong>BSc, Mechanical Engineering</strong>
-          <p>Budapest Technical University (2015 - 2019)</p>
-        </li>
-      </ul>
-    </section>
+    <button class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-    <!-- Expertise Section -->
-    <section class="section">
-      <h2>Expertise</h2>
-      <div class="skills">
-        <span>Power BI</span>
-        <span>Google Data Studio</span>
-        <span>Microsoft Package</span>
-        <span>Microsoft SQL Server</span>
-        <span>Python Visualization</span>
-        <span>NumPy, Pandas & Plotly</span>
-        <span>XGBoost and TensorFlow</span>
-        <span>DAX & Power Queries</span>
-        <span>A/B Testing</span>
-        <span>Customer Segmentation</span>
-        <span>Graph API Development</span>
-        <span>PyTorch</span>
-        <span>Scikit-learn</span>
-        <span>Exploratory Data Analysis</span>
-        <span>Model Forecasting</span>
-        <span>ad-hoc Analysis</span>
-        <span>GA4 </span>
-        <span>GTM & GA </span>
-      </div>
-    </section>
+    <!-- Scripts -->
+    <script>
+        // Check and set the theme on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const theme = localStorage.getItem('theme') || 'light';
+            document.body.classList.toggle('dark-theme', theme === 'dark');
+            updateThemeIcons(theme === 'dark');
+        });
 
-    <!-- Languages Section -->
-    <section class="section">
-      <h2>Languages</h2>
-      <ul>
-        <li>English: Mother tongue</li>
-        <li>Deutsch: B2</li>
-      </ul>
-    </section>
-  </div>
+        // Theme toggle functionality
+        const themeToggle = document.querySelector('.theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.body.classList.toggle('dark-theme');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateThemeIcons(isDark);
+        });
+
+        function updateThemeIcons(isDark) {
+            const moonIcon = document.querySelector('.fa-moon');
+            const sunIcon = document.querySelector('.fa-sun');
+            moonIcon.style.display = isDark ? 'none' : 'block';
+            sunIcon.style.display = isDark ? 'block' : 'none';
+        }
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navList = document.querySelector('.nav-list');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            navList.classList.toggle('active');
+        });
+
+        // Scroll to top functionality
+        const scrollToTopBtn = document.querySelector('.scroll-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
