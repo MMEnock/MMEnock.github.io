@@ -658,7 +658,9 @@ body.dark-theme .skill-bar {
     border-radius: var(--border-radius-md);
     overflow: hidden;
     box-shadow: var(--shadow-md);
-    transition: transform var(--transition-normal);
+    transition: all var(--transition-normal), transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+    transform: scale(1);
 }
 
 .portfolio-item:hover {
@@ -670,7 +672,7 @@ body.dark-theme .skill-bar {
     flex-direction: column;
     height: 100%;
     background-color: var(--bg-light);
-    transition: transform var(--transition-normal);
+    transition: all var(--transition-normal);
 }
 
 .portfolio-img {
@@ -1316,22 +1318,24 @@ body.dark-theme .project-date {
 }
 
 .portfolio-item {
-    border-radius: 15px;
+    border-radius: var(--border-radius-md);
     overflow: hidden;
-    background: var(--card-bg);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal), transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+    transform: scale(1);
 }
 
 .portfolio-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px);
 }
 
 .portfolio-card {
-    text-decoration: none;
-    color: var(--text-color);
-    display: block;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--bg-light);
+    transition: all var(--transition-normal);
 }
 
 .portfolio-img {
