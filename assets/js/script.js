@@ -1,3 +1,17 @@
+// Theme initialization - Must be at the top
+const initializeTheme = () => {
+    const savedTheme = localStorage.getItem('darkTheme');
+    if (savedTheme !== null) {
+        document.body.classList.toggle('dark-theme', savedTheme === 'true');
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark-theme');
+        localStorage.setItem('darkTheme', 'true');
+    }
+};
+
+// Initialize theme immediately
+initializeTheme();
+
 // Detect mobile/tablet devices
 const isTouchDevice = () => {
     return (('ontouchstart' in window) ||
@@ -119,7 +133,6 @@ sr.reveal('.contact-container', { delay: 200 });
 
 // Enhanced theme toggle functionality
 const themeToggle = document.querySelector('.theme-toggle');
-const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
 const toggleTheme = () => {
     document.body.classList.toggle('dark-theme');
@@ -127,20 +140,13 @@ const toggleTheme = () => {
     localStorage.setItem('darkTheme', isDarkTheme);
 };
 
-// Initialize theme based on user preference or system preference
-const initializeTheme = () => {
-    const savedTheme = localStorage.getItem('darkTheme');
-    if (savedTheme !== null) {
-        document.body.classList.toggle('dark-theme', savedTheme === 'true');
-    } else if (prefersDarkScheme.matches) {
-        document.body.classList.add('dark-theme');
+// Add theme toggle event listener
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
     }
-};
-
-if (themeToggle) {
-    themeToggle.addEventListener('click', toggleTheme);
-}
-initializeTheme();
+});
 
 // Scroll to top functionality
 const scrollToTopBtn = document.querySelector('.scroll-to-top');
