@@ -113,12 +113,6 @@ const toggleTheme = () => {
     document.body.classList.toggle('dark-theme');
     const isDarkTheme = document.body.classList.contains('dark-theme');
     localStorage.setItem('darkTheme', isDarkTheme);
-    
-    // Update icon visibility
-    const moonIcon = themeToggle.querySelector('.fa-moon');
-    const sunIcon = themeToggle.querySelector('.fa-sun');
-    moonIcon.style.display = isDarkTheme ? 'none' : 'block';
-    sunIcon.style.display = isDarkTheme ? 'block' : 'none';
 };
 
 // Initialize theme based on user preference or system preference
@@ -129,16 +123,11 @@ const initializeTheme = () => {
     } else if (prefersDarkScheme.matches) {
         document.body.classList.add('dark-theme');
     }
-    
-    // Initialize icon visibility
-    const isDarkTheme = document.body.classList.contains('dark-theme');
-    const moonIcon = themeToggle.querySelector('.fa-moon');
-    const sunIcon = themeToggle.querySelector('.fa-sun');
-    moonIcon.style.display = isDarkTheme ? 'none' : 'block';
-    sunIcon.style.display = isDarkTheme ? 'block' : 'none';
 };
 
-themeToggle.addEventListener('click', toggleTheme);
+if (themeToggle) {
+    themeToggle.addEventListener('click', toggleTheme);
+}
 initializeTheme();
 
 // Scroll to top functionality
