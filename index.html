@@ -347,18 +347,22 @@
                 </div>
                 <div class="contact-form-container">
                     <form class="contact-form" action="https://formspree.io/f/xeoelqjp" method="POST">
+                        <!-- Honeypot field to prevent spam -->
+                        <input type="text" name="_gotcha" style="display:none">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="_replyto" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
                             <textarea id="message" name="message" required></textarea>
                         </div>
+                        <input type="hidden" name="_subject" value="New contact form submission">
+                        <input type="hidden" name="_next" value="https://mmenock.github.io/?submitted=true">
                         <div class="g-recaptcha" data-sitekey="6LdlSdQqAAAAAMqompFxPvvkYOMWuSl3vFiMlKRm" data-theme="light" style="margin-bottom: 1rem;"></div>
                         <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
                     </form>

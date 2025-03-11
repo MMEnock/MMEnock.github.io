@@ -105,16 +105,6 @@ sr.reveal('.skills-container', { delay: 200 });
 sr.reveal('.portfolio-grid', { delay: 200 });
 sr.reveal('.contact-container', { delay: 200 });
 
-// Form submission handling
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        // Let Formspree handle the submission
-        // No need to prevent default or show alert
-        // Form will be handled automatically
-    });
-}
-
 // Enhanced theme toggle functionality
 const themeToggle = document.querySelector('.theme-toggle');
 const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
