@@ -109,11 +109,9 @@ sr.reveal('.contact-container', { delay: 200 });
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // Add your form submission logic here
-        // You can use fetch API or any other method to handle form submission
-        alert('Thank you for your message! I will get back to you soon.');
-        contactForm.reset();
+        // Let Formspree handle the submission
+        // No need to prevent default or show alert
+        // Form will be handled automatically
     });
 }
 
