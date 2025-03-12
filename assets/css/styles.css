@@ -460,16 +460,20 @@ body.dark-theme .theme-toggle .fa-moon {
 .animation-container {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
+    max-width: 500px;
 }
 
 .neural-network {
     width: 100%;
     height: 100%;
-    max-width: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .node {
@@ -500,6 +504,7 @@ body.dark-theme .theme-toggle .fa-moon {
     background: rgba(26, 188, 156, 0.1);
     border: 2px solid var(--primary-color);
     border-radius: var(--border-radius-md);
+    transition: all var(--transition-normal);
 }
 
 .bar-chart {
@@ -562,11 +567,39 @@ body.dark-theme .theme-toggle .fa-moon {
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
     .animation-container {
-        transform: scale(0.8);
+        height: 350px;
+        transform: none;
+        margin: 0 auto;
     }
     
     .chart {
-        display: none;
+        display: block;
+        transform: scale(0.8);
+    }
+
+    .bar-chart {
+        width: 60px;
+        height: 90px;
+    }
+
+    .line-chart {
+        width: 90px;
+        height: 60px;
+    }
+
+    .scatter-plot {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .animation-container {
+        height: 300px;
+    }
+    
+    .chart {
+        transform: scale(0.7);
     }
 }
 
