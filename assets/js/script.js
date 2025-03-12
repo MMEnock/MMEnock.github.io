@@ -27,21 +27,60 @@ const toggleTheme = () => {
     const isDarkTheme = document.body.classList.toggle('dark-theme');
     localStorage.setItem('darkTheme', isDarkTheme);
     
-    // Update button state
+    // Update button state and add animation class
     const themeToggle = document.querySelector('.theme-toggle');
     if (themeToggle) {
         themeToggle.setAttribute('aria-pressed', isDarkTheme);
+        
+        // Add animation feedback
+        themeToggle.classList.add('theme-toggle-active');
+        setTimeout(() => {
+            themeToggle.classList.remove('theme-toggle-active');
+        }, 300);
+
+        // Update icons
+        const sunIcon = themeToggle.querySelector('.fa-sun');
+        const moonIcon = themeToggle.querySelector('.fa-moon');
+        
+        if (isDarkTheme) {
+            sunIcon.style.transform = 'rotate(180deg) scale(1)';
+            sunIcon.style.opacity = '1';
+            moonIcon.style.transform = 'rotate(-180deg) scale(0)';
+            moonIcon.style.opacity = '0';
+        } else {
+            sunIcon.style.transform = 'rotate(-180deg) scale(0)';
+            sunIcon.style.opacity = '0';
+            moonIcon.style.transform = 'rotate(180deg) scale(1)';
+            moonIcon.style.opacity = '1';
+        }
     }
 
     // Dispatch custom event for theme change
     window.dispatchEvent(new CustomEvent('themechange', { detail: { isDark: isDarkTheme } }));
 };
 
-// Add theme toggle event listener
+// Add theme toggle event listener with improved touch handling
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.querySelector('.theme-toggle');
     if (themeToggle) {
-        themeToggle.addEventListener('click', toggleTheme);
+        // Handle both click and touch events
+        const handleToggle = (e) => {
+            e.preventDefault();
+            toggleTheme();
+            
+            // Add tactile feedback for touch devices
+            if (document.body.classList.contains('has-touch')) {
+                navigator.vibrate && navigator.vibrate(50);
+            }
+        };
+
+        themeToggle.addEventListener('click', handleToggle);
+        themeToggle.addEventListener('touchend', handleToggle);
+        
+        // Prevent ghost clicks on touch devices
+        themeToggle.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+        });
     }
 });
 

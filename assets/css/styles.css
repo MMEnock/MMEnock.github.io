@@ -257,7 +257,8 @@ strong {
 
 .nav-list {
     display: flex;
-    gap: var(--spacing-xl);
+    gap: var(--spacing-lg);
+    padding-right: 16px;
 }
 
 .nav-link {
@@ -292,47 +293,95 @@ strong {
     background: none;
     border: none;
     color: white;
-    font-size: var(--font-size-xl);
     cursor: pointer;
-    padding: var(--spacing-xs);
-    transition: color var(--transition-normal);
+    padding: 12px;
+    margin-left: 20px;
+    transition: all var(--transition-normal);
     position: relative;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .theme-toggle:hover {
-    color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
 }
 
 .theme-toggle .fa-sun,
 .theme-toggle .fa-moon {
     position: absolute;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    font-size: 24px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.theme-toggle .fa-sun {
-    transform: translateY(100%) rotate(45deg);
+/* Improved touch area for mobile devices */
+.is-mobile .theme-toggle,
+.is-tablet .theme-toggle {
+    width: 56px;
+    height: 56px;
+    margin-left: 24px;
+    padding: 16px;
+}
+
+.is-mobile .theme-toggle .fa-sun,
+.is-mobile .theme-toggle .fa-moon,
+.is-tablet .theme-toggle .fa-sun,
+.is-tablet .theme-toggle .fa-moon {
+    font-size: 28px;
+}
+
+/* Add ripple effect for better feedback */
+.theme-toggle::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--primary-color);
     opacity: 0;
+    transform: scale(0);
+    transition: all 0.4s ease;
 }
 
-.theme-toggle .fa-moon {
-    transform: translateY(0) rotate(0);
-    opacity: 1;
+.theme-toggle:active::after {
+    opacity: 0.2;
+    transform: scale(1);
 }
 
-body.dark-theme .theme-toggle .fa-sun {
-    transform: translateY(0) rotate(0);
-    opacity: 1;
+/* Adjust nav spacing to accommodate larger toggle */
+.nav-list {
+    gap: var(--spacing-lg);
+    padding-right: 16px;
 }
 
-body.dark-theme .theme-toggle .fa-moon {
-    transform: translateY(-100%) rotate(-45deg);
-    opacity: 0;
+/* Dark theme adjustments */
+body.dark-theme .theme-toggle {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+body.dark-theme .theme-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure proper spacing in mobile menu */
+@media (max-width: 768px) {
+    .nav-list li:last-child {
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
+    .theme-toggle {
+        margin: 0;
+    }
 }
 
 .mobile-menu-toggle {
