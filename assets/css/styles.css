@@ -601,6 +601,19 @@ body.dark-theme .theme-toggle .fa-moon {
     box-shadow: var(--shadow-md);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid rgba(var(--primary-color-rgb), 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    opacity: 0.8;
 }
 
 .skill-category:hover {
@@ -608,35 +621,34 @@ body.dark-theme .theme-toggle .fa-moon {
     box-shadow: var(--shadow-lg);
 }
 
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.category-header i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    background: rgba(26, 188, 156, 0.1);
+    padding: 1rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.skill-category:hover .category-header i {
+    transform: scale(1.1) rotate(5deg);
+}
+
 .category-title {
     color: var(--text-color);
     font-size: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
+    font-weight: 600;
     position: relative;
-    padding-left: 2rem;
-}
-
-.category-title::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 10px;
-    height: 10px;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-}
-
-.category-title::after {
-    content: '';
-    position: absolute;
-    left: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 35px;
-    height: 2px;
-    background-color: var(--primary-color);
 }
 
 .skills-grid {
@@ -657,7 +669,7 @@ body.dark-theme .theme-toggle .fa-moon {
     font-weight: 500;
     display: flex;
     align-items: center;
-    padding-left: 2rem;
+    padding-left: 1rem;
     position: relative;
 }
 
@@ -666,22 +678,18 @@ body.dark-theme .theme-toggle .fa-moon {
     position: absolute;
     left: 0;
     color: var(--primary-color);
-    font-size: 1.2rem;
-    width: 2rem;
-    display: flex;
-    justify-content: center;
 }
 
 .skill-bar {
     height: 8px;
-    background-color: rgba(var(--primary-color-rgb), 0.1);
+    background-color: rgba(26, 188, 156, 0.1);
     border-radius: 4px;
     overflow: hidden;
 }
 
 .skill-level {
     height: 100%;
-    background-color: var(--primary-color);
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
     border-radius: 4px;
     transition: width 1s ease-in-out;
     position: relative;
@@ -704,6 +712,14 @@ body.dark-theme .skill-category {
     border-color: rgba(255, 255, 255, 0.1);
 }
 
+body.dark-theme .category-header {
+    border-bottom-color: var(--dark-border-color);
+}
+
+body.dark-theme .category-header i {
+    background: rgba(26, 188, 156, 0.2);
+}
+
 body.dark-theme .skill-bar {
     background-color: rgba(255, 255, 255, 0.1);
 }
@@ -722,12 +738,21 @@ body.dark-theme .skill-bar {
         padding: 1.5rem;
     }
 
+    .category-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .category-header i {
+        font-size: 1.5rem;
+        padding: 0.75rem;
+    }
+
     .category-title {
-        padding-left: 1.75rem;
+        font-size: 1.25rem;
     }
 
     .skill-name {
-        padding-left: 1.75rem;
+        font-size: 1rem;
     }
 }
 
