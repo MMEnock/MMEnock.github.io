@@ -2067,4 +2067,66 @@ body.dark-theme .certification-item {
 .has-touch .btn:active,
 .has-touch .nav-link:active {
     opacity: 0.7;
+}
+
+/* Email link styles */
+.email-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    position: relative;
+}
+
+.email-link:hover {
+    color: var(--primary-dark);
+}
+
+.email-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.email-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Blinking animation */
+.blink {
+    animation: subtle-blink 3s ease-in-out infinite;
+}
+
+@keyframes subtle-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Dark theme adjustments for email link */
+body.dark-theme .email-link {
+    color: var(--primary-color);
+}
+
+body.dark-theme .email-link:hover {
+    color: var(--primary-dark);
+}
+
+body.dark-theme .email-link::after {
+    background-color: var(--primary-color);
+}
+
+/* Touch device adjustments */
+.has-touch .email-link {
+    padding: var(--spacing-xs) 0;
+}
+
+.has-touch .email-link:active {
+    opacity: 0.7;
 } 
