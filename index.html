@@ -110,7 +110,42 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="assets/images/Resume-picture.jpg" alt="Mugisha Enock" class="profile-image">
+                <div class="animation-container">
+                    <!-- Neural Network Animation -->
+                    <svg class="neural-network" viewBox="0 0 500 500">
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#1abc9c;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#2c3e50;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Data Nodes -->
+                        <circle class="node" cx="100" cy="150" r="20" />
+                        <circle class="node" cx="100" cy="250" r="20" />
+                        <circle class="node" cx="100" cy="350" r="20" />
+                        
+                        <!-- Hidden Layer Nodes -->
+                        <circle class="node" cx="250" cy="200" r="20" />
+                        <circle class="node" cx="250" cy="300" r="20" />
+                        
+                        <!-- Output Node -->
+                        <circle class="node" cx="400" cy="250" r="20" />
+                        
+                        <!-- Connections -->
+                        <line class="connection" x1="120" y1="150" x2="230" y2="200" />
+                        <line class="connection" x1="120" y1="250" x2="230" y2="200" />
+                        <line class="connection" x1="120" y1="350" x2="230" y2="300" />
+                        <line class="connection" x1="270" y1="200" x2="380" y2="250" />
+                        <line class="connection" x1="270" y1="300" x2="380" y2="250" />
+                    </svg>
+                    
+                    <!-- Data Visualization Elements -->
+                    <div class="data-viz">
+                        <div class="chart bar-chart"></div>
+                        <div class="chart line-chart"></div>
+                        <div class="chart scatter-plot"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
