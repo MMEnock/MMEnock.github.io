@@ -460,20 +460,16 @@ body.dark-theme .theme-toggle .fa-moon {
 .animation-container {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    max-width: 500px;
 }
 
 .neural-network {
     width: 100%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+    max-width: 500px;
 }
 
 .node {
@@ -504,7 +500,6 @@ body.dark-theme .theme-toggle .fa-moon {
     background: rgba(26, 188, 156, 0.1);
     border: 2px solid var(--primary-color);
     border-radius: var(--border-radius-md);
-    transition: all var(--transition-normal);
 }
 
 .bar-chart {
@@ -567,39 +562,11 @@ body.dark-theme .theme-toggle .fa-moon {
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
     .animation-container {
-        height: 350px;
-        transform: none;
-        margin: 0 auto;
-    }
-    
-    .chart {
-        display: block;
         transform: scale(0.8);
     }
-
-    .bar-chart {
-        width: 60px;
-        height: 90px;
-    }
-
-    .line-chart {
-        width: 90px;
-        height: 60px;
-    }
-
-    .scatter-plot {
-        width: 80px;
-        height: 80px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .animation-container {
-        height: 300px;
-    }
     
     .chart {
-        transform: scale(0.7);
+        display: none;
     }
 }
 
@@ -1924,4 +1891,131 @@ body.dark-theme .certification-item {
         width: 100%;
         justify-content: center;
     }
+}
+
+/* Device-specific styles */
+.is-mobile {
+    --nav-height: 60px;
+    --section-padding: 40px 0;
+}
+
+.is-tablet {
+    --nav-height: 70px;
+    --section-padding: 60px 0;
+}
+
+.is-laptop, .is-desktop {
+    --nav-height: 80px;
+    --section-padding: 80px 0;
+}
+
+/* Touch-specific adjustments */
+.has-touch {
+    --hover-transition: none;
+    scroll-behavior: auto;
+}
+
+.has-touch .nav-link,
+.has-touch .btn,
+.has-touch .portfolio-card {
+    transition: none;
+}
+
+.has-touch .portfolio-card:hover {
+    transform: none;
+}
+
+/* Orientation-specific styles */
+.is-mobile.portrait .hero-content,
+.is-tablet.portrait .hero-content {
+    text-align: center;
+}
+
+.is-mobile.landscape .hero-section,
+.is-tablet.landscape .hero-section {
+    min-height: auto;
+    padding: 40px 0;
+}
+
+/* Device-specific layout adjustments */
+.is-mobile .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.is-tablet .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.is-laptop .portfolio-grid,
+.is-desktop .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Navigation adjustments */
+.is-mobile .nav-list,
+.is-tablet .nav-list {
+    padding: 15px;
+}
+
+.is-mobile .mobile-menu-toggle {
+    display: block;
+}
+
+.is-mobile .nav-list {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    background: var(--bg-color);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.is-mobile .nav-list.active {
+    transform: translateX(0);
+}
+
+/* Form adjustments */
+.is-mobile .contact-form {
+    padding: 20px;
+}
+
+.is-tablet .contact-form {
+    padding: 30px;
+}
+
+/* Section spacing adjustments */
+.is-mobile .section {
+    padding: var(--section-padding);
+}
+
+/* Typography adjustments */
+.is-mobile .section-title {
+    font-size: 24px;
+}
+
+.is-tablet .section-title {
+    font-size: 28px;
+}
+
+.is-mobile .hero-title {
+    font-size: 32px;
+}
+
+.is-tablet .hero-title {
+    font-size: 40px;
+}
+
+/* Animation adjustments for mobile */
+.is-mobile .scroll-reveal {
+    animation-duration: 0.5s;
+}
+
+/* Touch interaction improvements */
+.has-touch .btn:active,
+.has-touch .nav-link:active {
+    opacity: 0.7;
 } 

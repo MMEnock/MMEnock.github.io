@@ -53,16 +53,61 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
     }
 });
 
-// Detect mobile/tablet devices
-const isTouchDevice = () => {
-    return (('ontouchstart' in window) ||
-        (navigator.maxTouchPoints > 0) ||
-        (navigator.msMaxTouchPoints > 0));
+// Enhanced device detection
+const detectDevice = () => {
+    const ua = navigator.userAgent;
+    const width = window.innerWidth;
+    
+    // Remove any existing device classes
+    document.body.classList.remove('is-mobile', 'is-tablet', 'is-laptop', 'is-desktop');
+    
+    // Device detection based on screen width and user agent
+    if (width < 768 || /Mobi|Android|iPhone|iPad|iPod/i.test(ua)) {
+        document.body.classList.add('is-mobile');
+    } else if (width >= 768 && width < 1024) {
+        document.body.classList.add('is-tablet');
+    } else if (width >= 1024 && width < 1366) {
+        document.body.classList.add('is-laptop');
+    } else {
+        document.body.classList.add('is-desktop');
+    }
+
+    // Touch capability detection
+    if (('ontouchstart' in window) || 
+        (navigator.maxTouchPoints > 0) || 
+        (navigator.msMaxTouchPoints > 0)) {
+        document.body.classList.add('has-touch');
+    } else {
+        document.body.classList.add('no-touch');
+    }
+
+    // Orientation detection for mobile/tablet
+    if (width < 1024) {
+        if (window.innerHeight > window.innerWidth) {
+            document.body.classList.add('portrait');
+            document.body.classList.remove('landscape');
+        } else {
+            document.body.classList.add('landscape');
+            document.body.classList.remove('portrait');
+        }
+    }
 };
 
-// Add touch device class to body if needed
-if (isTouchDevice()) {
-    document.body.classList.add('touch-device');
+// Call device detection on load and resize
+window.addEventListener('load', detectDevice);
+window.addEventListener('resize', debounce(detectDevice, 250));
+
+// Debounce function to limit resize event calls
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
 }
 
 // Typed.js for typing animation
