@@ -1,16 +1,57 @@
-// Theme initialization - Must be at the top
+// Theme initialization and management
 const initializeTheme = () => {
     const savedTheme = localStorage.getItem('darkTheme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Set initial theme based on localStorage or system preference
     if (savedTheme !== null) {
         document.body.classList.toggle('dark-theme', savedTheme === 'true');
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    } else if (prefersDark) {
         document.body.classList.add('dark-theme');
         localStorage.setItem('darkTheme', 'true');
+    }
+
+    // Update theme toggle button state
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (themeToggle) {
+        themeToggle.setAttribute('aria-pressed', document.body.classList.contains('dark-theme'));
     }
 };
 
 // Initialize theme immediately
-initializeTheme();
+document.addEventListener('DOMContentLoaded', initializeTheme);
+initializeTheme(); // Also call immediately in case DOM is already loaded
+
+// Theme toggle functionality
+const toggleTheme = () => {
+    const isDarkTheme = document.body.classList.toggle('dark-theme');
+    localStorage.setItem('darkTheme', isDarkTheme);
+    
+    // Update button state
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (themeToggle) {
+        themeToggle.setAttribute('aria-pressed', isDarkTheme);
+    }
+
+    // Dispatch custom event for theme change
+    window.dispatchEvent(new CustomEvent('themechange', { detail: { isDark: isDarkTheme } }));
+};
+
+// Add theme toggle event listener
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+});
+
+// Listen for system color scheme changes
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (localStorage.getItem('darkTheme') === null) {
+        document.body.classList.toggle('dark-theme', e.matches);
+        localStorage.setItem('darkTheme', e.matches);
+    }
+});
 
 // Detect mobile/tablet devices
 const isTouchDevice = () => {
@@ -130,23 +171,6 @@ sr.reveal('.about-content', { delay: 200 });
 sr.reveal('.skills-container', { delay: 200 });
 sr.reveal('.portfolio-grid', { delay: 200 });
 sr.reveal('.contact-container', { delay: 200 });
-
-// Enhanced theme toggle functionality
-const themeToggle = document.querySelector('.theme-toggle');
-
-const toggleTheme = () => {
-    document.body.classList.toggle('dark-theme');
-    const isDarkTheme = document.body.classList.contains('dark-theme');
-    localStorage.setItem('darkTheme', isDarkTheme);
-};
-
-// Add theme toggle event listener
-document.addEventListener('DOMContentLoaded', () => {
-    const themeToggle = document.querySelector('.theme-toggle');
-    if (themeToggle) {
-        themeToggle.addEventListener('click', toggleTheme);
-    }
-});
 
 // Scroll to top functionality
 const scrollToTopBtn = document.querySelector('.scroll-to-top');
