@@ -216,56 +216,55 @@ strong {
 
 /* ===== HEADER & NAVIGATION ===== */
 .header {
-    background-color: var(--bg-dark);
-    color: white;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    background-color: var(--bg-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    box-shadow: var(--shadow-md);
-    transition: all var(--transition-normal);
-}
-
-.header.scrolled {
-    background-color: rgba(44, 62, 80, 0.95);
-    backdrop-filter: blur(10px);
+    padding: 1rem 0;
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--spacing-md) 0;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-right: 2rem;
 }
 
 .logo a {
-    font-size: var(--font-size-2xl);
-    font-weight: 700;
-    color: white;
-    letter-spacing: 1px;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color var(--transition-normal);
 }
 
 .logo a:hover {
     color: var(--primary-color);
 }
 
-.main-nav {
-    display: flex;
-    align-items: center;
-}
-
 .nav-list {
     display: flex;
-    gap: var(--spacing-lg);
-    padding-right: 16px;
+    align-items: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .nav-link {
-    color: white;
+    color: var(--text-color);
+    text-decoration: none;
     font-weight: 500;
-    position: relative;
-    padding: var(--spacing-xs) 0;
+    transition: color var(--transition-normal);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
 }
 
 .nav-link:hover,
@@ -273,133 +272,73 @@ strong {
     color: var(--primary-color);
 }
 
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--primary-color);
-    transition: width var(--transition-normal);
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-    width: 100%;
-}
-
+/* Theme Toggle Button */
 .theme-toggle {
     background: none;
     border: none;
-    color: white;
     cursor: pointer;
-    padding: 12px;
-    margin-left: 20px;
-    transition: all var(--transition-normal);
+    padding: 0.5rem;
+    margin-left: 1rem;
     position: relative;
     width: 48px;
     height: 48px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
+    transition: all var(--transition-normal);
+    background-color: var(--bg-secondary);
 }
 
 .theme-toggle:hover {
-    background-color: rgba(255, 255, 255, 0.2);
     transform: scale(1.1);
+    background-color: var(--bg-hover);
 }
 
-.theme-toggle:active {
-    transform: scale(0.95);
+.theme-toggle i {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    transition: all var(--transition-normal);
 }
 
-.theme-toggle .fa-sun,
+.theme-toggle .fa-sun {
+    position: absolute;
+    opacity: 0;
+    transform: rotate(180deg);
+}
+
 .theme-toggle .fa-moon {
     position: absolute;
-    font-size: 24px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
 }
 
-/* Improved touch area for mobile devices */
-.is-mobile .theme-toggle,
-.is-tablet .theme-toggle {
-    width: 56px;
-    height: 56px;
-    margin-left: 24px;
-    padding: 16px;
+body.dark-theme .theme-toggle .fa-sun {
+    opacity: 1;
+    transform: rotate(0);
 }
 
-.is-mobile .theme-toggle .fa-sun,
-.is-mobile .theme-toggle .fa-moon,
-.is-tablet .theme-toggle .fa-sun,
-.is-tablet .theme-toggle .fa-moon {
-    font-size: 28px;
-}
-
-/* Add ripple effect for better feedback */
-.theme-toggle::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-color: var(--primary-color);
+body.dark-theme .theme-toggle .fa-moon {
     opacity: 0;
-    transform: scale(0);
-    transition: all 0.4s ease;
+    transform: rotate(-180deg);
 }
 
-.theme-toggle:active::after {
-    opacity: 0.2;
-    transform: scale(1);
-}
-
-/* Adjust nav spacing to accommodate larger toggle */
-.nav-list {
-    gap: var(--spacing-lg);
-    padding-right: 16px;
-}
-
-/* Dark theme adjustments */
-body.dark-theme .theme-toggle {
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-body.dark-theme .theme-toggle:hover {
-    background-color: rgba(0, 0, 0, 0.3);
-}
-
-/* Ensure proper spacing in mobile menu */
-@media (max-width: 768px) {
-    .nav-list li:last-child {
-        margin-top: 16px;
-        margin-bottom: 16px;
-    }
-
-    .theme-toggle {
-        margin: 0;
-    }
-}
-
+/* Mobile Menu Toggle */
 .mobile-menu-toggle {
     display: none;
     background: none;
     border: none;
-    color: white;
-    font-size: var(--font-size-xl);
     cursor: pointer;
+    padding: 0.5rem;
+    margin-left: 1rem;
 }
 
 .hamburger {
     display: block;
     width: 24px;
     height: 2px;
-    background-color: white;
+    background-color: var(--text-color);
     position: relative;
-    transition: background-color var(--transition-fast);
+    transition: all var(--transition-normal);
 }
 
 .hamburger::before,
@@ -408,8 +347,8 @@ body.dark-theme .theme-toggle:hover {
     position: absolute;
     width: 24px;
     height: 2px;
-    background-color: white;
-    transition: all var(--transition-fast);
+    background-color: var(--text-color);
+    transition: all var(--transition-normal);
 }
 
 .hamburger::before {
@@ -420,18 +359,106 @@ body.dark-theme .theme-toggle:hover {
     bottom: -8px;
 }
 
-.mobile-menu-toggle.active .hamburger {
-    background-color: transparent;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        padding: 0 1rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+        margin-right: 1rem;
+    }
+
+    .nav-list {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: var(--bg-color);
+        flex-direction: column;
+        padding: 5rem 2rem 2rem;
+        transition: right var(--transition-normal);
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-list.active {
+        right: 0;
+    }
+
+    .nav-link {
+        padding: 0.8rem 1.5rem;
+        width: 100%;
+        text-align: left;
+        border-radius: 8px;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        background-color: var(--bg-hover);
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    .mobile-menu-toggle.active .hamburger {
+        background-color: transparent;
+    }
+
+    .mobile-menu-toggle.active .hamburger::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+    .mobile-menu-toggle.active .hamburger::after {
+        transform: rotate(-45deg);
+        bottom: 0;
+    }
+
+    .theme-toggle {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 56px;
+        height: 56px;
+        background-color: var(--primary-color);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 1001;
+    }
+
+    .theme-toggle:hover {
+        background-color: var(--primary-dark);
+    }
+
+    .theme-toggle i {
+        color: white;
+        font-size: 1.4rem;
+    }
 }
 
-.mobile-menu-toggle.active .hamburger::before {
-    transform: rotate(45deg);
-    top: 0;
-}
+@media (max-width: 480px) {
+    .header-container {
+        padding: 0 0.8rem;
+    }
 
-.mobile-menu-toggle.active .hamburger::after {
-    transform: rotate(-45deg);
-    bottom: 0;
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .theme-toggle {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 52px;
+        height: 52px;
+    }
+
+    .theme-toggle i {
+        font-size: 1.3rem;
+    }
 }
 
 /* ===== HERO SECTION ===== */
