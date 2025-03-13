@@ -28,19 +28,19 @@ const updateThemeIcons = (isDark) => {
     const moonIcon = themeToggle.querySelector('.fa-moon');
     
     if (isDark) {
-        sunIcon.style.transform = 'rotate(0deg) scale(1)';
+        sunIcon.style.transform = 'scale(1) rotate(0)';
         sunIcon.style.opacity = '1';
-        moonIcon.style.transform = 'rotate(-180deg) scale(0)';
+        moonIcon.style.transform = 'scale(0.5) rotate(-180deg)';
         moonIcon.style.opacity = '0';
     } else {
-        sunIcon.style.transform = 'rotate(-180deg) scale(0)';
+        sunIcon.style.transform = 'scale(0.5) rotate(180deg)';
         sunIcon.style.opacity = '0';
-        moonIcon.style.transform = 'rotate(0deg) scale(1)';
+        moonIcon.style.transform = 'scale(1) rotate(0)';
         moonIcon.style.opacity = '1';
     }
 };
 
-// Theme toggle functionality
+// Theme toggle functionality with improved animations
 const toggleTheme = () => {
     const isDarkTheme = document.body.classList.toggle('dark-theme');
     localStorage.setItem('darkTheme', isDarkTheme);
@@ -54,7 +54,7 @@ const toggleTheme = () => {
         themeToggle.classList.add('theme-toggle-active');
         setTimeout(() => {
             themeToggle.classList.remove('theme-toggle-active');
-        }, 300);
+        }, 500);
 
         // Update icons with improved transitions
         updateThemeIcons(isDarkTheme);
@@ -72,12 +72,28 @@ document.addEventListener('DOMContentLoaded', () => {
         let touchStartX = 0;
         let touchStartY = 0;
         let isTouching = false;
+        let hasMoved = false;
 
         const handleTouchStart = (e) => {
             isTouching = true;
+            hasMoved = false;
             touchStartTime = Date.now();
             touchStartX = e.touches[0].clientX;
             touchStartY = e.touches[0].clientY;
+        };
+
+        const handleTouchMove = (e) => {
+            if (!isTouching) return;
+            
+            const touchX = e.touches[0].clientX;
+            const touchY = e.touches[0].clientY;
+            const moveX = Math.abs(touchX - touchStartX);
+            const moveY = Math.abs(touchY - touchStartY);
+            
+            // If moved more than 10px, mark as moved
+            if (moveX > 10 || moveY > 10) {
+                hasMoved = true;
+            }
         };
 
         const handleTouchEnd = (e) => {
@@ -85,18 +101,10 @@ document.addEventListener('DOMContentLoaded', () => {
             isTouching = false;
 
             const touchEndTime = Date.now();
-            const touchEndX = e.changedTouches[0].clientX;
-            const touchEndY = e.changedTouches[0].clientY;
-            
-            // Calculate touch duration and distance
             const touchDuration = touchEndTime - touchStartTime;
-            const touchDistance = Math.sqrt(
-                Math.pow(touchEndX - touchStartX, 2) + 
-                Math.pow(touchEndY - touchStartY, 2)
-            );
-
-            // Only trigger if it's a quick tap (less than 200ms) and minimal movement (less than 10px)
-            if (touchDuration < 200 && touchDistance < 10) {
+            
+            // Only trigger if it's a quick tap (less than 200ms) and hasn't moved
+            if (touchDuration < 200 && !hasMoved) {
                 e.preventDefault();
                 toggleTheme();
                 
@@ -114,14 +122,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         themeToggle.addEventListener('touchstart', handleTouchStart, { passive: true });
+        themeToggle.addEventListener('touchmove', handleTouchMove, { passive: true });
         themeToggle.addEventListener('touchend', handleTouchEnd, { passive: false });
         
         // Prevent ghost clicks
-        themeToggle.addEventListener('touchmove', (e) => {
-            if (isTouching) {
-                e.preventDefault();
-            }
-        }, { passive: false });
+        themeToggle.addEventListener('touchcancel', () => {
+            isTouching = false;
+        }, { passive: true });
     }
 });
 

@@ -311,118 +311,115 @@ strong {
 
 /* Theme Toggle Button */
 .theme-toggle {
-    background: none;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
     border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    margin-left: 1rem;
-    position: relative;
-    width: 48px;
-    height: 48px;
     border-radius: 50%;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all var(--transition-normal);
-    background-color: var(--bg-light);
-    box-shadow: var(--shadow-sm);
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    overflow: hidden;
 }
 
-.theme-toggle:hover,
-.theme-toggle:active {
-    transform: scale(1.1);
-    background-color: var(--bg-color);
-    box-shadow: var(--shadow-md);
-}
-
-.theme-toggle i {
-    font-size: 1.2rem;
-    color: var(--text-color);
-    transition: all var(--transition-normal);
-    pointer-events: none;
-}
-
-.theme-toggle .fa-sun {
+.theme-toggle::before {
+    content: '';
     position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
     opacity: 0;
-    transform: rotate(180deg);
+    transition: opacity 0.3s ease;
 }
 
-.theme-toggle .fa-moon {
-    position: absolute;
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle:hover::before {
     opacity: 1;
 }
 
-body.dark-theme .theme-toggle {
-    background-color: var(--dark-bg-light);
+.theme-toggle:active {
+    transform: scale(0.95);
 }
 
-body.dark-theme .theme-toggle:hover,
-body.dark-theme .theme-toggle:active {
-    background-color: var(--dark-bg-color);
+.theme-toggle i {
+    font-size: 1.5rem;
+    color: white;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: absolute;
+    opacity: 0;
+    transform: scale(0.5) rotate(-180deg);
+}
+
+.theme-toggle .fa-sun {
+    opacity: 0;
+    transform: scale(0.5) rotate(180deg);
+}
+
+.theme-toggle .fa-moon {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+}
+
+/* Dark theme button styles */
+body.dark-theme .theme-toggle {
+    background: var(--primary-dark);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-theme .theme-toggle:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
 }
 
 body.dark-theme .theme-toggle .fa-sun {
     opacity: 1;
-    transform: rotate(0);
+    transform: scale(1) rotate(0);
 }
 
 body.dark-theme .theme-toggle .fa-moon {
     opacity: 0;
-    transform: rotate(-180deg);
+    transform: scale(0.5) rotate(-180deg);
 }
 
-/* Mobile-specific theme toggle styles */
+/* Animation for theme toggle */
+.theme-toggle-active {
+    animation: pulse 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Mobile-specific styles */
 @media (max-width: 768px) {
     .theme-toggle {
-        position: fixed;
-        bottom: 2rem;
-        right: 2rem;
+        bottom: 1.5rem;
+        right: 1.5rem;
         width: 56px;
         height: 56px;
-        background-color: var(--primary-color);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        z-index: 1001;
-        margin: 0;
-        padding: 0;
-    }
-
-    .theme-toggle:hover,
-    .theme-toggle:active {
-        background-color: var(--primary-dark);
-        transform: scale(1.05);
     }
 
     .theme-toggle i {
-        color: white;
         font-size: 1.4rem;
-    }
-
-    /* Add ripple effect for touch devices */
-    .theme-toggle::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.2);
-        transform: scale(0);
-        opacity: 0;
-        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-    }
-
-    .theme-toggle:active::after {
-        transform: scale(1.5);
-        opacity: 1;
     }
 }
 
 @media (max-width: 480px) {
     .theme-toggle {
-        bottom: 1.5rem;
-        right: 1.5rem;
+        bottom: 1rem;
+        right: 1rem;
         width: 52px;
         height: 52px;
     }
@@ -430,6 +427,35 @@ body.dark-theme .theme-toggle .fa-moon {
     .theme-toggle i {
         font-size: 1.3rem;
     }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .theme-toggle {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+
+    .theme-toggle:active {
+        transform: scale(0.95);
+    }
+}
+
+/* Add ripple effect for touch devices */
+.theme-toggle::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.theme-toggle:active::after {
+    transform: scale(2);
+    opacity: 1;
 }
 
 /* Mobile Menu Toggle */
