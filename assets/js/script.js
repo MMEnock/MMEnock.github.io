@@ -151,10 +151,11 @@ function debounce(func, wait) {
 
 // Typed.js for typing animation
 const typed = new Typed('.typed', {
-    strings: ['Data Analyst', 'Machine Learning Engineer', 'Business Analyst'],
+    strings: ['Data Analyst', 'Machine Learning Engineer', 'Business Analyst', 'WordPress Developer'],
     typeSpeed: 100,
     backSpeed: 60,
-    loop: true
+    loop: true,
+    backDelay: 2000
 });
 
 // Smooth scrolling for navigation links
