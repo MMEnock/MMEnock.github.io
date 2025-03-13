@@ -38,7 +38,7 @@ const toggleTheme = () => {
             themeToggle.classList.remove('theme-toggle-active');
         }, 300);
 
-        // Update icons
+        // Update icons with improved transitions
         const sunIcon = themeToggle.querySelector('.fa-sun');
         const moonIcon = themeToggle.querySelector('.fa-moon');
         
@@ -63,24 +63,53 @@ const toggleTheme = () => {
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.querySelector('.theme-toggle');
     if (themeToggle) {
-        // Handle both click and touch events
-        const handleToggle = (e) => {
-            e.preventDefault();
-            toggleTheme();
+        let touchStartTime = 0;
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        const handleTouchStart = (e) => {
+            touchStartTime = Date.now();
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        };
+
+        const handleTouchEnd = (e) => {
+            const touchEndTime = Date.now();
+            const touchEndX = e.changedTouches[0].clientX;
+            const touchEndY = e.changedTouches[0].clientY;
             
-            // Add tactile feedback for touch devices
-            if (document.body.classList.contains('has-touch')) {
-                navigator.vibrate && navigator.vibrate(50);
+            // Calculate touch duration and distance
+            const touchDuration = touchEndTime - touchStartTime;
+            const touchDistance = Math.sqrt(
+                Math.pow(touchEndX - touchStartX, 2) + 
+                Math.pow(touchEndY - touchStartY, 2)
+            );
+
+            // Only trigger if it's a quick tap (less than 200ms) and minimal movement (less than 10px)
+            if (touchDuration < 200 && touchDistance < 10) {
+                e.preventDefault();
+                toggleTheme();
+                
+                // Add tactile feedback if available
+                if (navigator.vibrate) {
+                    navigator.vibrate(50);
+                }
             }
         };
 
-        themeToggle.addEventListener('click', handleToggle);
-        themeToggle.addEventListener('touchend', handleToggle);
-        
-        // Prevent ghost clicks on touch devices
-        themeToggle.addEventListener('touchstart', (e) => {
+        // Handle both click and touch events
+        themeToggle.addEventListener('click', (e) => {
             e.preventDefault();
+            toggleTheme();
         });
+
+        themeToggle.addEventListener('touchstart', handleTouchStart, { passive: true });
+        themeToggle.addEventListener('touchend', handleTouchEnd, { passive: false });
+        
+        // Prevent ghost clicks
+        themeToggle.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+        }, { passive: false });
     }
 });
 
