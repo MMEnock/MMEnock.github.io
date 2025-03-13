@@ -155,7 +155,7 @@ const typed = new Typed('.typed', {
     typeSpeed: 100,
     backSpeed: 60,
     loop: true,
-    backDelay: 2000
+    backDelay: 1000
 });
 
 // Smooth scrolling for navigation links
