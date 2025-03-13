@@ -15,12 +15,30 @@ const initializeTheme = () => {
     const themeToggle = document.querySelector('.theme-toggle');
     if (themeToggle) {
         themeToggle.setAttribute('aria-pressed', document.body.classList.contains('dark-theme'));
+        updateThemeIcons(document.body.classList.contains('dark-theme'));
     }
 };
 
-// Initialize theme immediately
-document.addEventListener('DOMContentLoaded', initializeTheme);
-initializeTheme(); // Also call immediately in case DOM is already loaded
+// Update theme icons with smooth transitions
+const updateThemeIcons = (isDark) => {
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (!themeToggle) return;
+
+    const sunIcon = themeToggle.querySelector('.fa-sun');
+    const moonIcon = themeToggle.querySelector('.fa-moon');
+    
+    if (isDark) {
+        sunIcon.style.transform = 'rotate(0deg) scale(1)';
+        sunIcon.style.opacity = '1';
+        moonIcon.style.transform = 'rotate(-180deg) scale(0)';
+        moonIcon.style.opacity = '0';
+    } else {
+        sunIcon.style.transform = 'rotate(-180deg) scale(0)';
+        sunIcon.style.opacity = '0';
+        moonIcon.style.transform = 'rotate(0deg) scale(1)';
+        moonIcon.style.opacity = '1';
+    }
+};
 
 // Theme toggle functionality
 const toggleTheme = () => {
@@ -39,20 +57,7 @@ const toggleTheme = () => {
         }, 300);
 
         // Update icons with improved transitions
-        const sunIcon = themeToggle.querySelector('.fa-sun');
-        const moonIcon = themeToggle.querySelector('.fa-moon');
-        
-        if (isDarkTheme) {
-            sunIcon.style.transform = 'rotate(180deg) scale(1)';
-            sunIcon.style.opacity = '1';
-            moonIcon.style.transform = 'rotate(-180deg) scale(0)';
-            moonIcon.style.opacity = '0';
-        } else {
-            sunIcon.style.transform = 'rotate(-180deg) scale(0)';
-            sunIcon.style.opacity = '0';
-            moonIcon.style.transform = 'rotate(180deg) scale(1)';
-            moonIcon.style.opacity = '1';
-        }
+        updateThemeIcons(isDarkTheme);
     }
 
     // Dispatch custom event for theme change
@@ -66,14 +71,19 @@ document.addEventListener('DOMContentLoaded', () => {
         let touchStartTime = 0;
         let touchStartX = 0;
         let touchStartY = 0;
+        let isTouching = false;
 
         const handleTouchStart = (e) => {
+            isTouching = true;
             touchStartTime = Date.now();
             touchStartX = e.touches[0].clientX;
             touchStartY = e.touches[0].clientY;
         };
 
         const handleTouchEnd = (e) => {
+            if (!isTouching) return;
+            isTouching = false;
+
             const touchEndTime = Date.now();
             const touchEndX = e.changedTouches[0].clientX;
             const touchEndY = e.changedTouches[0].clientY;
@@ -108,16 +118,23 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Prevent ghost clicks
         themeToggle.addEventListener('touchmove', (e) => {
-            e.preventDefault();
+            if (isTouching) {
+                e.preventDefault();
+            }
         }, { passive: false });
     }
 });
+
+// Initialize theme immediately
+document.addEventListener('DOMContentLoaded', initializeTheme);
+initializeTheme(); // Also call immediately in case DOM is already loaded
 
 // Listen for system color scheme changes
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
     if (localStorage.getItem('darkTheme') === null) {
         document.body.classList.toggle('dark-theme', e.matches);
         localStorage.setItem('darkTheme', e.matches);
+        updateThemeIcons(e.matches);
     }
 });
 
