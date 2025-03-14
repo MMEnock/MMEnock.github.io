@@ -2,6 +2,7 @@
 :root {
     /* Light Theme Colors */
     --primary-color: #1abc9c;
+    --primary-rgb: 26, 188, 156; /* RGB values for primary color */
     --primary-dark: #16a085;
     --secondary-color: #2c3e50;
     --secondary-light: #34495e;
@@ -1537,8 +1538,8 @@ body.dark-theme .about-text p {
     right: 20px;
     background-color: var(--primary-color);
     color: white;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -1546,24 +1547,60 @@ body.dark-theme .about-text p {
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
-    transition: all var(--transition-normal);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    will-change: transform, border-radius, background-color;
+    overflow: hidden;
+}
+
+.scroll-to-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-to-top:hover::before {
+    opacity: 1;
+}
+
+.scroll-to-top i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.scroll-to-top:hover i {
+    transform: translateY(-3px);
 }
 
 .scroll-to-top.visible {
     opacity: 1;
     visibility: visible;
+    animation: pulse 2s infinite;
 }
 
-.scroll-to-top:hover {
-    background-color: var(--primary-dark);
-    transform: translateY(-3px);
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(var(--primary-rgb), 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0);
+    }
 }
 
 body.dark-theme .scroll-to-top {
     background-color: var(--primary-color);
     color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* Add touch-specific styles */
@@ -1582,8 +1619,12 @@ body.dark-theme .scroll-to-top {
     }
 
     .scroll-to-top {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
+    }
+    
+    .scroll-to-top i {
+        font-size: 1.5rem;
     }
 }
 

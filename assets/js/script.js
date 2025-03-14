@@ -313,10 +313,35 @@ sr.reveal('.contact-container', { delay: 200 });
 // Scroll to top functionality
 const scrollToTopBtn = document.querySelector('.scroll-to-top');
 let isScrolling = false;
+let scrollProgress = 0;
+
+const updateScrollButtonAppearance = (scrollPosition) => {
+    // Calculate scroll progress as a percentage (0 to 1)
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    scrollProgress = Math.min(scrollPosition / scrollHeight, 1);
+    
+    // Apply the transformation to the button based on scroll progress
+    if (scrollToTopBtn) {
+        // Update the border-radius based on scroll progress
+        const borderRadius = 50 - (scrollProgress * 30); // From 50% (circle) to 20% (rounded square)
+        scrollToTopBtn.style.borderRadius = `${borderRadius}%`;
+        
+        // Scale the button slightly based on scroll progress
+        const scale = 1 + (scrollProgress * 0.1); // From 1 to 1.1
+        scrollToTopBtn.style.transform = `scale(${scale})`;
+        
+        // Update the background color intensity
+        const colorIntensity = Math.floor(scrollProgress * 20);
+        scrollToTopBtn.style.backgroundColor = `var(--primary-color)`;
+        
+        // Make the button visible when scrolled down
+        scrollToTopBtn.classList.toggle('visible', scrollPosition > 300);
+    }
+};
 
 const toggleScrollToTopButton = () => {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-    scrollToTopBtn.classList.toggle('visible', scrollPosition > 300);
+    updateScrollButtonAppearance(scrollPosition);
 };
 
 const scrollToTop = () => {
@@ -334,18 +359,29 @@ const scrollToTop = () => {
     }, 1000);
 };
 
+// Initialize the scroll button on page load
+document.addEventListener('DOMContentLoaded', () => {
+    if (scrollToTopBtn) {
+        toggleScrollToTopButton();
+    }
+});
+
 window.addEventListener('scroll', () => {
     toggleScrollToTopButton();
     
     // Add scrolled class to header
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-    header.classList.toggle('scrolled', scrollPosition > 100);
+    if (header) {
+        header.classList.toggle('scrolled', scrollPosition > 100);
+    }
 });
 
-scrollToTopBtn.addEventListener('click', scrollToTop);
-if (isTouchDevice()) {
-    scrollToTopBtn.addEventListener('touchend', (e) => {
-        e.preventDefault();
-        scrollToTop();
-    });
+if (scrollToTopBtn) {
+    scrollToTopBtn.addEventListener('click', scrollToTop);
+    if (isTouchDevice()) {
+        scrollToTopBtn.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            scrollToTop();
+        });
+    }
 } 
