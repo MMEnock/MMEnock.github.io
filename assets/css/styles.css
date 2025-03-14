@@ -1538,8 +1538,8 @@ body.dark-theme .about-text p {
     right: 20px;
     background-color: var(--primary-color);
     color: white;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -1571,7 +1571,7 @@ body.dark-theme .about-text p {
 }
 
 .scroll-to-top i {
-    font-size: 1.2rem;
+    font-size: 1rem;
     transition: transform 0.3s ease;
 }
 
@@ -1619,12 +1619,12 @@ body.dark-theme .scroll-to-top {
     }
 
     .scroll-to-top {
-        width: 60px;
-        height: 60px;
+        width: 45px;
+        height: 45px;
     }
     
     .scroll-to-top i {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 }
 
