@@ -237,21 +237,55 @@ const navList = document.querySelector('.nav-list');
 const header = document.querySelector('.header');
 
 const toggleMobileMenu = (event) => {
-    event.stopPropagation();
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+    
+    // Toggle classes
     mobileMenuToggle.classList.toggle('active');
     navList.classList.toggle('active');
     document.body.classList.toggle('menu-open');
+    
+    // Prevent body scroll when menu is open
+    if (document.body.classList.contains('menu-open')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
 };
 
-mobileMenuToggle.addEventListener('click', toggleMobileMenu);
-mobileMenuToggle.addEventListener('touchend', toggleMobileMenu);
+// Add event listeners for both click and touch events
+if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+    mobileMenuToggle.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        toggleMobileMenu(e);
+    });
+}
 
 // Close mobile menu when clicking outside
 document.addEventListener('click', (e) => {
-    if (!navList.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-        mobileMenuToggle.classList.remove('active');
-        navList.classList.remove('active');
-        document.body.classList.remove('menu-open');
+    if (navList.classList.contains('active') && 
+        !e.target.closest('.nav-list') && 
+        !e.target.closest('.mobile-menu-toggle')) {
+        toggleMobileMenu();
+    }
+});
+
+// Close mobile menu when clicking on a nav link
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        if (navList.classList.contains('active')) {
+            toggleMobileMenu();
+        }
+    });
+});
+
+// Close mobile menu on window resize if open
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && navList.classList.contains('active')) {
+        toggleMobileMenu();
     }
 });
 
