@@ -50,8 +50,329 @@
         </div>
     </header>
 
-    <!-- Rest of the content with data-lang attributes -->
-    <!-- ... Copy the rest of the content from index.html but with data-lang attributes ... -->
+    <!-- Hero Section -->
+    <section class="hero section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-lang="home.title">Hallo, ich bin Mugisha Enock</h1>
+                <h2 class="hero-subtitle" data-lang="home.subtitle">Datenanalyst & Business Intelligence Entwickler</h2>
+                <p class="hero-description" data-lang="home.description">Ich verwandle komplexe Daten in umsetzbare Erkenntnisse, die Geschäftswachstum und Innovation vorantreiben.</p>
+                <div class="hero-actions">
+                    <a href="#portfolio" class="btn btn-primary" data-lang="home.viewWork">Meine Arbeit ansehen</a>
+                    <a href="#contact" class="btn btn-secondary" data-lang="home.contactMe">Kontaktieren Sie mich</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang="skills.title">Meine Fähigkeiten</h2>
+                <div class="section-underline"></div>
+                <p class="section-subtitle" data-lang="skills.subtitle">Technologien und Tools, die ich beherrsche</p>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Data Analysis -->
+                <div class="skill-category">
+                    <h3 data-lang="skills.dataAnalysis">Datenanalyse & Visualisierung</h3>
+                    <ul class="skill-list">
+                        <li>Exploratory Data Analysis</li>
+                        <li>Model Forecasting</li>
+                        <li>Ad-hoc Analysis</li>
+                        <li>Customer Segmentation</li>
+                        <li>A/B Testing</li>
+                        <li>Python Visualization</li>
+                        <li>NumPy, Pandas & Plotly</li>
+                    </ul>
+                </div>
+
+                <!-- Analytics Tools -->
+                <div class="skill-category">
+                    <h3 data-lang="skills.analyticsTools">Analytische Tools</h3>
+                    <ul class="skill-list">
+                        <li>Power BI</li>
+                        <li>Google Data Studio</li>
+                        <li>GA4</li>
+                        <li>GTM & GA</li>
+                        <li>DAX & Power Queries</li>
+                        <li>Microsoft Package</li>
+                    </ul>
+                </div>
+
+                <!-- Machine Learning -->
+                <div class="skill-category">
+                    <h3 data-lang="skills.ml">Maschinelles Lernen & KI</h3>
+                    <ul class="skill-list">
+                        <li>XGBoost and TensorFlow</li>
+                        <li>PyTorch & Scikit-learn</li>
+                        <li>Model Development</li>
+                        <li>Predictive Analytics</li>
+                    </ul>
+                </div>
+
+                <!-- Programming -->
+                <div class="skill-category">
+                    <h3 data-lang="skills.programming">Programmierung & Datenbanken</h3>
+                    <ul class="skill-list">
+                        <li>Python (Pandas & NumPy)</li>
+                        <li>Microsoft SQL Server</li>
+                        <li>Graph API Development</li>
+                        <li>Data Pipeline Development</li>
+                    </ul>
+                </div>
+
+                <!-- Web Development -->
+                <div class="skill-category">
+                    <h3 data-lang="skills.webDev">Webentwicklung</h3>
+                    <ul class="skill-list">
+                        <li>WordPress</li>
+                        <li>HTML/CSS</li>
+                        <li>JavaScript</li>
+                        <li>Responsive Design</li>
+                        <li>SEO Optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Download Section -->
+    <section class="resume-download section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang="resume.downloadTitle">Lebenslauf herunterladen</h2>
+                <div class="section-underline"></div>
+                <p class="section-subtitle" data-lang="resume.downloadSubtitle">Erhalten Sie einen detaillierten Überblick über meine Erfahrungen und Qualifikationen</p>
+            </div>
+
+            <div class="resume-download-content">
+                <h3 data-lang="resume.fullResume">Vollständiger Lebenslauf PDF</h3>
+                <p data-lang="resume.downloadDescription">Laden Sie meinen vollständigen Lebenslauf mit detaillierten Erfahrungen und Qualifikationen herunter</p>
+                <a href="../Resume.pdf" download="Mugisha_Enock_Resume.pdf" class="btn btn-primary">
+                    <i class="fas fa-download"></i> <span data-lang="resume.download">PDF herunterladen</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang="portfolio.title">Aktuelle Projekte</h2>
+                <div class="section-underline"></div>
+                <p class="section-subtitle" data-lang="portfolio.subtitle">Entdecken Sie meine neuesten Arbeiten</p>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Titanic ML Project -->
+                <div class="portfolio-item" data-category="ml">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img">
+                            <img src="https://raw.githubusercontent.com/MMEnock/Titanic-end-to-end-ML-project/main/titanic%20end%20to%20end%20project.jpg" alt="Titanic ML Projekt">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3 class="project-title" data-lang="portfolio.titanic.title">Titanic ML-Projekt</h3>
+                            <p class="project-description" data-lang="portfolio.titanic.description">
+                                End-to-End Machine Learning Projekt zur Vorhersage der Überlebensraten auf der Titanic.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com/MMEnock/Titanic-end-to-end-ML-project" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> <span data-lang="portfolio.github">GitHub</span>
+                                </a>
+                                <a href="#" target="_blank" class="project-link">
+                                    <i class="fas fa-file-alt"></i> <span data-lang="portfolio.report">Bericht</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Credit Score ML Project -->
+                <div class="portfolio-item" data-category="ml">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img">
+                            <img src="https://raw.githubusercontent.com/MMEnock/Credit-Score-Evaluation-Machine-leaning-Project/refs/heads/main/credit%20score%20evaluation.jpg" alt="Kreditwürdigkeitsprüfung ML Projekt">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3 class="project-title" data-lang="portfolio.creditScore.title">Kreditwürdigkeitsprüfung</h3>
+                            <p class="project-description" data-lang="portfolio.creditScore.description">
+                                Machine Learning Modell zur Bewertung von Kreditwürdigkeit und Kreditvergabe.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com/MMEnock/Credit-Score-Evaluation-Machine-leaning-Project" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> <span data-lang="portfolio.github">GitHub</span>
+                                </a>
+                                <a href="#" target="_blank" class="project-link">
+                                    <i class="fas fa-file-alt"></i> <span data-lang="portfolio.report">Bericht</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flight Enrichment Project -->
+                <div class="portfolio-item" data-category="ml">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img">
+                            <img src="https://raw.githubusercontent.com/MMEnock/Flight-Enrichment-Project/main/flight%20enrichment%20project.jpg" alt="Flugoptimierung Projekt">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3 class="project-title" data-lang="portfolio.flightEnrichment.title">Flugoptimierung</h3>
+                            <p class="project-description" data-lang="portfolio.flightEnrichment.description">
+                                Python-basiertes System zur Flugplanoptimierung und Datenanreicherung.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com/MMEnock/Flight-Enrichment-Project" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> <span data-lang="portfolio.github">GitHub</span>
+                                </a>
+                                <a href="#" target="_blank" class="project-link">
+                                    <i class="fas fa-file-alt"></i> <span data-lang="portfolio.report">Bericht</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pax Load ML Project -->
+                <div class="portfolio-item" data-category="ml">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img">
+                            <img src="https://raw.githubusercontent.com/MMEnock/Pax-Load-ML-Project/main/pax%20load%20ml%20project.jpg" alt="Passagieraufkommen ML Projekt">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3 class="project-title" data-lang="portfolio.paxLoad.title">Passagieraufkommen Vorhersage</h3>
+                            <p class="project-description" data-lang="portfolio.paxLoad.description">
+                                ML-Modell zur Vorhersage des Passagieraufkommens im Flughafenbetrieb.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com/MMEnock/Pax-Load-ML-Project" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> <span data-lang="portfolio.github">GitHub</span>
+                                </a>
+                                <a href="#" target="_blank" class="project-link">
+                                    <i class="fas fa-file-alt"></i> <span data-lang="portfolio.report">Bericht</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yummy GmbH Sales Dashboard -->
+                <div class="portfolio-item" data-category="bi">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img">
+                            <img src="https://raw.githubusercontent.com/MMEnock/Yummy-GmbH-Sales-Dashboard/main/yummy%20gmbh%20sales%20dashboard.jpg" alt="Yummy GmbH Verkaufsdashboard">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3 class="project-title" data-lang="portfolio.yummy.title">Verkaufsdashboard</h3>
+                            <p class="project-description" data-lang="portfolio.yummy.description">
+                                Interaktives Power BI Dashboard zur Restaurantverkaufsanalyse.
+                            </p>
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i> <span data-lang="portfolio.demo">Demo</span>
+                                </a>
+                                <a href="#" target="_blank" class="project-link">
+                                    <i class="fas fa-file-alt"></i> <span data-lang="portfolio.report">Bericht</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media Power BI Dashboard -->
+                <div class="portfolio-item" data-category="bi">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img">
+                            <img src="https://raw.githubusercontent.com/MMEnock/Social-Media-Power-BI-Dashboard/main/social%20media%20power%20bi%20dashboard.jpg" alt="Social Media Power BI Dashboard">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3 class="project-title" data-lang="portfolio.socialMedia.title">Social Media Analytics</h3>
+                            <p class="project-description" data-lang="portfolio.socialMedia.description">
+                                Umfassendes Dashboard zur Verfolgung und Analyse von Social Media KPIs.
+                            </p>
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i> <span data-lang="portfolio.demo">Demo</span>
+                                </a>
+                                <a href="#" target="_blank" class="project-link">
+                                    <i class="fas fa-file-alt"></i> <span data-lang="portfolio.report">Bericht</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-actions">
+                <a href="portfolio.html" class="btn btn-primary" data-lang="portfolio.viewAll">Alle Projekte ansehen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang="contact.title">Kontakt</h2>
+                <div class="section-underline"></div>
+                <p class="section-subtitle" data-lang="contact.subtitle">Lassen Sie uns zusammenarbeiten</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 data-lang="contact.email">E-Mail</h3>
+                    <a href="mailto:mugisha@study-boundless.com">mugisha@study-boundless.com</a>
+                </div>
+
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="name" data-lang="contact.name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-lang="contact.email">E-Mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-lang="contact.message">Nachricht</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" data-lang="contact.send">Nachricht senden</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>ME</h3>
+                    <p data-lang="footer.role">Datenanalyst & ML-Ingenieur</p>
+                </div>
+                <nav class="footer-nav">
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-lang="nav.home">Startseite</a></li>
+                        <li><a href="resume.html" data-lang="nav.resume">Lebenslauf</a></li>
+                        <li><a href="portfolio.html" data-lang="nav.portfolio">Portfolio</a></li>
+                        <li><a href="index.html#contact" data-lang="nav.contact">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mugisha Enock. <span data-lang="footer.rights">Alle Rechte vorbehalten.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script>
         // Set initial language to German

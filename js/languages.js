@@ -175,7 +175,11 @@ const languages = {
             language: {
                 english: "Englisch: Muttersprache",
                 german: "Deutsch: B2"
-            }
+            },
+            downloadTitle: "Lebenslauf herunterladen",
+            downloadSubtitle: "Erhalten Sie einen detaillierten Überblick über meine Erfahrungen und Qualifikationen",
+            fullResume: "Vollständiger Lebenslauf PDF",
+            downloadDescription: "Laden Sie meinen vollständigen Lebenslauf mit detaillierten Erfahrungen und Qualifikationen herunter"
         },
         portfolio: {
             title: "Aktuelle Projekte",
@@ -192,6 +196,22 @@ const languages = {
             creditScore: {
                 title: "Kreditwürdigkeitsprüfung",
                 description: "Machine Learning Modell zur Bewertung von Kreditwürdigkeit und Kreditvergabe."
+            },
+            flightEnrichment: {
+                title: "Flugoptimierung",
+                description: "Python-basiertes System zur Flugplanoptimierung und Datenanreicherung."
+            },
+            paxLoad: {
+                title: "Passagieraufkommen Vorhersage",
+                description: "ML-Modell zur Vorhersage des Passagieraufkommens im Flughafenbetrieb."
+            },
+            yummy: {
+                title: "Verkaufsdashboard",
+                description: "Interaktives Power BI Dashboard zur Restaurantverkaufsanalyse."
+            },
+            socialMedia: {
+                title: "Social Media Analytics",
+                description: "Umfassendes Dashboard zur Verfolgung und Analyse von Social Media KPIs."
             }
         },
         contact: {
