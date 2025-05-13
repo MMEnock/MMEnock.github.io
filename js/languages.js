@@ -13,7 +13,7 @@ const languages = {
             description: "With expertise in transforming data into actionable insights and building predictive models using various machine learning libraries.",
             viewWork: "View My Work",
             contactMe: "Contact Me",
-            typedText: ["Data Analyst", "ML Engineer", "Business Intelligence Developer"]
+            typedText: ["Data Analyst", "Machine Learning Engineer", "Business Intelligence Developer"]
         },
         about: {
             title: "About Me",

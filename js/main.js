@@ -18,9 +18,7 @@ function initTyped() {
         }
 
         const options = {
-            strings: currentLang === 'de' 
-                ? ["Datenanalyst", "ML-Ingenieur", "Business Intelligence Entwickler"]
-                : ["Data Analyst", "ML Engineer", "Business Intelligence Developer"],
+            strings: ["Data Analyst", "Machine Learning Engineer", "Business Intelligence Developer"],
             typeSpeed: 50,
             backSpeed: 30,
             backDelay: 2000,
