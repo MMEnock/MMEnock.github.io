@@ -40,17 +40,21 @@
 
     <!-- Initialize animations with delay -->
     <script>
-        // Wait for 1 second before initializing animations
+        // Wait for 3 seconds before initializing animations
         setTimeout(() => {
             // Initialize Typed.js
             const typedElement = document.querySelector('.typed');
             if (typedElement && typeof Typed !== 'undefined') {
                 new Typed(typedElement, {
                     strings: ["Data Analyst", "ML Engineer", "Business Intelligence Developer"],
-                    typeSpeed: 50,
-                    backSpeed: 30,
-                    backDelay: 2000,
-                    loop: true
+                    typeSpeed: 40,
+                    backSpeed: 20,
+                    backDelay: 3000,
+                    loop: true,
+                    cursorChar: '|',
+                    fadeOut: true,
+                    fadeOutClass: 'typed-fade-out',
+                    fadeOutDelay: 500
                 });
             }
 
@@ -58,28 +62,55 @@
             if (typeof ScrollReveal !== 'undefined') {
                 const sr = ScrollReveal({
                     origin: 'bottom',
-                    distance: '60px',
-                    duration: 1000,
-                    delay: 200,
-                    easing: 'cubic-bezier(0.5, 0, 0, 1)',
-                    reset: false
+                    distance: '30px',
+                    duration: 1500,
+                    delay: 100,
+                    easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+                    reset: false,
+                    opacity: 0,
+                    scale: 0.95,
+                    mobile: true,
+                    viewFactor: 0.3
                 });
 
                 // Hero section
-                sr.reveal('.hero-content', { delay: 200 });
-                sr.reveal('.hero-image', { delay: 400 });
+                sr.reveal('.hero-content', { 
+                    delay: 300,
+                    distance: '50px',
+                    duration: 2000
+                });
+                sr.reveal('.hero-image', { 
+                    delay: 500,
+                    distance: '50px',
+                    duration: 2000
+                });
 
                 // Skills section
-                sr.reveal('.section-header', { delay: 200 });
-                sr.reveal('.skill-category', { interval: 200 });
+                sr.reveal('.section-header', { 
+                    delay: 300,
+                    duration: 1500
+                });
+                sr.reveal('.skill-category', { 
+                    interval: 150,
+                    duration: 1500,
+                    distance: '40px'
+                });
 
                 // Portfolio section
-                sr.reveal('.portfolio-item', { interval: 200 });
+                sr.reveal('.portfolio-item', { 
+                    interval: 150,
+                    duration: 1500,
+                    distance: '40px'
+                });
 
                 // Contact section
-                sr.reveal('.contact-content', { delay: 200 });
+                sr.reveal('.contact-content', { 
+                    delay: 300,
+                    duration: 1500,
+                    distance: '40px'
+                });
             }
-        }, 1000); // 1 second delay
+        }, 3000); // 3 seconds delay
     </script>
 
     <!-- JSON-LD structured data -->
