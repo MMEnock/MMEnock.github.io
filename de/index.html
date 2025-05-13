@@ -32,11 +32,55 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Scripts -->
-    <script src="https://unpkg.com/typed.js@2.0.12" defer></script>
-    <script src="https://unpkg.com/scrollreveal" defer></script>
+    <script src="https://unpkg.com/typed.js@2.0.12"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="../js/languages.js" defer></script>
-    <script src="../js/main.js" defer></script>
+    <script src="../js/languages.js"></script>
+    <script src="../js/main.js"></script>
+
+    <!-- Initialize animations with delay -->
+    <script>
+        // Wait for 1 second before initializing animations
+        setTimeout(() => {
+            // Initialize Typed.js
+            const typedElement = document.querySelector('.typed');
+            if (typedElement && typeof Typed !== 'undefined') {
+                new Typed(typedElement, {
+                    strings: ["Datenanalyst", "ML-Ingenieur", "Business Intelligence Entwickler"],
+                    typeSpeed: 50,
+                    backSpeed: 30,
+                    backDelay: 2000,
+                    loop: true
+                });
+            }
+
+            // Initialize ScrollReveal
+            if (typeof ScrollReveal !== 'undefined') {
+                const sr = ScrollReveal({
+                    origin: 'bottom',
+                    distance: '60px',
+                    duration: 1000,
+                    delay: 200,
+                    easing: 'cubic-bezier(0.5, 0, 0, 1)',
+                    reset: false
+                });
+
+                // Hero section
+                sr.reveal('.hero-content', { delay: 200 });
+                sr.reveal('.hero-image', { delay: 400 });
+
+                // Skills section
+                sr.reveal('.section-header', { delay: 200 });
+                sr.reveal('.skill-category', { interval: 200 });
+
+                // Portfolio section
+                sr.reveal('.portfolio-item', { interval: 200 });
+
+                // Contact section
+                sr.reveal('.contact-content', { delay: 200 });
+            }
+        }, 1000); // 1 second delay
+    </script>
 
     <!-- JSON-LD structured data -->
     <script type="application/ld+json">
