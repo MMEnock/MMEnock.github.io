@@ -3,72 +3,194 @@ let currentLang = localStorage.getItem('preferredLanguage') ||
                  (window.location.pathname.startsWith('/de/') ? 'de' : 
                  navigator.language.split('-')[0] || 'en');
 
+// Initialize Typed.js
+function initTyped() {
+    try {
+        const typedElement = document.querySelector('.typed');
+        if (!typedElement) {
+            console.error('Typed.js element not found');
+            return;
+        }
+
+        if (typeof Typed === 'undefined') {
+            console.error('Typed.js library not loaded');
+            return;
+        }
+
+        const options = {
+            strings: currentLang === 'de' 
+                ? ["Datenanalyst", "ML-Ingenieur", "Business Intelligence Entwickler"]
+                : ["Data Analyst", "ML Engineer", "Business Intelligence Developer"],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 2000,
+            loop: true,
+            onComplete: (self) => {
+                console.log('Typed.js animation completed');
+            },
+            onStringTyped: (arrayPos, self) => {
+                console.log('Typed.js string typed:', arrayPos);
+            }
+        };
+
+        console.log('Initializing Typed.js with options:', options);
+        new Typed(typedElement, options);
+    } catch (error) {
+        console.error('Error initializing Typed.js:', error);
+    }
+}
+
+// Initialize ScrollReveal
+function initScrollReveal() {
+    try {
+        if (typeof ScrollReveal === 'undefined') {
+            console.error('ScrollReveal library not loaded');
+            return;
+        }
+
+        const sr = ScrollReveal({
+            origin: 'bottom',
+            distance: '60px',
+            duration: 1000,
+            delay: 200,
+            easing: 'cubic-bezier(0.5, 0, 0, 1)',
+            reset: false,
+            beforeReveal: (el) => {
+                console.log('Element about to be revealed:', el);
+            },
+            afterReveal: (el) => {
+                console.log('Element revealed:', el);
+            }
+        });
+
+        // Hero section
+        sr.reveal('.hero-content', { delay: 200 });
+        sr.reveal('.hero-image', { delay: 400 });
+
+        // Skills section
+        sr.reveal('.section-header', { delay: 200 });
+        sr.reveal('.skill-category', { interval: 200 });
+
+        // Portfolio section
+        sr.reveal('.portfolio-item', { interval: 200 });
+
+        // Contact section
+        sr.reveal('.contact-content', { delay: 200 });
+
+        console.log('ScrollReveal initialized successfully');
+    } catch (error) {
+        console.error('Error initializing ScrollReveal:', error);
+    }
+}
+
 function changeLanguage(lang) {
-    currentLang = lang;
-    document.documentElement.lang = lang;
-    localStorage.setItem('preferredLanguage', lang);
-    
-    // Update URL if needed
-    const currentPath = window.location.pathname;
-    if (lang === 'de' && !currentPath.startsWith('/de/')) {
-        window.location.pathname = '/de' + currentPath;
-    } else if (lang === 'en' && currentPath.startsWith('/de/')) {
-        window.location.pathname = currentPath.replace('/de/', '/');
-    } else {
-        updateContent();
+    try {
+        currentLang = lang;
+        document.documentElement.lang = lang;
+        localStorage.setItem('preferredLanguage', lang);
+        
+        // Update URL if needed
+        const currentPath = window.location.pathname;
+        const baseUrl = window.location.origin;
+        
+        if (lang === 'de' && !currentPath.startsWith('/de/')) {
+            // Create a new URL with /de/ prefix
+            const newPath = '/de' + currentPath;
+            window.location.href = baseUrl + newPath;
+        } else if (lang === 'en' && currentPath.startsWith('/de/')) {
+            // Remove /de/ prefix
+            const newPath = currentPath.replace('/de/', '/');
+            window.location.href = baseUrl + newPath;
+        } else {
+            updateContent();
+        }
+    } catch (error) {
+        console.error('Error changing language:', error);
     }
 }
 
 function updateContent() {
-    document.querySelectorAll('[data-lang]').forEach(element => {
-        const keys = element.getAttribute('data-lang').split('.');
-        let value = languages[currentLang];
-        for (const key of keys) {
-            value = value[key];
+    try {
+        document.querySelectorAll('[data-lang]').forEach(element => {
+            const keys = element.getAttribute('data-lang').split('.');
+            let value = languages[currentLang];
+            for (const key of keys) {
+                value = value[key];
+            }
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                element.placeholder = value;
+            } else {
+                element.textContent = value;
+            }
+        });
+
+        // Update meta tags for SEO
+        const metaDescription = document.querySelector('meta[name="description"]');
+        const metaTitle = document.querySelector('title');
+        
+        if (metaDescription) {
+            metaDescription.setAttribute('content', 
+                currentLang === 'de' 
+                    ? 'Erfahrener Datenanalyst und Business Intelligence Entwickler mit Expertise in Datenvisualisierung, Analyse und Business Intelligence Lösungen.'
+                    : 'Experienced Data Analyst and Business Intelligence Developer with expertise in data visualization, analysis, and business intelligence solutions.'
+            );
         }
-        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-            element.placeholder = value;
-        } else {
-            element.textContent = value;
+
+        if (metaTitle) {
+            metaTitle.textContent = currentLang === 'de'
+                ? 'Mugisha Enock - Datenanalyst & ML-Ingenieur | Portfolio'
+                : 'Mugisha Enock - Data Analyst & ML Engineer | Portfolio';
         }
-    });
 
-    // Update meta tags for SEO
-    const metaDescription = document.querySelector('meta[name="description"]');
-    const metaTitle = document.querySelector('title');
-    
-    if (metaDescription) {
-        metaDescription.setAttribute('content', 
-            currentLang === 'de' 
-                ? 'Erfahrener Datenanalyst und Business Intelligence Entwickler mit Expertise in Datenvisualisierung, Analyse und Business Intelligence Lösungen.'
-                : 'Experienced Data Analyst and Business Intelligence Developer with expertise in data visualization, analysis, and business intelligence solutions.'
-        );
-    }
+        // Update Open Graph tags
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        const ogDescription = document.querySelector('meta[property="og:description"]');
+        
+        if (ogTitle) {
+            ogTitle.setAttribute('content', metaTitle.textContent);
+        }
+        if (ogDescription) {
+            ogDescription.setAttribute('content', metaDescription.getAttribute('content'));
+        }
 
-    if (metaTitle) {
-        metaTitle.textContent = currentLang === 'de'
-            ? 'Mugisha Enock - Datenanalyst & ML-Ingenieur | Portfolio'
-            : 'Mugisha Enock - Data Analyst & ML Engineer | Portfolio';
-    }
+        // Update canonical URL
+        const canonicalLink = document.querySelector('link[rel="canonical"]');
+        if (canonicalLink) {
+            const baseUrl = window.location.origin;
+            const path = window.location.pathname;
+            const newPath = currentLang === 'de' ? '/de' + path : path.replace('/de/', '/');
+            canonicalLink.setAttribute('href', baseUrl + newPath);
+        }
 
-    // Update Open Graph tags
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    const ogDescription = document.querySelector('meta[property="og:description"]');
-    
-    if (ogTitle) {
-        ogTitle.setAttribute('content', metaTitle.textContent);
-    }
-    if (ogDescription) {
-        ogDescription.setAttribute('content', metaDescription.getAttribute('content'));
+        // Reinitialize Typed.js with new language
+        initTyped();
+    } catch (error) {
+        console.error('Error updating content:', error);
     }
 }
 
-// Initialize language on page load
+// Initialize language and animations on page load
 document.addEventListener('DOMContentLoaded', () => {
-    // Set the language selector to the current language
-    const languageSelect = document.getElementById('language-select');
-    if (languageSelect) {
-        languageSelect.value = currentLang;
+    try {
+        console.log('DOM Content Loaded');
+        
+        // Set the language selector to the current language
+        const languageSelect = document.getElementById('language-select');
+        if (languageSelect) {
+            languageSelect.value = currentLang;
+        }
+        
+        // Initialize animations
+        console.log('Initializing animations...');
+        initTyped();
+        initScrollReveal();
+        
+        // Update content
+        console.log('Updating content...');
+        updateContent();
+        
+        console.log('Initialization complete');
+    } catch (error) {
+        console.error('Error during initialization:', error);
     }
-    updateContent();
 }); 
