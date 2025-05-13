@@ -70,8 +70,8 @@ const languages = {
             }
         },
         portfolio: {
-            title: "Latest Projects",
-            subtitle: "Check out my recent work",
+            title: "Current Projects",
+            subtitle: "Explore my latest works",
             viewAll: "View All Projects",
             viewProject: "View Project",
             github: "GitHub",
@@ -79,11 +79,11 @@ const languages = {
             demo: "Demo",
             titanic: {
                 title: "Titanic ML Project",
-                description: "End-to-end machine learning project predicting survival rates on the Titanic."
+                description: "End-to-End Machine Learning project for predicting survival rates on the Titanic."
             },
             creditScore: {
                 title: "Credit Score Evaluation",
-                description: "Machine learning model for evaluating credit scores and loan eligibility."
+                description: "Machine Learning model for creditworthiness assessment and loan approval."
             }
         },
         contact: {
