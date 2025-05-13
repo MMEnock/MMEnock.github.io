@@ -33,6 +33,8 @@
     <script src="https://unpkg.com/typed.js@2.0.12"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="js/languages.js"></script>
+    <script src="js/main.js"></script>
 
     <!-- JSON-LD structured data -->
     <script type="application/ld+json">
@@ -77,10 +79,16 @@
             </div>
             <nav class="main-nav">
                 <ul class="nav-list">
-                    <li><a href="#home" class="nav-link active">Home</a></li>
-                    <li><a href="resume.html" class="nav-link">Resume</a></li>
-                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#home" class="nav-link active" data-lang="nav.home">Home</a></li>
+                    <li><a href="resume.html" class="nav-link" data-lang="nav.resume">Resume</a></li>
+                    <li><a href="portfolio.html" class="nav-link" data-lang="nav.portfolio">Portfolio</a></li>
+                    <li><a href="#contact" class="nav-link" data-lang="nav.contact">Contact</a></li>
+                    <li>
+                        <select id="language-select" onchange="changeLanguage(this.value)">
+                            <option value="en">EN</option>
+                            <option value="de">DE</option>
+                        </select>
+                    </li>
                     <li>
                         <button class="theme-toggle">
                             <i class="fas fa-moon"></i>
@@ -615,7 +623,7 @@
                 </nav>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Mugisha Enock. All rights reserved.</p>
+                <p>&copy; 2024 Mugisha Enock. <span data-lang="footer.rights">All rights reserved.</span></p>
             </div>
         </div>
     </footer>
@@ -623,6 +631,34 @@
     <button class="scroll-to-top">
         <i class="fas fa-arrow-up"></i>
     </button>
-    <script src="assets/js/script.js"></script>
+    <script>
+        let currentLang = 'en';
+        
+        function changeLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            updateContent();
+        }
+
+        function updateContent() {
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                const keys = element.getAttribute('data-lang').split('.');
+                let value = languages[currentLang];
+                for (const key of keys) {
+                    value = value[key];
+                }
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    element.placeholder = value;
+                } else {
+                    element.textContent = value;
+                }
+            });
+        }
+
+        // Initialize with default language
+        document.addEventListener('DOMContentLoaded', () => {
+            updateContent();
+        });
+    </script>
 </body>
 </html> 

@@ -1,0 +1,32 @@
+/* Language Selector Styles */
+#language-select {
+    background: transparent;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 1rem;
+    transition: all 0.3s ease;
+}
+
+#language-select:hover {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+#language-select option {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] #language-select {
+    border-color: var(--text-color);
+}
+
+[data-theme="dark"] #language-select:hover {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+} 
