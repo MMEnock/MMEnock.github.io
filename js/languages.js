@@ -9,10 +9,11 @@ const languages = {
         },
         home: {
             title: "Hi, I'm Mugisha Enock",
-            subtitle: "Data Analyst & Business Intelligence Developer",
-            description: "I transform complex data into actionable insights that drive business growth and innovation.",
+            iam: "I'm a",
+            description: "With expertise in transforming data into actionable insights and building predictive models using various machine learning libraries.",
             viewWork: "View My Work",
-            contactMe: "Contact Me"
+            contactMe: "Contact Me",
+            typedText: ["Data Analyst", "ML Engineer", "Business Intelligence Developer"]
         },
         about: {
             title: "About Me",
@@ -109,10 +110,11 @@ const languages = {
         },
         home: {
             title: "Hallo, ich bin Mugisha Enock",
-            subtitle: "Datenanalyst & Business Intelligence Entwickler",
-            description: "Ich verwandle komplexe Daten in umsetzbare Erkenntnisse, die Geschäftswachstum und Innovation vorantreiben.",
+            iam: "Ich bin ein",
+            description: "Mit Expertise in der Transformation von Daten in umsetzbare Erkenntnisse und der Entwicklung prädiktiver Modelle mit verschiedenen Machine Learning-Bibliotheken.",
             viewWork: "Meine Arbeit ansehen",
-            contactMe: "Kontaktieren Sie mich"
+            contactMe: "Kontaktieren Sie mich",
+            typedText: ["Datenanalyst", "ML-Ingenieur", "Business Intelligence Entwickler"]
         },
         about: {
             title: "Über Mich",
