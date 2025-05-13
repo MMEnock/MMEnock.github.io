@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/typed.js@2.0.12"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="js/languages.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -19,10 +21,16 @@
             </div>
             <nav class="main-nav">
                 <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="#" class="nav-link active">Resume</a></li>
-                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    <li><a href="index.html" class="nav-link" data-lang="nav.home">Home</a></li>
+                    <li><a href="resume.html" class="nav-link active" data-lang="nav.resume">Resume</a></li>
+                    <li><a href="portfolio.html" class="nav-link" data-lang="nav.portfolio">Portfolio</a></li>
+                    <li><a href="index.html#contact" class="nav-link" data-lang="nav.contact">Contact</a></li>
+                    <li>
+                        <select id="language-select" onchange="changeLanguage(this.value)">
+                            <option value="en">EN</option>
+                            <option value="de">DE</option>
+                        </select>
+                    </li>
                     <li>
                         <button class="theme-toggle">
                             <i class="fas fa-moon"></i>
@@ -41,14 +49,14 @@
     <section class="resume-page section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">My Resume</h2>
+                <h2 class="section-title" data-lang="resume.title">My Resume</h2>
                 <div class="section-underline"></div>
-                <p class="section-subtitle">Data Analyst & Machine Learning Engineer based in Germany | Nordrhein Westfalen</p>
+                <p class="section-subtitle" data-lang="resume.subtitle">Data Analyst & Machine Learning Engineer based in Germany | Nordrhein Westfalen</p>
             </div>
 
             <div class="resume-content">
                 <div class="resume-actions">
-                    <a href="Resume.pdf" download="Mugisha_Enock_Resume.pdf" class="btn btn-primary">
+                    <a href="Resume.pdf" download="Mugisha_Enock_Resume.pdf" class="btn btn-primary" data-lang="resume.download">
                         <i class="fas fa-download"></i> Download PDF
                     </a>
                 </div>
@@ -78,12 +86,12 @@
                             <span class="experience-date">06.2024 - present</span>
                         </div>
                         <p class="experience-company">Study Boundless | Essen NRW</p>
-                        <p class="experience-description">My work revolves around managing WordPress websites, optimizing Google Ads campaigns, and developing data-driven dashboards to support performance-based marketing strategies. I bring deep knowledge of digital advertising, including platforms such as Google Ads and Meta Ads, and use advanced analytical tools to ensure campaign success and continual improvement.</p>
+                        <p class="experience-description" data-lang="resume.studyBoundless.description">My work revolves around managing WordPress websites, optimizing Google Ads campaigns, and developing data-driven dashboards to support performance-based marketing strategies. I bring deep knowledge of digital advertising, including platforms such as Google Ads and Meta Ads, and use advanced analytical tools to ensure campaign success and continual improvement.</p>
                         <ul class="experience-details">
-                            <li>Manage SEO-friendly WordPress sites and run high-performance Google & Meta Ads campaigns.</li>
-                            <li>Optimize campaigns using Looker Studio, Power BI, GA4 & GTM to boost ROI and conversions.</li>
-                            <li>Track user behavior, sales trends, and KPIs through custom dashboards and event reporting.</li>
-                            <li>Apply strong analytics, monitor trends, and adapt to new tech in digital advertising.</li>
+                            <li data-lang="resume.studyBoundless.bullet1">Manage SEO-friendly WordPress sites and run high-performance Google & Meta Ads campaigns.</li>
+                            <li data-lang="resume.studyBoundless.bullet2">Optimize campaigns using Looker Studio, Power BI, GA4 & GTM to boost ROI and conversions.</li>
+                            <li data-lang="resume.studyBoundless.bullet3">Track user behavior, sales trends, and KPIs through custom dashboards and event reporting.</li>
+                            <li data-lang="resume.studyBoundless.bullet4">Apply strong analytics, monitor trends, and adapt to new tech in digital advertising.</li>
                         </ul>
                     </div>
                     
@@ -95,9 +103,9 @@
                         <p class="experience-company">Airport Research Centre | Aachen NRW</p>
                         <p class="experience-description">My work involves the improvement of existing flight routes and the development of machine learning models to predict passenger volumes and behaviour to enable more efficient airport operations.</p>
                         <ul class="experience-details">
-                            <li>Improved flight routes and developed machine learning models to predict passenger volumes, enhancing airport operations efficiency.</li>
-                            <li>Created forecasting models with RandomForesRegressor, XGBoost, and TensorFlow, integrating results into operational planning software CAST.</li>
-                            <li>Analysed passenger movements using Python, generating detailed behavioural reports.</li>
+                            <li data-lang="resume.airportResearch.bullet1">Improved flight routes and developed machine learning models to predict passenger volumes, enhancing airport operations efficiency.</li>
+                            <li data-lang="resume.airportResearch.bullet2">Created forecasting models with RandomForesRegressor, XGBoost, and TensorFlow, integrating results into operational planning software CAST.</li>
+                            <li data-lang="resume.airportResearch.bullet3">Analysed passenger movements using Python, generating detailed behavioural reports.</li>
                         </ul>
                     </div>
 
@@ -109,9 +117,9 @@
                         <p class="experience-company">Timeframe AG | Essen</p>
                         <p class="experience-description">Conducted website performance analysis and Google Ads performance using GT4. Developed interactive dashboards using Locker Studio and integrated them using Graphs APIs to automate data retrieval from Google Sheets.</p>
                         <ul class="experience-details">
-                            <li>Specialized in website performance analysis and Google Ads performance evaluation using Google Analytics.</li>
-                            <li>Created Looker Studio-based interactive dashboards, automating data fetches and visualizations using Json, google sheets and Google apps script.</li>
-                            <li>Created customized google Tags and triggers into Events and conversions using google Tag manager and assistant.</li>
+                            <li data-lang="resume.timeframe.bullet1">Specialized in website performance analysis and Google Ads performance evaluation using Google Analytics.</li>
+                            <li data-lang="resume.timeframe.bullet2">Created Looker Studio-based interactive dashboards, automating data fetches and visualizations using Json, google sheets and Google apps script.</li>
+                            <li data-lang="resume.timeframe.bullet3">Created customized google Tags and triggers into Events and conversions using google Tag manager and assistant.</li>
                         </ul>
                     </div>
 
@@ -123,9 +131,9 @@
                         <p class="experience-company">Make It Tetten GmbH | Düsseldorf NRW</p>
                         <p class="experience-description">Analysed data for customers such as Harley Davidson regarding package design performance, Product sales and use KPIs.</p>
                         <ul class="experience-details">
-                            <li>Produced and sent weekly reports stakeholders regarding product performance.</li>
-                            <li>Automated data harvesting from Amazon and eBay, integrating it into Google Data Studio.</li>
-                            <li>Performed data cleansing, aggregation, and investigation in Power BI using DAX and Power queries.</li>
+                            <li data-lang="resume.makeItTetten.bullet1">Produced and sent weekly reports stakeholders regarding product performance.</li>
+                            <li data-lang="resume.makeItTetten.bullet2">Automated data harvesting from Amazon and eBay, integrating it into Google Data Studio.</li>
+                            <li data-lang="resume.makeItTetten.bullet3">Performed data cleansing, aggregation, and investigation in Power BI using DAX and Power queries.</li>
                         </ul>
                     </div>
 
@@ -137,9 +145,9 @@
                         <p class="experience-company">Gelsenwasser AG | Gelsenkirchen NRW</p>
                         <p class="experience-description">Analysed weather household electricity and wind energy data in the southern German region.</p>
                         <ul class="experience-details">
-                            <li>Analyzed weather, household electricity, and wind energy data for the southern German region.</li>
-                            <li>Built reusable dashboards in Power BI to facilitate data-driven decision-making.</li>
-                            <li>Generated insights using Excel, DAX, Pandas, and NumPy.</li>
+                            <li data-lang="resume.gelsenwasser.bullet1">Analyzed weather, household electricity, and wind energy data for the southern German region.</li>
+                            <li data-lang="resume.gelsenwasser.bullet2">Built reusable dashboards in Power BI to facilitate data-driven decision-making.</li>
+                            <li data-lang="resume.gelsenwasser.bullet3">Generated insights using Excel, DAX, Pandas, and NumPy.</li>
                         </ul>
                     </div>
                 </div>
@@ -192,8 +200,8 @@
                 <div class="resume-section">
                     <h3>Languages</h3>
                     <ul class="language-list">
-                        <li>English: Mother tongue</li>
-                        <li>Deutsch: B2</li>
+                        <li data-lang="resume.language.english">English: Mother tongue</li>
+                        <li data-lang="resume.language.german">Deutsch: B2</li>
                     </ul>
                 </div>
             </div>
@@ -218,7 +226,7 @@
                 </nav>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Mugisha Enock. All rights reserved.</p>
+                <p>&copy; 2024 Mugisha Enock. <span data-lang="footer.rights">All rights reserved.</span></p>
             </div>
         </div>
     </footer>

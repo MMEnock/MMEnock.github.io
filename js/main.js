@@ -1,11 +1,22 @@
 // Language handling
-let currentLang = localStorage.getItem('preferredLanguage') || navigator.language.split('-')[0] || 'en';
+let currentLang = localStorage.getItem('preferredLanguage') || 
+                 (window.location.pathname.startsWith('/de/') ? 'de' : 
+                 navigator.language.split('-')[0] || 'en');
 
 function changeLanguage(lang) {
     currentLang = lang;
     document.documentElement.lang = lang;
     localStorage.setItem('preferredLanguage', lang);
-    updateContent();
+    
+    // Update URL if needed
+    const currentPath = window.location.pathname;
+    if (lang === 'de' && !currentPath.startsWith('/de/')) {
+        window.location.pathname = '/de' + currentPath;
+    } else if (lang === 'en' && currentPath.startsWith('/de/')) {
+        window.location.pathname = currentPath.replace('/de/', '/');
+    } else {
+        updateContent();
+    }
 }
 
 function updateContent() {
@@ -23,11 +34,33 @@ function updateContent() {
     });
 
     // Update meta tags for SEO
-    document.querySelector('meta[name="description"]').setAttribute('content', 
-        currentLang === 'de' 
-            ? 'Erfahrener Datenanalyst und Business Intelligence Entwickler mit Expertise in Datenvisualisierung, Analyse und Business Intelligence Lösungen.'
-            : 'Experienced Data Analyst and Business Intelligence Developer with expertise in data visualization, analysis, and business intelligence solutions.'
-    );
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const metaTitle = document.querySelector('title');
+    
+    if (metaDescription) {
+        metaDescription.setAttribute('content', 
+            currentLang === 'de' 
+                ? 'Erfahrener Datenanalyst und Business Intelligence Entwickler mit Expertise in Datenvisualisierung, Analyse und Business Intelligence Lösungen.'
+                : 'Experienced Data Analyst and Business Intelligence Developer with expertise in data visualization, analysis, and business intelligence solutions.'
+        );
+    }
+
+    if (metaTitle) {
+        metaTitle.textContent = currentLang === 'de'
+            ? 'Mugisha Enock - Datenanalyst & ML-Ingenieur | Portfolio'
+            : 'Mugisha Enock - Data Analyst & ML Engineer | Portfolio';
+    }
+
+    // Update Open Graph tags
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    
+    if (ogTitle) {
+        ogTitle.setAttribute('content', metaTitle.textContent);
+    }
+    if (ogDescription) {
+        ogDescription.setAttribute('content', metaDescription.getAttribute('content'));
+    }
 }
 
 // Initialize language on page load
