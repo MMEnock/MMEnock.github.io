@@ -1,0 +1,6 @@
+theme: jekyll-theme-minimal
+permalink: /:title/
+baseurl: ""
+url: "https://mmenock.github.io"
+include: ["de"]
+exclude: ["node_modules", "Gemfile", "Gemfile.lock"] 
