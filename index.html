@@ -42,33 +42,76 @@
     <script>
         // Wait for 3 seconds before initializing animations
         setTimeout(() => {
-            // Initialize Typed.js
+            // Initialize Typed.js with fade effect
             const typedElement = document.querySelector('.typed');
             if (typedElement && typeof Typed !== 'undefined') {
+                // Create a wrapper for the typed text
+                const wrapper = document.createElement('div');
+                wrapper.className = 'typed-wrapper';
+                typedElement.parentNode.insertBefore(wrapper, typedElement);
+                wrapper.appendChild(typedElement);
+
+                // Add CSS for the fade effect
+                const style = document.createElement('style');
+                style.textContent = `
+                    .typed-wrapper {
+                        position: relative;
+                        display: inline-block;
+                    }
+                    .typed {
+                        opacity: 1;
+                        transition: opacity 0.5s ease-in-out;
+                    }
+                    .typed.fade-out {
+                        opacity: 0;
+                    }
+                    .typed-cursor {
+                        opacity: 1;
+                        animation: blink 0.7s infinite;
+                    }
+                    @keyframes blink {
+                        0% { opacity: 1; }
+                        50% { opacity: 0; }
+                        100% { opacity: 1; }
+                    }
+                `;
+                document.head.appendChild(style);
+
+                // Initialize Typed.js with custom callbacks
                 new Typed(typedElement, {
                     strings: ["Data Analyst", "ML Engineer", "Business Intelligence Developer"],
-                    typeSpeed: 40,
-                    backSpeed: 20,
-                    backDelay: 3000,
+                    typeSpeed: 50,
+                    backSpeed: 30,
+                    backDelay: 2000,
                     loop: true,
                     cursorChar: '|',
-                    fadeOut: true,
-                    fadeOutClass: 'typed-fade-out',
-                    fadeOutDelay: 500
+                    onStringTyped: (arrayPos, self) => {
+                        // Fade out current string
+                        typedElement.classList.add('fade-out');
+                        setTimeout(() => {
+                            typedElement.classList.remove('fade-out');
+                        }, 500);
+                    },
+                    onComplete: (self) => {
+                        // Reset cursor position
+                        self.cursor.remove();
+                        self.cursor = null;
+                        self.init();
+                    }
                 });
             }
 
-            // Initialize ScrollReveal
+            // Initialize ScrollReveal with fade effect
             if (typeof ScrollReveal !== 'undefined') {
                 const sr = ScrollReveal({
                     origin: 'bottom',
-                    distance: '30px',
-                    duration: 1500,
+                    distance: '0px',
+                    duration: 1000,
                     delay: 100,
-                    easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+                    easing: 'ease-in-out',
                     reset: false,
                     opacity: 0,
-                    scale: 0.95,
+                    scale: 1,
                     mobile: true,
                     viewFactor: 0.3
                 });
@@ -76,38 +119,45 @@
                 // Hero section
                 sr.reveal('.hero-content', { 
                     delay: 300,
-                    distance: '50px',
-                    duration: 2000
+                    duration: 1000,
+                    opacity: 0,
+                    scale: 0.9
                 });
                 sr.reveal('.hero-image', { 
                     delay: 500,
-                    distance: '50px',
-                    duration: 2000
+                    duration: 1000,
+                    opacity: 0,
+                    scale: 0.9
                 });
 
                 // Skills section
                 sr.reveal('.section-header', { 
                     delay: 300,
-                    duration: 1500
+                    duration: 1000,
+                    opacity: 0,
+                    scale: 0.9
                 });
                 sr.reveal('.skill-category', { 
-                    interval: 150,
-                    duration: 1500,
-                    distance: '40px'
+                    interval: 100,
+                    duration: 1000,
+                    opacity: 0,
+                    scale: 0.9
                 });
 
                 // Portfolio section
                 sr.reveal('.portfolio-item', { 
-                    interval: 150,
-                    duration: 1500,
-                    distance: '40px'
+                    interval: 100,
+                    duration: 1000,
+                    opacity: 0,
+                    scale: 0.9
                 });
 
                 // Contact section
                 sr.reveal('.contact-content', { 
                     delay: 300,
-                    duration: 1500,
-                    distance: '40px'
+                    duration: 1000,
+                    opacity: 0,
+                    scale: 0.9
                 });
             }
         }, 3000); // 3 seconds delay
