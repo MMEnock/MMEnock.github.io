@@ -762,6 +762,17 @@
         let currentLang = 'en';
         
         function changeLanguage(lang) {
+            // If German is selected, redirect to English version of current page
+            if (lang === 'de') {
+                const currentPage = window.location.pathname.split('/').pop();
+                if (currentPage === 'index.html' || currentPage === '') {
+                    window.location.href = 'index.html';
+                } else {
+                    window.location.href = currentPage;
+                }
+                return;
+            }
+            
             currentLang = lang;
             document.documentElement.lang = lang;
             updateContent();
