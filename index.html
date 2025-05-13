@@ -38,70 +38,23 @@
     <script src="js/languages.js"></script>
     <script src="js/main.js"></script>
 
-    <!-- Initialize animations with delay -->
+    <!-- Initialize animations -->
     <script>
-        // Wait for 3 seconds before initializing animations
-        setTimeout(() => {
-            // Initialize Typed.js with fade effect
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Typed.js
             const typedElement = document.querySelector('.typed');
             if (typedElement && typeof Typed !== 'undefined') {
-                // Create a wrapper for the typed text
-                const wrapper = document.createElement('div');
-                wrapper.className = 'typed-wrapper';
-                typedElement.parentNode.insertBefore(wrapper, typedElement);
-                wrapper.appendChild(typedElement);
-
-                // Add CSS for the fade effect
-                const style = document.createElement('style');
-                style.textContent = `
-                    .typed-wrapper {
-                        position: relative;
-                        display: inline-block;
-                    }
-                    .typed {
-                        opacity: 1;
-                        transition: opacity 0.5s ease-in-out;
-                    }
-                    .typed.fade-out {
-                        opacity: 0;
-                    }
-                    .typed-cursor {
-                        opacity: 1;
-                        animation: blink 0.7s infinite;
-                    }
-                    @keyframes blink {
-                        0% { opacity: 1; }
-                        50% { opacity: 0; }
-                        100% { opacity: 1; }
-                    }
-                `;
-                document.head.appendChild(style);
-
-                // Initialize Typed.js with custom callbacks
                 new Typed(typedElement, {
                     strings: ["Data Analyst", "Machine Learning Engineer", "Business Analyst"],
                     typeSpeed: 50,
                     backSpeed: 30,
                     backDelay: 2000,
                     loop: true,
-                    cursorChar: '|',
-                    onStringTyped: (arrayPos, self) => {
-                        // Fade out current string
-                        typedElement.classList.add('fade-out');
-                        setTimeout(() => {
-                            typedElement.classList.remove('fade-out');
-                        }, 500);
-                    },
-                    onComplete: (self) => {
-                        // Reset cursor position
-                        self.cursor.remove();
-                        self.cursor = null;
-                        self.init();
-                    }
+                    cursorChar: '|'
                 });
             }
 
-            // Initialize ScrollReveal with fade effect
+            // Initialize ScrollReveal
             if (typeof ScrollReveal !== 'undefined') {
                 const sr = ScrollReveal({
                     origin: 'bottom',
@@ -160,7 +113,7 @@
                     scale: 0.9
                 });
             }
-        }, 3000); // 3 seconds delay
+        });
     </script>
 
     <!-- JSON-LD structured data -->
