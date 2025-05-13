@@ -3,33 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
     <title>Mugisha Enock - Datenanalyst & ML-Ingenieur | Portfolio</title>
-    <meta name="description" content="Erfahrener Datenanalyst und Business Intelligence Entwickler mit Expertise in Datenvisualisierung, Analyse und Business Intelligence Lösungen.">
-    <link rel="canonical" href="https://mmenock.github.io/de/index.html" />
-    <link rel="alternate" hreflang="en" href="https://mmenock.github.io/index.html" />
-    <link rel="alternate" hreflang="de" href="https://mmenock.github.io/de/index.html" />
-    <link rel="alternate" hreflang="x-default" href="https://mmenock.github.io/index.html" />
+    <meta name="title" content="Mugisha Enock - Datenanalyst & ML-Ingenieur | Portfolio">
+    <meta name="description" content="Erfahrener Datenanalyst und Machine Learning Engineer mit Expertise in prädiktiver Modellierung, Business Analytics und Risikobewertung. Spezialisiert auf Python, Power BI und fortgeschrittene Datenvisualisierung.">
+    <meta name="keywords" content="Datenanalyst, Machine Learning Engineer, Business Analyst, Risikoanalyst, Python, Power BI, Datenvisualisierung, Prädiktive Modellierung, Business Intelligence, Data Science, Analytik, GA4, GTM, SQL, Data Mining, Statistische Analyse, Risikobewertung">
+    <meta name="author" content="Mugisha Enock">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mmenock.github.io/de/">
+    <meta property="og:title" content="Mugisha Enock - Datenanalyst & ML-Ingenieur | Portfolio">
+    <meta property="og:description" content="Erfahrener Datenanalyst und Machine Learning Engineer mit Expertise in prädiktiver Modellierung, Business Analytics und Risikobewertung. Spezialisiert auf Python, Power BI und fortgeschrittene Datenvisualisierung.">
+    <meta property="og:image" content="../assets/images/Resume-picture.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mmenock.github.io/de/">
+    <meta property="twitter:title" content="Mugisha Enock - Datenanalyst & ML-Ingenieur | Portfolio">
+    <meta property="twitter:description" content="Erfahrener Datenanalyst und Machine Learning Engineer mit Expertise in prädiktiver Modellierung, Business Analytics und Risikobewertung. Spezialisiert auf Python, Power BI und fortgeschrittene Datenvisualisierung.">
+    <meta property="twitter:image" content="../assets/images/Resume-picture.jpg">
+
+    <!-- Existing CSS and Script links -->
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/typed.js@2.0.12"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="../js/languages.js"></script>
     <script src="../js/main.js"></script>
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mugisha Enock",
+      "url": "https://mmenock.github.io/de/",
+      "image": "../assets/images/Resume-picture.jpg",
+      "sameAs": [
+        "https://www.linkedin.com/in/mugishaenock0/",
+        "https://x.com/enochmugisha1",
+        "https://www.xing.com/profile/Mugabi_EnockMugisha078797/web_profiles?expandNeffi=true"
+      ],
+      "jobTitle": ["Datenanalyst", "Machine Learning Engineer", "Business Analyst"],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Airport Research Centre"
+      },
+      "description": "Erfahrener Datenanalyst und Machine Learning Engineer mit Expertise in prädiktiver Modellierung, Business Analytics und Risikobewertung. Spezialisiert auf Python, Power BI und fortgeschrittene Datenvisualisierung.",
+      "knowsAbout": [
+        "Datenanalyse",
+        "Maschinelles Lernen",
+        "Business Intelligence",
+        "Risikoanalyse",
+        "Python Programmierung",
+        "Power BI",
+        "SQL",
+        "Statistische Analyse",
+        "Google Analytics (GA4)",
+        "Datenvisualisierung"
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="container header-container">
             <div class="logo">
-                <a href="index.html">ME</a>
+                <a href="#home">ME</a>
             </div>
             <nav class="main-nav">
                 <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link active" data-lang="nav.home">Startseite</a></li>
+                    <li><a href="#home" class="nav-link active" data-lang="nav.home">Startseite</a></li>
                     <li><a href="resume.html" class="nav-link" data-lang="nav.resume">Lebenslauf</a></li>
                     <li><a href="portfolio.html" class="nav-link" data-lang="nav.portfolio">Portfolio</a></li>
-                    <li><a href="index.html#contact" class="nav-link" data-lang="nav.contact">Kontakt</a></li>
+                    <li><a href="#contact" class="nav-link" data-lang="nav.contact">Kontakt</a></li>
                     <li>
                         <select id="language-select" onchange="changeLanguage(this.value)">
                             <option value="en">EN</option>
@@ -51,92 +104,273 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero section">
-        <div class="container">
+    <section id="home" class="hero">
+        <div class="container hero-container">
             <div class="hero-content">
-                <h1 class="hero-title" data-lang="home.title">Hallo, ich bin Mugisha Enock</h1>
-                <h2 class="hero-subtitle">
-                    <span data-lang="home.iam">Ich bin ein</span>
-                    <span class="typed-text" id="typed-text"></span>
-                </h2>
-                <p class="hero-description" data-lang="home.description">Mit Expertise in der Transformation von Daten in umsetzbare Erkenntnisse und der Entwicklung prädiktiver Modelle mit verschiedenen Machine Learning-Bibliotheken.</p>
-                <div class="hero-actions">
-                    <a href="#portfolio" class="btn btn-primary" data-lang="home.viewWork">Meine Arbeit ansehen</a>
-                    <a href="#contact" class="btn btn-secondary" data-lang="home.contactMe">Kontaktieren Sie mich</a>
+                <h1 class="hero-title">Hallo, ich bin <span class="highlight">Mugisha Enock</span></h1>
+                <h2 class="hero-subtitle">Ich bin ein <span class="typed"></span></h2>
+                <p class="hero-text">
+                    Mit Expertise in der Transformation von Daten in umsetzbare Erkenntnisse und der Entwicklung prädiktiver Modelle mit verschiedenen Machine Learning-Bibliotheken.
+                </p>
+                <div class="hero-cta">
+                    <a href="#portfolio" class="btn btn-primary">Meine Arbeit ansehen</a>
+                    <a href="#contact" class="btn btn-secondary">Kontaktieren Sie mich</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="animation-container">
+                    <!-- Neural Network Animation -->
+                    <svg class="neural-network" viewBox="0 0 500 500">
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#1abc9c;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#2c3e50;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Data Nodes -->
+                        <circle class="node" cx="100" cy="150" r="20" />
+                        <circle class="node" cx="100" cy="250" r="20" />
+                        <circle class="node" cx="100" cy="350" r="20" />
+                        
+                        <!-- Hidden Layer Nodes -->
+                        <circle class="node" cx="250" cy="200" r="20" />
+                        <circle class="node" cx="250" cy="300" r="20" />
+                        
+                        <!-- Output Node -->
+                        <circle class="node" cx="400" cy="250" r="20" />
+                        
+                        <!-- Connections -->
+                        <line class="connection" x1="120" y1="150" x2="230" y2="200" />
+                        <line class="connection" x1="120" y1="250" x2="230" y2="200" />
+                        <line class="connection" x1="120" y1="350" x2="230" y2="300" />
+                        <line class="connection" x1="270" y1="200" x2="380" y2="250" />
+                        <line class="connection" x1="270" y1="300" x2="380" y2="250" />
+                    </svg>
+                    
+                    <!-- Data Visualization Elements -->
+                    <div class="data-viz">
+                        <div class="chart bar-chart"></div>
+                        <div class="chart line-chart"></div>
+                        <div class="chart scatter-plot"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills section">
+    <section id="skills" class="skills-section section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-lang="skills.title">Meine Fähigkeiten</h2>
+                <h2 class="section-title">Meine Fähigkeiten</h2>
                 <div class="section-underline"></div>
-                <p class="section-subtitle" data-lang="skills.subtitle">Technologien und Tools, die ich beherrsche</p>
+                <p class="section-subtitle">Technologien und Tools, die ich beherrsche</p>
             </div>
-
-            <div class="skills-grid">
-                <!-- Data Analysis -->
+            <div class="skills-container">
+                <!-- Data Analysis & Visualization -->
                 <div class="skill-category">
-                    <h3 data-lang="skills.dataAnalysis">Datenanalyse & Visualisierung</h3>
-                    <ul class="skill-list">
-                        <li>Exploratory Data Analysis</li>
-                        <li>Model Forecasting</li>
-                        <li>Ad-hoc Analysis</li>
-                        <li>Customer Segmentation</li>
-                        <li>A/B Testing</li>
-                        <li>Python Visualization</li>
-                        <li>NumPy, Pandas & Plotly</li>
-                    </ul>
+                    <div class="category-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h3 class="category-title">Datenanalyse & Visualisierung</h3>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <span class="skill-name">Exploratory Data Analysis</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Model Forecasting</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Ad-hoc Analysis</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Customer Segmentation</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">A/B Testing</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Python Visualization</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">NumPy, Pandas & Plotly</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Analytics Tools -->
                 <div class="skill-category">
-                    <h3 data-lang="skills.analyticsTools">Analytische Tools</h3>
-                    <ul class="skill-list">
-                        <li>Power BI</li>
-                        <li>Google Data Studio</li>
-                        <li>GA4</li>
-                        <li>GTM & GA</li>
-                        <li>DAX & Power Queries</li>
-                        <li>Microsoft Package</li>
-                    </ul>
+                    <div class="category-header">
+                        <i class="fas fa-tools"></i>
+                        <h3 class="category-title">Analytische Tools</h3>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <span class="skill-name">Power BI</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Google Data Studio</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">GA4</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">GTM & GA</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">DAX & Power Queries</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Microsoft Package</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Machine Learning -->
                 <div class="skill-category">
-                    <h3 data-lang="skills.ml">Maschinelles Lernen & KI</h3>
-                    <ul class="skill-list">
-                        <li>XGBoost and TensorFlow</li>
-                        <li>PyTorch & Scikit-learn</li>
-                        <li>Model Development</li>
-                        <li>Predictive Analytics</li>
-                    </ul>
+                    <div class="category-header">
+                        <i class="fas fa-brain"></i>
+                        <h3 class="category-title">Maschinelles Lernen & KI</h3>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <span class="skill-name">XGBoost and TensorFlow</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">PyTorch & Scikit-learn</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Model Development</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Predictive Analytics</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Programming -->
                 <div class="skill-category">
-                    <h3 data-lang="skills.programming">Programmierung & Datenbanken</h3>
-                    <ul class="skill-list">
-                        <li>Python (Pandas & NumPy)</li>
-                        <li>Microsoft SQL Server</li>
-                        <li>Graph API Development</li>
-                        <li>Data Pipeline Development</li>
-                    </ul>
+                    <div class="category-header">
+                        <i class="fas fa-code"></i>
+                        <h3 class="category-title">Programmierung & Datenbanken</h3>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <span class="skill-name">Python (Pandas & NumPy)</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Microsoft SQL Server</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Graph API Development</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Data Pipeline Development</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Web Development -->
                 <div class="skill-category">
-                    <h3 data-lang="skills.webDev">Webentwicklung</h3>
-                    <ul class="skill-list">
-                        <li>WordPress</li>
-                        <li>HTML/CSS</li>
-                        <li>JavaScript</li>
-                        <li>Responsive Design</li>
-                        <li>SEO Optimization</li>
-                    </ul>
+                    <div class="category-header">
+                        <i class="fas fa-globe"></i>
+                        <h3 class="category-title">Webentwicklung</h3>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <span class="skill-name">WordPress</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">HTML/CSS</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Responsive Design</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">SEO Optimization</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -146,16 +380,16 @@
     <section class="resume-download section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-lang="resume.downloadTitle">Lebenslauf herunterladen</h2>
+                <h2 class="section-title">Lebenslauf herunterladen</h2>
                 <div class="section-underline"></div>
-                <p class="section-subtitle" data-lang="resume.downloadSubtitle">Erhalten Sie einen detaillierten Überblick über meine Erfahrungen und Qualifikationen</p>
+                <p class="section-subtitle">Erhalten Sie einen detaillierten Überblick über meine Erfahrungen und Qualifikationen</p>
             </div>
 
             <div class="resume-download-content">
-                <h3 data-lang="resume.fullResume">Vollständiger Lebenslauf PDF</h3>
-                <p data-lang="resume.downloadDescription">Laden Sie meinen vollständigen Lebenslauf mit detaillierten Erfahrungen und Qualifikationen herunter</p>
+                <h3>Vollständiger Lebenslauf PDF</h3>
+                <p>Laden Sie meinen vollständigen Lebenslauf mit detaillierten Erfahrungen und Qualifikationen herunter</p>
                 <a href="../Resume.pdf" download="Mugisha_Enock_Resume.pdf" class="btn btn-primary">
-                    <i class="fas fa-download"></i> <span data-lang="resume.download">PDF herunterladen</span>
+                    <i class="fas fa-download"></i> PDF herunterladen
                 </a>
             </div>
         </div>
@@ -165,9 +399,9 @@
     <section id="portfolio" class="portfolio section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-lang="portfolio.title">Aktuelle Projekte</h2>
+                <h2 class="section-title">Aktuelle Projekte</h2>
                 <div class="section-underline"></div>
-                <p class="section-subtitle" data-lang="portfolio.subtitle">Entdecken Sie meine neuesten Arbeiten</p>
+                <p class="section-subtitle">Entdecken Sie meine neuesten Arbeiten</p>
             </div>
 
             <div class="portfolio-grid">
@@ -178,16 +412,16 @@
                             <img src="https://raw.githubusercontent.com/MMEnock/Titanic-end-to-end-ML-project/main/titanic%20end%20to%20end%20project.jpg" alt="Titanic ML Projekt">
                         </div>
                         <div class="portfolio-content">
-                            <h3 class="project-title" data-lang="portfolio.titanic.title">Titanic ML-Projekt</h3>
-                            <p class="project-description" data-lang="portfolio.titanic.description">
+                            <h3 class="project-title">Titanic ML-Projekt</h3>
+                            <p class="project-description">
                                 End-to-End Machine Learning Projekt zur Vorhersage der Überlebensraten auf der Titanic.
                             </p>
                             <div class="project-links">
                                 <a href="https://github.com/MMEnock/Titanic-end-to-end-ML-project" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> <span data-lang="portfolio.github">GitHub</span>
+                                    <i class="fab fa-github"></i> GitHub
                                 </a>
                                 <a href="#" target="_blank" class="project-link">
-                                    <i class="fas fa-file-alt"></i> <span data-lang="portfolio.report">Bericht</span>
+                                    <i class="fas fa-file-alt"></i> Bericht
                                 </a>
                             </div>
                         </div>
@@ -201,16 +435,16 @@
                             <img src="https://raw.githubusercontent.com/MMEnock/Credit-Score-Evaluation-Machine-leaning-Project/refs/heads/main/credit%20score%20evaluation.jpg" alt="Kreditwürdigkeitsprüfung ML Projekt">
                         </div>
                         <div class="portfolio-content">
-                            <h3 class="project-title" data-lang="portfolio.creditScore.title">Kreditwürdigkeitsprüfung</h3>
-                            <p class="project-description" data-lang="portfolio.creditScore.description">
+                            <h3 class="project-title">Kreditwürdigkeitsprüfung</h3>
+                            <p class="project-description">
                                 Machine Learning Modell zur Bewertung von Kreditwürdigkeit und Kreditvergabe.
                             </p>
                             <div class="project-links">
                                 <a href="https://github.com/MMEnock/Credit-Score-Evaluation-Machine-leaning-Project" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> <span data-lang="portfolio.github">GitHub</span>
+                                    <i class="fab fa-github"></i> GitHub
                                 </a>
                                 <a href="#" target="_blank" class="project-link">
-                                    <i class="fas fa-file-alt"></i> <span data-lang="portfolio.report">Bericht</span>
+                                    <i class="fas fa-file-alt"></i> Bericht
                                 </a>
                             </div>
                         </div>
@@ -224,16 +458,16 @@
                             <img src="https://raw.githubusercontent.com/MMEnock/Flight-Enrichment-Project/main/flight%20enrichment%20project.jpg" alt="Flugoptimierung Projekt">
                         </div>
                         <div class="portfolio-content">
-                            <h3 class="project-title" data-lang="portfolio.flightEnrichment.title">Flugoptimierung</h3>
-                            <p class="project-description" data-lang="portfolio.flightEnrichment.description">
+                            <h3 class="project-title">Flugoptimierung</h3>
+                            <p class="project-description">
                                 Python-basiertes System zur Flugplanoptimierung und Datenanreicherung.
                             </p>
                             <div class="project-links">
                                 <a href="https://github.com/MMEnock/Flight-Enrichment-Project" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> <span data-lang="portfolio.github">GitHub</span>
+                                    <i class="fab fa-github"></i> GitHub
                                 </a>
                                 <a href="#" target="_blank" class="project-link">
-                                    <i class="fas fa-file-alt"></i> <span data-lang="portfolio.report">Bericht</span>
+                                    <i class="fas fa-file-alt"></i> Bericht
                                 </a>
                             </div>
                         </div>
@@ -247,16 +481,16 @@
                             <img src="https://raw.githubusercontent.com/MMEnock/Pax-Load-ML-Project/main/pax%20load%20ml%20project.jpg" alt="Passagieraufkommen ML Projekt">
                         </div>
                         <div class="portfolio-content">
-                            <h3 class="project-title" data-lang="portfolio.paxLoad.title">Passagieraufkommen Vorhersage</h3>
-                            <p class="project-description" data-lang="portfolio.paxLoad.description">
+                            <h3 class="project-title">Passagieraufkommen Vorhersage</h3>
+                            <p class="project-description">
                                 ML-Modell zur Vorhersage des Passagieraufkommens im Flughafenbetrieb.
                             </p>
                             <div class="project-links">
                                 <a href="https://github.com/MMEnock/Pax-Load-ML-Project" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> <span data-lang="portfolio.github">GitHub</span>
+                                    <i class="fab fa-github"></i> GitHub
                                 </a>
                                 <a href="#" target="_blank" class="project-link">
-                                    <i class="fas fa-file-alt"></i> <span data-lang="portfolio.report">Bericht</span>
+                                    <i class="fas fa-file-alt"></i> Bericht
                                 </a>
                             </div>
                         </div>
@@ -270,16 +504,16 @@
                             <img src="https://raw.githubusercontent.com/MMEnock/Yummy-GmbH-Sales-Dashboard/main/yummy%20gmbh%20sales%20dashboard.jpg" alt="Yummy GmbH Verkaufsdashboard">
                         </div>
                         <div class="portfolio-content">
-                            <h3 class="project-title" data-lang="portfolio.yummy.title">Verkaufsdashboard</h3>
-                            <p class="project-description" data-lang="portfolio.yummy.description">
+                            <h3 class="project-title">Verkaufsdashboard</h3>
+                            <p class="project-description">
                                 Interaktives Power BI Dashboard zur Restaurantverkaufsanalyse.
                             </p>
                             <div class="project-links">
                                 <a href="#" target="_blank" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i> <span data-lang="portfolio.demo">Demo</span>
+                                    <i class="fas fa-external-link-alt"></i> Demo
                                 </a>
                                 <a href="#" target="_blank" class="project-link">
-                                    <i class="fas fa-file-alt"></i> <span data-lang="portfolio.report">Bericht</span>
+                                    <i class="fas fa-file-alt"></i> Bericht
                                 </a>
                             </div>
                         </div>
@@ -293,16 +527,16 @@
                             <img src="https://raw.githubusercontent.com/MMEnock/Social-Media-Power-BI-Dashboard/main/social%20media%20power%20bi%20dashboard.jpg" alt="Social Media Power BI Dashboard">
                         </div>
                         <div class="portfolio-content">
-                            <h3 class="project-title" data-lang="portfolio.socialMedia.title">Social Media Analytics</h3>
-                            <p class="project-description" data-lang="portfolio.socialMedia.description">
+                            <h3 class="project-title">Social Media Analytics</h3>
+                            <p class="project-description">
                                 Umfassendes Dashboard zur Verfolgung und Analyse von Social Media KPIs.
                             </p>
                             <div class="project-links">
                                 <a href="#" target="_blank" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i> <span data-lang="portfolio.demo">Demo</span>
+                                    <i class="fas fa-external-link-alt"></i> Demo
                                 </a>
                                 <a href="#" target="_blank" class="project-link">
-                                    <i class="fas fa-file-alt"></i> <span data-lang="portfolio.report">Bericht</span>
+                                    <i class="fas fa-file-alt"></i> Bericht
                                 </a>
                             </div>
                         </div>
@@ -311,7 +545,7 @@
             </div>
 
             <div class="portfolio-actions">
-                <a href="portfolio.html" class="btn btn-primary" data-lang="portfolio.viewAll">Alle Projekte ansehen</a>
+                <a href="portfolio.html" class="btn btn-primary">Alle Projekte ansehen</a>
             </div>
         </div>
     </section>
@@ -320,31 +554,31 @@
     <section id="contact" class="contact section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-lang="contact.title">Kontakt</h2>
+                <h2 class="section-title">Kontakt</h2>
                 <div class="section-underline"></div>
-                <p class="section-subtitle" data-lang="contact.subtitle">Lassen Sie uns zusammenarbeiten</p>
+                <p class="section-subtitle">Lassen Sie uns zusammenarbeiten</p>
             </div>
 
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3 data-lang="contact.email">E-Mail</h3>
+                    <h3>E-Mail</h3>
                     <a href="mailto:mugisha@study-boundless.com">mugisha@study-boundless.com</a>
                 </div>
 
                 <form class="contact-form" id="contact-form">
                     <div class="form-group">
-                        <label for="name" data-lang="contact.name">Name</label>
+                        <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="email" data-lang="contact.email">E-Mail</label>
+                        <label for="email">E-Mail</label>
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="message" data-lang="contact.message">Nachricht</label>
+                        <label for="message">Nachricht</label>
                         <textarea id="message" name="message" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary" data-lang="contact.send">Nachricht senden</button>
+                    <button type="submit" class="btn btn-primary">Nachricht senden</button>
                 </form>
             </div>
         </div>
@@ -356,19 +590,19 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <h3>ME</h3>
-                    <p data-lang="footer.role">Datenanalyst & ML-Ingenieur</p>
+                    <p>Datenanalyst & ML-Ingenieur</p>
                 </div>
                 <nav class="footer-nav">
                     <ul class="footer-links">
-                        <li><a href="index.html" data-lang="nav.home">Startseite</a></li>
-                        <li><a href="resume.html" data-lang="nav.resume">Lebenslauf</a></li>
-                        <li><a href="portfolio.html" data-lang="nav.portfolio">Portfolio</a></li>
-                        <li><a href="index.html#contact" data-lang="nav.contact">Kontakt</a></li>
+                        <li><a href="index.html">Startseite</a></li>
+                        <li><a href="resume.html">Lebenslauf</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="index.html#contact">Kontakt</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Mugisha Enock. <span data-lang="footer.rights">Alle Rechte vorbehalten.</span></p>
+                <p>&copy; 2024 Mugisha Enock. Alle Rechte vorbehalten.</p>
             </div>
         </div>
     </footer>
