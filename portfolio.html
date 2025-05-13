@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Mugisha Enock</title>
+    <link rel="canonical" href="https://mmenock.github.io/portfolio.html" />
+    <link rel="alternate" hreflang="en" href="https://mmenock.github.io/portfolio.html" />
+    <link rel="alternate" hreflang="de" href="https://mmenock.github.io/de/portfolio.html" />
+    <link rel="alternate" hreflang="x-default" href="https://mmenock.github.io/portfolio.html" />
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/typed.js@2.0.12"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="js/languages.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -19,10 +25,16 @@
             </div>
             <nav class="main-nav">
                 <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="resume.html" class="nav-link">Resume</a></li>
-                    <li><a href="#" class="nav-link active">Portfolio</a></li>
-                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    <li><a href="index.html" class="nav-link" data-lang="nav.home">Home</a></li>
+                    <li><a href="resume.html" class="nav-link" data-lang="nav.resume">Resume</a></li>
+                    <li><a href="portfolio.html" class="nav-link active" data-lang="nav.portfolio">Portfolio</a></li>
+                    <li><a href="index.html#contact" class="nav-link" data-lang="nav.contact">Contact</a></li>
+                    <li>
+                        <select id="language-select" onchange="changeLanguage(this.value)">
+                            <option value="en">EN</option>
+                            <option value="de">DE</option>
+                        </select>
+                    </li>
                     <li>
                         <button class="theme-toggle">
                             <i class="fas fa-moon"></i>
@@ -41,9 +53,9 @@
     <section class="portfolio-page section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">My Portfolio</h2>
+                <h2 class="section-title" data-lang="portfolio.title">Latest Projects</h2>
                 <div class="section-underline"></div>
-                <p class="section-subtitle">My latest projects in Machine Learning and Data Analysis. Open to remote, hybrid, or office roles. Currently based in Germany | Nordrhein Westfalen.</p>
+                <p class="section-subtitle" data-lang="portfolio.subtitle">Check out my recent work</p>
             </div>
 
             <div class="portfolio-filters">
@@ -62,16 +74,16 @@
                             <img src="https://raw.githubusercontent.com/MMEnock/Titanic-end-to-end-ML-project/main/titanic%20end%20to%20end%20project.jpg" alt="Titanic ML Project">
                         </div>
                         <div class="portfolio-content">
-                            <h3 class="project-title">Titanic ML Project</h3>
-                            <p class="project-description">
+                            <h3 class="project-title" data-lang="portfolio.titanic.title">Titanic ML Project</h3>
+                            <p class="project-description" data-lang="portfolio.titanic.description">
                                 End-to-end machine learning project predicting survival rates on the Titanic.
                             </p>
                             <div class="project-links">
                                 <a href="https://github.com/MMEnock/Titanic-end-to-end-ML-project" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> GitHub
+                                    <i class="fab fa-github"></i> <span data-lang="portfolio.github">GitHub</span>
                                 </a>
                                 <a href="#" target="_blank" class="project-link">
-                                    <i class="fas fa-file-alt"></i> Report
+                                    <i class="fas fa-file-alt"></i> <span data-lang="portfolio.report">Report</span>
                                 </a>
                             </div>
                         </div>
@@ -85,16 +97,16 @@
                             <img src="https://raw.githubusercontent.com/MMEnock/Credit-Score-Evaluation-Machine-leaning-Project/refs/heads/main/credit%20score%20evaluation.jpg" alt="Credit Score ML Project">
                         </div>
                         <div class="portfolio-content">
-                            <h3 class="project-title">Credit Score Evaluation</h3>
-                            <p class="project-description">
+                            <h3 class="project-title" data-lang="portfolio.creditScore.title">Credit Score Evaluation</h3>
+                            <p class="project-description" data-lang="portfolio.creditScore.description">
                                 Machine learning model for evaluating credit scores and loan eligibility.
                             </p>
                             <div class="project-links">
                                 <a href="https://github.com/MMEnock/Credit-Score-Evaluation-Machine-leaning-Project" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> GitHub
+                                    <i class="fab fa-github"></i> <span data-lang="portfolio.github">GitHub</span>
                                 </a>
                                 <a href="#" target="_blank" class="project-link">
-                                    <i class="fas fa-file-alt"></i> Report
+                                    <i class="fas fa-file-alt"></i> <span data-lang="portfolio.report">Report</span>
                                 </a>
                             </div>
                         </div>
@@ -294,19 +306,19 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <h3>ME</h3>
-                    <p>Data Analyst & Machine Learning Engineer</p>
+                    <p data-lang="footer.role">Data Analyst & Machine Learning Engineer</p>
                 </div>
                 <nav class="footer-nav">
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="resume.html">Resume</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="index.html" data-lang="nav.home">Home</a></li>
+                        <li><a href="resume.html" data-lang="nav.resume">Resume</a></li>
+                        <li><a href="portfolio.html" data-lang="nav.portfolio">Portfolio</a></li>
+                        <li><a href="index.html#contact" data-lang="nav.contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Mugisha Enock. All rights reserved.</p>
+                <p>&copy; 2024 Mugisha Enock. <span data-lang="footer.rights">All rights reserved.</span></p>
             </div>
         </div>
     </footer>

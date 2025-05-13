@@ -76,7 +76,15 @@ const languages = {
             viewProject: "View Project",
             github: "GitHub",
             report: "Report",
-            demo: "Demo"
+            demo: "Demo",
+            titanic: {
+                title: "Titanic ML Project",
+                description: "End-to-end machine learning project predicting survival rates on the Titanic."
+            },
+            creditScore: {
+                title: "Credit Score Evaluation",
+                description: "Machine learning model for evaluating credit scores and loan eligibility."
+            }
         },
         contact: {
             title: "Get In Touch",
@@ -87,6 +95,7 @@ const languages = {
             send: "Send Message"
         },
         footer: {
+            role: "Data Analyst & Machine Learning Engineer",
             rights: "All rights reserved."
         }
     },
@@ -161,13 +170,21 @@ const languages = {
             }
         },
         portfolio: {
-            title: "Neueste Projekte",
-            subtitle: "Schauen Sie sich meine aktuellen Arbeiten an",
+            title: "Aktuelle Projekte",
+            subtitle: "Entdecken Sie meine neuesten Arbeiten",
             viewAll: "Alle Projekte ansehen",
             viewProject: "Projekt ansehen",
             github: "GitHub",
             report: "Bericht",
-            demo: "Demo"
+            demo: "Demo",
+            titanic: {
+                title: "Titanic ML-Projekt",
+                description: "End-to-End Machine Learning Projekt zur Vorhersage der Überlebensraten auf der Titanic."
+            },
+            creditScore: {
+                title: "Kreditwürdigkeitsprüfung",
+                description: "Machine Learning Modell zur Bewertung von Kreditwürdigkeit und Kreditvergabe."
+            }
         },
         contact: {
             title: "Kontakt",
@@ -178,6 +195,7 @@ const languages = {
             send: "Nachricht senden"
         },
         footer: {
+            role: "Datenanalyst & ML-Ingenieur",
             rights: "Alle Rechte vorbehalten."
         }
     }
