@@ -41,18 +41,35 @@
     <!-- Initialize animations -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Initialize Typed.js
-            const typedElement = document.querySelector('.typed');
-            if (typedElement && typeof Typed !== 'undefined') {
-                new Typed(typedElement, {
-                    strings: ["Data Analyst", "Machine Learning Engineer", "Business Analyst"],
-                    typeSpeed: 50,
-                    backSpeed: 30,
-                    backDelay: 2000,
-                    loop: true,
-                    cursorChar: '|'
-                });
+            // Custom title animation
+            const titles = ["Data Analyst", "Machine Learning Engineer", "Business Analyst"];
+            const titleElement = document.querySelector('.typed');
+            let currentIndex = 0;
+
+            function updateTitle() {
+                titleElement.style.opacity = '0';
+                setTimeout(() => {
+                    titleElement.textContent = titles[currentIndex];
+                    titleElement.style.opacity = '1';
+                    currentIndex = (currentIndex + 1) % titles.length;
+                }, 500);
             }
+
+            // Initial title
+            titleElement.textContent = titles[0];
+            
+            // Update title every 3 seconds
+            setInterval(updateTitle, 3000);
+
+            // Add smooth transition styles
+            const style = document.createElement('style');
+            style.textContent = `
+                .typed {
+                    transition: opacity 0.5s ease-in-out;
+                    opacity: 1;
+                }
+            `;
+            document.head.appendChild(style);
 
             // Initialize ScrollReveal
             if (typeof ScrollReveal !== 'undefined') {
