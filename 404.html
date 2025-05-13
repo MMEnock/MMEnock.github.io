@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        // Get the current path
+        const path = window.location.pathname;
+        
+        // Check if the path starts with /de/
+        if (path.startsWith('/de/')) {
+            // Extract the rest of the path after /de/
+            const newPath = path.replace('/de/', '/');
+            // Redirect to the English version
+            window.location.href = newPath;
+        } else {
+            // If not a language path, redirect to home
+            window.location.href = '/';
+        }
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html> 
