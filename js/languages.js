@@ -137,6 +137,8 @@ const languages = {
             experience: "Berufserfahrung",
             skills: "Fähigkeiten",
             download: "PDF herunterladen",
+            aboutMe: "Über Mich",
+            aboutMeText: "Erfahren in der Durchführung umfassender Website-Performance-Analysen mit Google Analytics und GT4-Eigenschaften zur Bewertung von Google Ads-Kampagnen. Geschickt in der Implementierung automatisierter interaktiver Dashboards mit Looker Studio, Power BI, Python und Graphs APIs. 2 Jahre Erfahrung in der Implementierung von Machine Learning-Algorithmen.",
             studyBoundless: {
                 description: "Meine Arbeit konzentriert sich auf die Verwaltung von WordPress-Websites, die Optimierung von Google Ads-Kampagnen und die Entwicklung datengesteuerter Dashboards zur Unterstützung leistungsorientierter Marketingstrategien. Ich bringe fundierte Kenntnisse im digitalen Marketing mit, einschließlich Plattformen wie Google Ads und Meta Ads, und nutze fortschrittliche Analysetools, um den Erfolg und die kontinuierliche Verbesserung der Kampagnen sicherzustellen.",
                 bullet1: "Verwaltung von SEO-freundlichen WordPress-Sites und Durchführung leistungsstarker Google & Meta Ads-Kampagnen.",
@@ -145,25 +147,31 @@ const languages = {
                 bullet4: "Anwendung starker Analysen, Überwachung von Trends und Anpassung an neue Technologien im digitalen Marketing."
             },
             airportResearch: {
+                description: "Meine Arbeit umfasst die Verbesserung bestehender Flugrouten und die Entwicklung von Machine Learning-Modellen zur Vorhersage von Passagieraufkommen und -verhalten, um einen effizienteren Flughafenbetrieb zu ermöglichen.",
                 bullet1: "Verbesserung von Flugrouten und Entwicklung von Machine Learning-Modellen zur Vorhersage von Passagieraufkommen, um die Effizienz des Flughafenbetriebs zu steigern.",
                 bullet2: "Erstellung von Prognosemodellen mit RandomForesRegressor, XGBoost und TensorFlow, Integration der Ergebnisse in die Betriebsplanungssoftware CAST.",
                 bullet3: "Analyse von Passagierbewegungen mit Python, Erstellung detaillierter Verhaltensberichte."
             },
             timeframe: {
+                description: "Durchführung von Website-Performance-Analysen und Google Ads-Performance mit GT4. Entwicklung interaktiver Dashboards mit Looker Studio und Integration mit Graphs APIs zur Automatisierung der Datenabfrage aus Google Sheets.",
                 bullet1: "Spezialisierung auf Website-Performance-Analyse und Google Ads-Performance-Evaluierung mit Google Analytics.",
                 bullet2: "Erstellung interaktiver Dashboards mit Looker Studio, Automatisierung von Datenabrufen und Visualisierungen mit Json, Google Sheets und Google Apps Script.",
                 bullet3: "Erstellung angepasster Google Tags und Trigger für Events und Konversionen mit Google Tag Manager und Assistant."
             },
             makeItTetten: {
+                description: "Analyse von Daten für Kunden wie Harley Davidson bezüglich Verpackungsdesign-Performance, Produktverkäufen und KPIs.",
                 bullet1: "Erstellung und Versand wöchentlicher Berichte an Stakeholder bezüglich Produktperformance.",
                 bullet2: "Automatisierung der Datenerfassung von Amazon und eBay, Integration in Google Data Studio.",
                 bullet3: "Durchführung von Datenbereinigung, -aggregation und -analyse in Power BI mit DAX und Power Queries."
             },
             gelsenwasser: {
+                description: "Analyse von Wetter-, Haushaltsstrom- und Windenergiedaten in der süddeutschen Region.",
                 bullet1: "Analyse von Wetter-, Haushaltsstrom- und Windenergiedaten für die süddeutsche Region.",
                 bullet2: "Entwicklung wiederverwendbarer Dashboards in Power BI zur Unterstützung datengesteuerter Entscheidungsfindung.",
                 bullet3: "Generierung von Erkenntnissen mit Excel, DAX, Pandas und NumPy."
             },
+            expertise: "Expertise",
+            languages: "Sprachen",
             language: {
                 english: "Englisch: Muttersprache",
                 german: "Deutsch: B2"
