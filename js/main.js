@@ -18,7 +18,7 @@ function initTyped() {
         }
 
         const options = {
-            strings: ["Data Analyst", "Machine Learning Engineer", "Business Intelligence Developer"],
+            strings: ["Data Analyst", "Machine Learning Engineer", "Business Analyst"],
             typeSpeed: 50,
             backSpeed: 30,
             backDelay: 2000,
@@ -129,8 +129,8 @@ function updateContent() {
         if (metaDescription) {
             metaDescription.setAttribute('content', 
                 currentLang === 'de' 
-                    ? 'Erfahrener Datenanalyst und Business Intelligence Entwickler mit Expertise in Datenvisualisierung, Analyse und Business Intelligence Lösungen.'
-                    : 'Experienced Data Analyst and Business Intelligence Developer with expertise in data visualization, analysis, and business intelligence solutions.'
+                    ? 'Erfahrener Datenanalyst und ML-Ingenieur mit Expertise in Datenvisualisierung und Analyse.'
+                    : 'Experienced Data Analyst and Machine Learning Engineer with expertise in data visualization and analysis.'
             );
         }
 
