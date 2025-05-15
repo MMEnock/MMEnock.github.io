@@ -32,11 +32,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Scripts -->
-    <script src="https://unpkg.com/typed.js@2.0.12"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/typed.js@2.0.12" defer></script>
+    <script src="https://unpkg.com/scrollreveal" defer></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="js/languages.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/languages.js" defer></script>
+    <script src="js/main.js" defer></script>
 
     <!-- Initialize animations -->
     <script>
@@ -71,14 +71,14 @@
             `;
             document.head.appendChild(style);
 
-            // Initialize ScrollReveal
+            // Initialize ScrollReveal with optimized settings
             if (typeof ScrollReveal !== 'undefined') {
                 const sr = ScrollReveal({
                     origin: 'bottom',
                     distance: '0px',
-                    duration: 1000,
+                    duration: 800,
                     delay: 100,
-                    easing: 'ease-in-out',
+                    easing: 'ease-out',
                     reset: false,
                     opacity: 0,
                     scale: 1,
@@ -86,52 +86,24 @@
                     viewFactor: 0.3
                 });
 
-                // Hero section
-                sr.reveal('.hero-content', { 
-                    delay: 300,
-                    duration: 1000,
-                    opacity: 0,
-                    scale: 0.9
-                });
-                sr.reveal('.hero-image', { 
-                    delay: 500,
-                    duration: 1000,
-                    opacity: 0,
-                    scale: 0.9
-                });
-
-                // Skills section
-                sr.reveal('.section-header', { 
-                    delay: 300,
-                    duration: 1000,
-                    opacity: 0,
-                    scale: 0.9
-                });
-                sr.reveal('.skill-category', { 
-                    interval: 100,
-                    duration: 1000,
-                    opacity: 0,
-                    scale: 0.9
-                });
-
-                // Portfolio section
-                sr.reveal('.portfolio-item', { 
-                    interval: 100,
-                    duration: 1000,
-                    opacity: 0,
-                    scale: 0.9
-                });
-
-                // Contact section
-                sr.reveal('.contact-content', { 
-                    delay: 300,
-                    duration: 1000,
-                    opacity: 0,
-                    scale: 0.9
-                });
+                // Optimize reveal animations
+                sr.reveal('.hero-content', { delay: 200 });
+                sr.reveal('.hero-image', { delay: 300 });
+                sr.reveal('.section-header', { delay: 200 });
+                sr.reveal('.skill-category', { interval: 100 });
             }
         });
     </script>
+
+    <!-- Remove complex SVG animation -->
+    <div class="animation-container">
+        <!-- Simplified hero section animation -->
+        <div class="hero-animation">
+            <div class="pulse-circle"></div>
+            <div class="pulse-circle"></div>
+            <div class="pulse-circle"></div>
+        </div>
+    </div>
 
     <!-- JSON-LD structured data -->
     <script type="application/ld+json">

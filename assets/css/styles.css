@@ -721,7 +721,7 @@ body.menu-open {
 
 @keyframes pulse {
     0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 0.9; }
     100% { transform: scale(1); opacity: 1; }
 }
 
@@ -1718,7 +1718,7 @@ body.dark-theme .project-date {
     border-radius: var(--border-radius-md);
     overflow: hidden;
     box-shadow: var(--shadow-md);
-    transition: all var(--transition-normal), transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease;
     opacity: 1;
     transform: scale(1);
 }
@@ -1732,7 +1732,6 @@ body.dark-theme .project-date {
     flex-direction: column;
     height: 100%;
     background-color: var(--bg-light);
-    transition: all var(--transition-normal);
 }
 
 .portfolio-img {

@@ -28,14 +28,10 @@ const updateThemeIcons = (isDark) => {
     const moonIcon = themeToggle.querySelector('.fa-moon');
     
     if (isDark) {
-        sunIcon.style.transform = 'scale(1) rotate(0)';
         sunIcon.style.opacity = '1';
-        moonIcon.style.transform = 'scale(0.5) rotate(-180deg)';
         moonIcon.style.opacity = '0';
     } else {
-        sunIcon.style.transform = 'scale(0.5) rotate(180deg)';
         sunIcon.style.opacity = '0';
-        moonIcon.style.transform = 'scale(1) rotate(0)';
         moonIcon.style.opacity = '1';
     }
 };
@@ -328,81 +324,58 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Scroll reveal animation
+// Optimize scroll reveal animation
 const sr = ScrollReveal({
     origin: 'top',
-    distance: '80px',
-    duration: 2000,
-    reset: true
+    distance: '60px',
+    duration: 1000,
+    reset: false,
+    mobile: true,
+    viewFactor: 0.3
 });
 
-// Scroll reveal animations for different sections
-sr.reveal('.hero-content', {});
-sr.reveal('.hero-image', { delay: 200 });
-sr.reveal('.about-content', { delay: 200 });
-sr.reveal('.skills-container', { delay: 200 });
-sr.reveal('.portfolio-grid', { delay: 200 });
-sr.reveal('.contact-container', { delay: 200 });
+// Optimize scroll reveal animations
+sr.reveal('.hero-content', { delay: 200 });
+sr.reveal('.hero-image', { delay: 300 });
+sr.reveal('.section-header', { delay: 200 });
+sr.reveal('.skill-category', { interval: 100 });
 
-// Scroll to top functionality
+// Optimize scroll to top functionality
 const scrollToTopBtn = document.querySelector('.scroll-to-top');
-let isScrolling = false;
-let scrollProgress = 0;
+let lastScrollPosition = 0;
+let ticking = false;
 
 const updateScrollButtonAppearance = (scrollPosition) => {
-    // Calculate scroll progress as a percentage (0 to 1)
-    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-    scrollProgress = Math.min(scrollPosition / scrollHeight, 1);
+    if (!scrollToTopBtn) return;
     
-    // Apply the transformation to the button based on scroll progress
-    if (scrollToTopBtn) {
-        // Update the border-radius based on scroll progress
-        const borderRadius = 50 - (scrollProgress * 30); // From 50% (circle) to 20% (rounded square)
-        scrollToTopBtn.style.borderRadius = `${borderRadius}%`;
-        
-        // Scale the button slightly based on scroll progress
-        const scale = 1 + (scrollProgress * 0.1); // From 1 to 1.1
-        scrollToTopBtn.style.transform = `scale(${scale})`;
-        
-        // Update the background color intensity
-        const colorIntensity = Math.floor(scrollProgress * 20);
-        scrollToTopBtn.style.backgroundColor = `var(--primary-color)`;
-        
-        // Make the button visible when scrolled down
-        scrollToTopBtn.classList.toggle('visible', scrollPosition > 300);
+    // Only update if scrolled more than 100px
+    if (Math.abs(scrollPosition - lastScrollPosition) < 100) return;
+    
+    lastScrollPosition = scrollPosition;
+    
+    // Simple visibility toggle
+    scrollToTopBtn.classList.toggle('visible', scrollPosition > 300);
+};
+
+// Use requestAnimationFrame for smooth scrolling
+window.addEventListener('scroll', () => {
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            updateScrollButtonAppearance(window.pageYOffset);
+            ticking = false;
+        });
+        ticking = true;
     }
-};
-
-const toggleScrollToTopButton = () => {
-    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-    updateScrollButtonAppearance(scrollPosition);
-};
-
-const scrollToTop = () => {
-    if (isScrolling) return;
-    
-    isScrolling = true;
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-    
-    // Reset isScrolling after animation
-    setTimeout(() => {
-        isScrolling = false;
-    }, 1000);
-};
+});
 
 // Initialize the scroll button on page load
 document.addEventListener('DOMContentLoaded', () => {
     if (scrollToTopBtn) {
-        toggleScrollToTopButton();
+        updateScrollButtonAppearance(window.pageYOffset);
     }
 });
 
 window.addEventListener('scroll', () => {
-    toggleScrollToTopButton();
-    
     // Add scrolled class to header
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
     if (header) {
@@ -411,11 +384,19 @@ window.addEventListener('scroll', () => {
 });
 
 if (scrollToTopBtn) {
-    scrollToTopBtn.addEventListener('click', scrollToTop);
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
     if (isTouchDevice()) {
         scrollToTopBtn.addEventListener('touchend', (e) => {
             e.preventDefault();
-            scrollToTop();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     }
 } 
