@@ -1797,19 +1797,19 @@ body.dark-theme .project-date {
 }
 
 /* Dark mode styles for portfolio */
-[data-theme="dark"] .portfolio-item {
+body.dark-theme .portfolio-item {
     background: var(--dark-card-bg);
 }
 
-[data-theme="dark"] .project-title {
+body.dark-theme .project-title {
     color: var(--dark-heading-color);
 }
 
-[data-theme="dark"] .project-description {
+body.dark-theme .project-description {
     color: var(--dark-text-color);
 }
 
-[data-theme="dark"] .tech-tag {
+body.dark-theme .tech-tag {
     background: var(--dark-tag-bg);
     color: var(--dark-tag-text);
 }

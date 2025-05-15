@@ -734,6 +734,18 @@
         document.addEventListener('DOMContentLoaded', () => {
             updateContent();
         });
+
+        // Update reCAPTCHA theme when theme changes
+        function updateRecaptchaTheme() {
+            const recaptcha = document.querySelector('.g-recaptcha');
+            if (recaptcha) {
+                recaptcha.setAttribute('data-theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+            }
+        }
+
+        // Listen for theme changes
+        window.addEventListener('themechange', updateRecaptchaTheme);
+        document.addEventListener('DOMContentLoaded', updateRecaptchaTheme);
     </script>
 </body>
 </html> 

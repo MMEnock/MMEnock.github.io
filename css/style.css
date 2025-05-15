@@ -22,11 +22,11 @@
 }
 
 /* Dark mode adjustments */
-[data-theme="dark"] #language-select {
+body.dark-theme #language-select {
     border-color: var(--text-color);
 }
 
-[data-theme="dark"] #language-select:hover {
+body.dark-theme #language-select:hover {
     background: var(--accent-color);
     border-color: var(--accent-color);
 } 
