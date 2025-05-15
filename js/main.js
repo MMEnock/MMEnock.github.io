@@ -3,6 +3,42 @@ let currentLang = localStorage.getItem('preferredLanguage') ||
                  (window.location.pathname.startsWith('/de/') ? 'de' : 
                  navigator.language.split('-')[0] || 'en');
 
+// Theme handling
+let currentTheme = localStorage.getItem('preferredTheme') || 'light';
+
+function toggleTheme() {
+    currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+    document.body.classList.toggle('dark-theme');
+    localStorage.setItem('preferredTheme', currentTheme);
+    
+    // Update theme toggle button icons
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (themeToggle) {
+        const sunIcon = themeToggle.querySelector('.fa-sun');
+        const moonIcon = themeToggle.querySelector('.fa-moon');
+        if (sunIcon && moonIcon) {
+            sunIcon.style.display = currentTheme === 'light' ? 'none' : 'block';
+            moonIcon.style.display = currentTheme === 'light' ? 'block' : 'none';
+        }
+    }
+}
+
+// Initialize theme on page load
+function initTheme() {
+    if (currentTheme === 'dark') {
+        document.body.classList.add('dark-theme');
+        const themeToggle = document.querySelector('.theme-toggle');
+        if (themeToggle) {
+            const sunIcon = themeToggle.querySelector('.fa-sun');
+            const moonIcon = themeToggle.querySelector('.fa-moon');
+            if (sunIcon && moonIcon) {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            }
+        }
+    }
+}
+
 // Initialize Typed.js
 function initTyped() {
     try {
@@ -176,6 +212,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const languageSelect = document.getElementById('language-select');
         if (languageSelect) {
             languageSelect.value = currentLang;
+        }
+        
+        // Initialize theme
+        initTheme();
+        
+        // Add theme toggle event listener
+        const themeToggle = document.querySelector('.theme-toggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', toggleTheme);
         }
         
         // Initialize animations
