@@ -3,48 +3,6 @@ let currentLang = localStorage.getItem('preferredLanguage') ||
                  (window.location.pathname.startsWith('/de/') ? 'de' : 
                  navigator.language.split('-')[0] || 'en');
 
-// Theme handling
-function toggleTheme() {
-    const isDarkTheme = document.body.classList.toggle('dark-theme');
-    localStorage.setItem('darkTheme', isDarkTheme);
-    
-    // Update theme toggle button icons
-    const themeToggle = document.querySelector('.theme-toggle');
-    if (themeToggle) {
-        const sunIcon = themeToggle.querySelector('.fa-sun');
-        const moonIcon = themeToggle.querySelector('.fa-moon');
-        if (sunIcon && moonIcon) {
-            sunIcon.style.opacity = isDarkTheme ? '1' : '0';
-            moonIcon.style.opacity = isDarkTheme ? '0' : '1';
-        }
-    }
-}
-
-// Initialize theme on page load
-function initTheme() {
-    const savedTheme = localStorage.getItem('darkTheme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme !== null) {
-        document.body.classList.toggle('dark-theme', savedTheme === 'true');
-    } else if (prefersDark) {
-        document.body.classList.add('dark-theme');
-        localStorage.setItem('darkTheme', 'true');
-    }
-
-    // Update theme toggle button state
-    const themeToggle = document.querySelector('.theme-toggle');
-    if (themeToggle) {
-        const isDarkTheme = document.body.classList.contains('dark-theme');
-        const sunIcon = themeToggle.querySelector('.fa-sun');
-        const moonIcon = themeToggle.querySelector('.fa-moon');
-        if (sunIcon && moonIcon) {
-            sunIcon.style.opacity = isDarkTheme ? '1' : '0';
-            moonIcon.style.opacity = isDarkTheme ? '0' : '1';
-        }
-    }
-}
-
 // Initialize Typed.js
 function initTyped() {
     try {
@@ -218,15 +176,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const languageSelect = document.getElementById('language-select');
         if (languageSelect) {
             languageSelect.value = currentLang;
-        }
-        
-        // Initialize theme
-        initTheme();
-        
-        // Add theme toggle event listener
-        const themeToggle = document.querySelector('.theme-toggle');
-        if (themeToggle) {
-            themeToggle.addEventListener('click', toggleTheme);
         }
         
         // Initialize animations
