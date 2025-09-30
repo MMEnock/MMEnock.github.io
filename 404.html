@@ -8,14 +8,16 @@
         // Get the current path
         const path = window.location.pathname;
         
-        // Check if the path starts with /de/
-        if (path.startsWith('/de/')) {
-            // Extract the rest of the path after /de/
+        // Check if the path contains lebenslauf.html (German resume)
+        if (path.includes('lebenslauf.html')) {
+            // Redirect to the English resume
+            window.location.href = '/resume.html';
+        } else if (path.startsWith('/de/')) {
+            // Legacy /de/ paths - redirect to root level
             const newPath = path.replace('/de/', '/');
-            // Redirect to the English version
             window.location.href = newPath;
         } else {
-            // If not a language path, redirect to home
+            // If not a recognized path, redirect to home
             window.location.href = '/';
         }
     </script>

@@ -1,6 +1,6 @@
 // Language handling
 let currentLang = localStorage.getItem('preferredLanguage') || 
-                 (window.location.pathname.startsWith('/de/') ? 'de' : 
+                 (window.location.pathname.includes('lebenslauf.html') ? 'de' : 
                  navigator.language.split('-')[0] || 'en');
 
 // Initialize Typed.js
@@ -105,16 +105,10 @@ function changeLanguage(lang) {
             }
         };
         
-        if (lang === 'de' && !currentPath.startsWith('/de/')) {
+        if (lang === 'de' && !currentPath.includes('lebenslauf.html')) {
             // Map to German URLs
             const fileName = currentPath.split('/').pop() || 'index.html';
             const mappedFile = urlMappings.de[fileName] || fileName;
-            const newPath = '/' + mappedFile;
-            window.location.href = baseUrl + newPath;
-        } else if (lang === 'en' && currentPath.startsWith('/de/')) {
-            // Map from German URLs to English URLs
-            const fileName = currentPath.split('/').pop() || 'index.html';
-            const mappedFile = urlMappings.en[fileName] || fileName;
             const newPath = '/' + mappedFile;
             window.location.href = baseUrl + newPath;
         } else if (lang === 'en' && currentPath.includes('lebenslauf.html')) {
@@ -180,8 +174,8 @@ function updateContent() {
         if (canonicalLink) {
             const baseUrl = window.location.origin;
             const path = window.location.pathname;
-            const newPath = currentLang === 'de' ? '/de' + path : path.replace('/de/', '/');
-            canonicalLink.setAttribute('href', baseUrl + newPath);
+            // No need to modify path since we're using root-level URLs now
+            canonicalLink.setAttribute('href', baseUrl + path);
         }
 
         // Reinitialize Typed.js with new language
