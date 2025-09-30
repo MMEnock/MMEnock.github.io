@@ -1,7 +1,20 @@
 // Language handling
-let currentLang = localStorage.getItem('preferredLanguage') || 
-                 (window.location.pathname.includes('lebenslauf.html') ? 'de' : 
-                 navigator.language.split('-')[0] || 'en');
+let currentLang = (() => {
+    // First, check if we're on a German-specific page
+    if (window.location.pathname.includes('lebenslauf.html') || 
+        window.location.pathname.includes('/de/')) {
+        return 'de';
+    }
+    
+    // Then check localStorage for user preference
+    const savedLang = localStorage.getItem('preferredLanguage');
+    if (savedLang) {
+        return savedLang;
+    }
+    
+    // Default to English for English pages
+    return 'en';
+})();
 
 // Initialize Typed.js
 function initTyped() {
@@ -201,6 +214,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (languageSelect) {
             languageSelect.value = currentLang;
         }
+        
+        // Ensure the page language attribute matches the current language
+        document.documentElement.lang = currentLang;
         
         // Initialize animations
         console.log('Initializing animations...');
