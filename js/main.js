@@ -95,7 +95,7 @@ function changeLanguage(lang) {
         const urlMappings = {
             'de': {
                 'resume.html': 'lebenslauf.html',
-                'portfolio.html': 'portfolio.html',
+                'portfolio.html': '/de/portfolio.html',
                 'index.html': 'index.html'
             },
             'en': {
@@ -105,11 +105,11 @@ function changeLanguage(lang) {
             }
         };
         
-        if (lang === 'de' && !currentPath.includes('lebenslauf.html')) {
+        if (lang === 'de' && !currentPath.includes('lebenslauf.html') && !currentPath.includes('/de/')) {
             // Map to German URLs
             const fileName = currentPath.split('/').pop() || 'index.html';
             const mappedFile = urlMappings.de[fileName] || fileName;
-            const newPath = '/' + mappedFile;
+            const newPath = mappedFile.startsWith('/') ? mappedFile : '/' + mappedFile;
             window.location.href = baseUrl + newPath;
         } else if (lang === 'en' && currentPath.includes('lebenslauf.html')) {
             // Handle direct lebenslauf.html to resume.html mapping
@@ -117,6 +117,12 @@ function changeLanguage(lang) {
         } else if (lang === 'de' && currentPath.includes('resume.html')) {
             // Handle direct resume.html to lebenslauf.html mapping
             window.location.href = baseUrl + '/lebenslauf.html';
+        } else if (lang === 'en' && currentPath.includes('/de/portfolio.html')) {
+            // Handle German portfolio to English portfolio mapping
+            window.location.href = baseUrl + '/portfolio.html';
+        } else if (lang === 'de' && currentPath.includes('portfolio.html') && !currentPath.includes('/de/')) {
+            // Handle English portfolio to German portfolio mapping
+            window.location.href = baseUrl + '/de/portfolio.html';
         } else {
             updateContent();
         }
