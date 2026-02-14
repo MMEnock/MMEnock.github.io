@@ -45,8 +45,7 @@ const languages = {
                 description: "Leverage GA4, GTM, and BigQuery to analyze behavioral and campaign data, improving performance efficiency through data-driven optimization. Build automated dashboards and execute A/B tests to boost ROI, conversions, and website performance.",
                 bullet1: "Leverage GA4, GTM, BigQuery to analyze behavioral and campaign data, improving performance efficiency by 24.5% through data-driven optimization.",
                 bullet2: "Design and execute A/B tests across ads, audiences, and landing pages, using SQL segmentation to increase ROI by 56.3% and conversions by 14%.",
-                bullet3: "Build automated dashboards in Power BI and Looker Studio, optimizing tracking and attribution, increasing accuracy and website performance by 13%.",
-                bullet4: "Portfolio, make.com & n8n automations."
+                bullet3: "Build automated dashboards in Power BI and Looker Studio, optimizing tracking and attribution, increasing accuracy and website performance by 13%."
             },
             airportResearch: {
                 description: "Built forecasting models and KPI dashboards to predict passenger volumes and improve airport staff planning and flight route efficiency.",
@@ -141,8 +140,7 @@ const languages = {
                 description: "Nutzung von GA4, GTM und BigQuery zur Analyse von Verhaltens- und Kampagnendaten, Steigerung der Performance durch datengesteuerte Optimierung. Aufbau automatisierter Dashboards und A/B-Tests zur Steigerung von ROI, Konversionen und Website-Performance.",
                 bullet1: "Nutzung von GA4, GTM, BigQuery zur Analyse von Verhaltens- und Kampagnendaten, Steigerung der Performance-Effizienz um 24,5 % durch datengesteuerte Optimierung.",
                 bullet2: "Konzeption und Durchführung von A/B-Tests für Anzeigen, Zielgruppen und Landing Pages, SQL-Segmentierung zur Steigerung des ROI um 56,3 % und der Konversionen um 14 %.",
-                bullet3: "Aufbau automatisierter Dashboards in Power BI und Looker Studio, Optimierung von Tracking und Attribution, Steigerung von Genauigkeit und Website-Performance um 13 %.",
-                bullet4: "Portfolio, make.com & n8n Automatisierungen."
+                bullet3: "Aufbau automatisierter Dashboards in Power BI und Looker Studio, Optimierung von Tracking und Attribution, Steigerung von Genauigkeit und Website-Performance um 13 %."
             },
             airportResearch: {
                 description: "Entwicklung von Prognosemodellen und KPI-Dashboards zur Vorhersage des Passagieraufkommens und Verbesserung der Personalplanung und Flugrouteneffizienz.",
