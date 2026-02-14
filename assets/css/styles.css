@@ -1875,6 +1875,23 @@ body.dark-theme .nav-link[href$=".pdf"]:hover {
     background-color: var(--bg-color);
 }
 
+/* So "My Resume" / "Mein Lebenslauf" and subtitle stay visible below fixed header on phone/tablet */
+@media screen and (max-width: 1024px) {
+    .resume-page {
+        padding-top: 7rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    .resume-page {
+        padding-top: 8rem;
+    }
+}
+@media screen and (max-width: 480px) {
+    .resume-page {
+        padding-top: 9rem;
+    }
+}
+
 .resume-content {
     background-color: var(--bg-light);
     padding: 2rem;
@@ -2011,7 +2028,8 @@ body.dark-theme .certification-item {
 /* Responsive styles for resume */
 @media screen and (max-width: 768px) {
     .resume-page {
-        padding: 4rem 0;
+        padding-bottom: 4rem;
+        /* padding-top set above so title/subtitle stay visible below header */
     }
 
     .resume-content {
