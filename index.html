@@ -179,12 +179,12 @@
             <div class="hero-content">
                 <h1 class="hero-title">Hi, I'm <span class="highlight">Mugisha Enock</span></h1>
                 <h2 class="hero-subtitle">I'm a <span class="typed"></span></h2>
-                <p class="hero-text">
+                <p class="hero-text" data-lang="home.description">
                     With expertise in transforming data into actionable insights and building predictive models using various machine learning libraries.
                 </p>
                 <div class="hero-cta">
-                    <a href="#portfolio" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    <a href="#portfolio" class="btn btn-primary" data-lang="home.viewWork">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary" data-lang="home.contactMe">Contact Me</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -232,9 +232,9 @@
     <section id="skills" class="skills-section section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">My Skills</h2>
+                <h2 class="section-title" data-lang="skills.title">My Skills</h2>
                 <div class="section-underline"></div>
-                <p class="section-subtitle">Technologies and Tools I Master</p>
+                <p class="section-subtitle" data-lang="skills.subtitle">Technologies and Tools I Master</p>
             </div>
             <div class="skills-container">
                 <!-- Data Analysis & Visualization -->
@@ -628,9 +628,9 @@
     <section id="contact" class="contact-section section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Get In Touch</h2>
+                <h2 class="section-title" data-lang="contact.title">Get In Touch</h2>
                 <div class="section-underline"></div>
-                <p class="section-subtitle">Let's work together</p>
+                <p class="section-subtitle" data-lang="contact.subtitle">Let's work together</p>
             </div>
             <div class="contact-container">
                 <div class="contact-info">
@@ -702,39 +702,7 @@
         <i class="fas fa-arrow-up"></i>
     </button>
     <script>
-        let currentLang = 'en';
-        
-        function changeLanguage(lang) {
-            // If German is selected, redirect to English version
-            if (lang === 'de') {
-                window.location.href = 'index.html';
-                return;
-            }
-            
-            currentLang = lang;
-            document.documentElement.lang = lang;
-            updateContent();
-        }
-
-        function updateContent() {
-            document.querySelectorAll('[data-lang]').forEach(element => {
-                const keys = element.getAttribute('data-lang').split('.');
-                let value = languages[currentLang];
-                for (const key of keys) {
-                    value = value[key];
-                }
-                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                    element.placeholder = value;
-                } else {
-                    element.textContent = value;
-                }
-            });
-        }
-
-        // Initialize with default language
-        document.addEventListener('DOMContentLoaded', () => {
-            updateContent();
-        });
+        // Language switching is handled by js/main.js (changeLanguage, updateContent).
 
         // Update reCAPTCHA theme when theme changes
         function updateRecaptchaTheme() {

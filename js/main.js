@@ -146,12 +146,15 @@ function changeLanguage(lang) {
 
 function updateContent() {
     try {
+        if (typeof languages === 'undefined' || !languages[currentLang]) return;
         document.querySelectorAll('[data-lang]').forEach(element => {
             const keys = element.getAttribute('data-lang').split('.');
             let value = languages[currentLang];
             for (const key of keys) {
+                if (value == null) break;
                 value = value[key];
             }
+            if (value == null || typeof value !== 'string') return;
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 element.placeholder = value;
             } else {
