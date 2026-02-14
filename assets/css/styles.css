@@ -1692,6 +1692,23 @@ body.dark-theme .project-date {
     padding: 6rem 0;
 }
 
+/* So "Current Projects" / "Aktuelle Projekte" and subtitle stay visible below fixed header on phone/tablet */
+@media screen and (max-width: 1024px) {
+    .portfolio-page {
+        padding-top: 7rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    .portfolio-page {
+        padding-top: 8rem;
+    }
+}
+@media screen and (max-width: 480px) {
+    .portfolio-page {
+        padding-top: 9rem;
+    }
+}
+
 .portfolio-filters {
     display: flex;
     justify-content: center;
@@ -1828,7 +1845,8 @@ body.dark-theme .tech-tag {
 /* Responsive styles for portfolio */
 @media (max-width: 768px) {
     .portfolio-page {
-        padding: 4rem 0;
+        padding-bottom: 4rem;
+        /* padding-top set above so title/subtitle stay visible below header */
     }
 
     .portfolio-grid {
