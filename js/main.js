@@ -16,38 +16,48 @@ let currentLang = (() => {
     return 'en';
 })();
 
-// Initialize Typed.js
+// Single Typed instance so we can destroy before reinit (e.g. on language change)
+let typedInstance = null;
+
+// Initialize Typed.js for "I'm a [Data Analyst | Machine Learning Engineer | Business Analyst]"
+// Works on all viewports; respects reduced-motion; fallback static text if Typed.js fails to load
 function initTyped() {
     try {
         const typedElement = document.querySelector('.typed');
-        if (!typedElement) {
-            console.error('Typed.js element not found');
+        if (!typedElement) return;
+
+        const strings = (typeof languages !== 'undefined' && languages[currentLang]?.home?.typedText)
+            ? languages[currentLang].home.typedText
+            : ['Data Analyst', 'Machine Learning Engineer', 'Business Analyst'];
+        const firstString = strings[0];
+
+        if (typedInstance && typeof typedInstance.destroy === 'function') {
+            typedInstance.destroy();
+            typedInstance = null;
+        }
+
+        // Respect user preference for reduced motion (accessibility + some devices)
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReducedMotion) {
+            typedElement.textContent = firstString;
             return;
         }
 
         if (typeof Typed === 'undefined') {
-            console.error('Typed.js library not loaded');
+            typedElement.textContent = firstString;
             return;
         }
 
-        const options = {
-            strings: ["Data Analyst", "Machine Learning Engineer", "Business Analyst"],
+        typedInstance = new Typed(typedElement, {
+            strings: strings,
             typeSpeed: 50,
             backSpeed: 30,
             backDelay: 2000,
-            loop: true,
-            onComplete: (self) => {
-                console.log('Typed.js animation completed');
-            },
-            onStringTyped: (arrayPos, self) => {
-                console.log('Typed.js string typed:', arrayPos);
-            }
-        };
-
-        console.log('Initializing Typed.js with options:', options);
-        new Typed(typedElement, options);
+            loop: true
+        });
     } catch (error) {
-        console.error('Error initializing Typed.js:', error);
+        const el = document.querySelector('.typed');
+        if (el) el.textContent = (typeof languages !== 'undefined' && languages[currentLang]?.home?.typedText?.[0]) || 'Data Analyst';
     }
 }
 

@@ -39,39 +39,9 @@
     <script src="js/main.js" defer></script>
     <script src="assets/js/script.js" defer></script>
 
-    <!-- Initialize animations -->
+    <!-- Initialize animations (hero "I'm a..." typewriter is handled by js/main.js initTyped()) -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Custom title animation
-            const titles = ["Data Analyst", "Machine Learning Engineer", "Business Analyst"];
-            const titleElement = document.querySelector('.typed');
-            let currentIndex = 0;
-
-            function updateTitle() {
-                titleElement.style.opacity = '0';
-                setTimeout(() => {
-                    titleElement.textContent = titles[currentIndex];
-                    titleElement.style.opacity = '1';
-                    currentIndex = (currentIndex + 1) % titles.length;
-                }, 500);
-            }
-
-            // Initial title
-            titleElement.textContent = titles[0];
-            
-            // Update title every 3 seconds
-            setInterval(updateTitle, 3000);
-
-            // Add smooth transition styles
-            const style = document.createElement('style');
-            style.textContent = `
-                .typed {
-                    transition: opacity 0.5s ease-in-out;
-                    opacity: 1;
-                }
-            `;
-            document.head.appendChild(style);
-
             // Initialize ScrollReveal with optimized settings
             if (typeof ScrollReveal !== 'undefined') {
                 const sr = ScrollReveal({

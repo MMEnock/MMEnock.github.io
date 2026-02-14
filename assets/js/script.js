@@ -198,14 +198,7 @@ function debounce(func, wait) {
     };
 }
 
-// Typed.js for typing animation
-const typed = new Typed('.typed', {
-    strings: ['Data Analyst', 'Machine Learning Engineer', 'Business Analyst', 'WordPress Developer'],
-    typeSpeed: 100,
-    backSpeed: 60,
-    loop: true,
-    backDelay: 1000
-});
+// Typed.js for "I'm a [Data Analyst | ...]" is initialized in js/main.js (initTyped) on index/resume pages to avoid duplicate instances and conflicts.
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

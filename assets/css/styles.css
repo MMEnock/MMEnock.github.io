@@ -621,6 +621,17 @@ body.menu-open {
     margin-bottom: var(--spacing-md);
 }
 
+/* Typed.js hero line: wrap on narrow viewports, minimal layout shift on small screens */
+.hero-subtitle .typed {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+@media (max-width: 576px) {
+    .hero-subtitle .typed {
+        min-height: 1.5em;
+    }
+}
+
 .hero-text {
     font-size: var(--font-size-lg);
     color: var(--text-light);
