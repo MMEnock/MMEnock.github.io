@@ -663,9 +663,8 @@
         </div>
     </footer>
 
-    <!-- Availability popup -->
+    <!-- Availability popup (top-right card) -->
     <div id="availability-popup" class="availability-popup" role="dialog" aria-labelledby="availability-popup-title" aria-modal="true" hidden>
-        <div class="availability-popup-overlay"></div>
         <div class="availability-popup-content">
             <button type="button" class="availability-popup-close" aria-label="Close">
                 <i class="fas fa-times"></i>
@@ -720,15 +719,17 @@
                     osc.stop(ctx.currentTime + 0.12);
                 } catch (e) {}
             }
+            var autoCloseTimer = null;
             var showPopup = function() {
                 popup.removeAttribute('hidden');
                 popup.classList.add('availability-popup-visible');
-                document.body.style.overflow = 'hidden';
                 playPopSound();
+                if (autoCloseTimer) clearTimeout(autoCloseTimer);
+                autoCloseTimer = setTimeout(hidePopup, 8000);
             };
             var hidePopup = function() {
+                if (autoCloseTimer) { clearTimeout(autoCloseTimer); autoCloseTimer = null; }
                 popup.classList.remove('availability-popup-visible');
-                document.body.style.overflow = '';
                 setTimeout(function() { popup.setAttribute('hidden', ''); }, 300);
             };
             if (overlay) overlay.addEventListener('click', hidePopup);
