@@ -2367,4 +2367,182 @@ body.dark-theme .email-link::after {
 
 .has-touch .email-link:active {
     opacity: 0.7;
+}
+
+/* ===== AVAILABILITY POPUP ===== */
+.availability-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+    padding: max(var(--spacing-lg), env(safe-area-inset-top)) max(var(--spacing-lg), env(safe-area-inset-right)) max(var(--spacing-lg), env(safe-area-inset-bottom)) max(var(--spacing-lg), env(safe-area-inset-left));
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.availability-popup[hidden] {
+    display: none !important;
+}
+
+.availability-popup.availability-popup-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.availability-popup.availability-popup-visible[hidden] {
+    display: flex !important;
+}
+
+.availability-popup-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.availability-popup-content {
+    position: relative;
+    max-width: 420px;
+    width: 100%;
+    max-height: calc(100vh - 2 * var(--spacing-lg));
+    max-height: calc(100dvh - 2 * max(var(--spacing-lg), env(safe-area-inset-top) + env(safe-area-inset-bottom)));
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background: var(--bg-light);
+    color: var(--text-color);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: var(--spacing-2xl);
+    text-align: center;
+    animation: availability-popup-in 0.35s ease;
+}
+
+@keyframes availability-popup-in {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.availability-popup-close {
+    position: absolute;
+    top: max(var(--spacing-md), env(safe-area-inset-top));
+    right: max(var(--spacing-md), env(safe-area-inset-right));
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: var(--text-light);
+    cursor: pointer;
+    border-radius: var(--border-radius-full);
+    transition: color var(--transition-fast), background var(--transition-fast);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.availability-popup-close:hover {
+    color: var(--secondary-color);
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.availability-popup-icon {
+    margin-bottom: var(--spacing-lg);
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.availability-popup-title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--secondary-color);
+}
+
+.availability-popup-text {
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-xl);
+}
+
+.availability-popup-cta {
+    display: inline-block;
+}
+
+/* Dark theme */
+body.dark-theme .availability-popup-content {
+    background: var(--dark-card-bg);
+    color: var(--dark-text-color);
+}
+
+body.dark-theme .availability-popup-title {
+    color: var(--dark-text-color);
+}
+
+body.dark-theme .availability-popup-text {
+    color: var(--dark-text-light);
+}
+
+body.dark-theme .availability-popup-close {
+    color: var(--dark-text-light);
+}
+
+body.dark-theme .availability-popup-close:hover {
+    color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Popup: all screens – small phones */
+@media (max-width: 480px) {
+    .availability-popup {
+        padding: var(--spacing-md);
+        padding: max(var(--spacing-md), env(safe-area-inset-top)) max(var(--spacing-md), env(safe-area-inset-right)) max(var(--spacing-md), env(safe-area-inset-bottom)) max(var(--spacing-md), env(safe-area-inset-left));
+    }
+    .availability-popup-content {
+        padding: var(--spacing-xl);
+        max-height: calc(100vh - 2 * var(--spacing-md));
+        max-height: calc(100dvh - 2 * max(var(--spacing-md), env(safe-area-inset-top) + env(safe-area-inset-bottom)));
+    }
+    .availability-popup-close {
+        top: max(var(--spacing-sm), env(safe-area-inset-top));
+        right: max(var(--spacing-sm), env(safe-area-inset-right));
+    }
+    .availability-popup-icon {
+        font-size: 2rem;
+        margin-bottom: var(--spacing-md);
+    }
+    .availability-popup-title {
+        font-size: var(--font-size-xl);
+        padding-right: 36px;
+    }
+    .availability-popup-text {
+        font-size: var(--font-size-sm);
+        margin-bottom: var(--spacing-lg);
+    }
+}
+
+/* Popup: landscape on small height */
+@media (max-height: 400px) {
+    .availability-popup {
+        align-items: flex-start;
+        padding-top: max(var(--spacing-md), env(safe-area-inset-top));
+        overflow-y: auto;
+    }
+    .availability-popup-content {
+        margin: auto 0;
+        max-height: none;
+    }
 } 

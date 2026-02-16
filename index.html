@@ -663,11 +663,87 @@
         </div>
     </footer>
 
+    <!-- Availability popup -->
+    <div id="availability-popup" class="availability-popup" role="dialog" aria-labelledby="availability-popup-title" aria-modal="true" hidden>
+        <div class="availability-popup-overlay"></div>
+        <div class="availability-popup-content">
+            <button type="button" class="availability-popup-close" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="availability-popup-icon">
+                <i class="fas fa-handshake"></i>
+            </div>
+            <h2 id="availability-popup-title" class="availability-popup-title">Let's work together</h2>
+            <p class="availability-popup-text">
+                Do you have Data Analyst roles? Let us work together.
+            </p>
+            <a href="#contact" class="btn btn-primary availability-popup-cta">Get in touch</a>
+        </div>
+    </div>
+
     <button class="scroll-to-top">
         <i class="fas fa-arrow-up"></i>
     </button>
     <script>
         // Language switching is handled by js/main.js (changeLanguage, updateContent).
+
+        // Availability popup: show once per session after a short delay
+        (function() {
+            var popup = document.getElementById('availability-popup');
+            if (!popup) return;
+            var overlay = popup.querySelector('.availability-popup-overlay');
+            var closeBtn = popup.querySelector('.availability-popup-close');
+            function playPopSound() {
+                try {
+                    var C = typeof AudioContext !== 'undefined' ? AudioContext : (window.webkitAudioContext || window.AudioContext);
+                    if (!C) return;
+                    var ctx = new C();
+                    if (ctx.state === 'suspended') {
+                        ctx.resume().then(function() { playPopSoundInner(ctx); }).catch(function() {});
+                        return;
+                    }
+                    playPopSoundInner(ctx);
+                } catch (e) {}
+            }
+            function playPopSoundInner(ctx) {
+                try {
+                    var osc = ctx.createOscillator();
+                    var gain = ctx.createGain();
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(880, ctx.currentTime);
+                    osc.frequency.exponentialRampToValueAtTime(440, ctx.currentTime + 0.08);
+                    gain.gain.setValueAtTime(0.15, ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.12);
+                    osc.start(ctx.currentTime);
+                    osc.stop(ctx.currentTime + 0.12);
+                } catch (e) {}
+            }
+            var showPopup = function() {
+                popup.removeAttribute('hidden');
+                popup.classList.add('availability-popup-visible');
+                document.body.style.overflow = 'hidden';
+                playPopSound();
+            };
+            var hidePopup = function() {
+                popup.classList.remove('availability-popup-visible');
+                document.body.style.overflow = '';
+                setTimeout(function() { popup.setAttribute('hidden', ''); }, 300);
+            };
+            if (overlay) overlay.addEventListener('click', hidePopup);
+            if (closeBtn) closeBtn.addEventListener('click', hidePopup);
+            popup.addEventListener('click', function(e) {
+                if (e.target === popup) hidePopup();
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && popup.classList.contains('availability-popup-visible')) hidePopup();
+            });
+            if (!sessionStorage.getItem('availabilityPopupSeen')) {
+                setTimeout(showPopup, 1200);
+                sessionStorage.setItem('availabilityPopupSeen', '1');
+            }
+        })();
 
         // Update reCAPTCHA theme when theme changes
         function updateRecaptchaTheme() {
