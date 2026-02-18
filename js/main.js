@@ -210,6 +210,14 @@ function updateContent() {
             canonicalLink.setAttribute('href', baseUrl + path);
         }
 
+        // Update Resume/Lebenslauf link: German → lebenslauf.html (German CV + PDF), English → resume.html
+        const resumeLinks = document.querySelectorAll('a[href="resume.html"], a[href="lebenslauf.html"], a[href="../resume.html"], a[href="../lebenslauf.html"]');
+        const inDeFolder = window.location.pathname.includes('/de/');
+        const resumeHref = currentLang === 'de'
+            ? (inDeFolder ? '../lebenslauf.html' : 'lebenslauf.html')
+            : (inDeFolder ? '../resume.html' : 'resume.html');
+        resumeLinks.forEach(a => { a.setAttribute('href', resumeHref); });
+
         // Reinitialize Typed.js with new language
         initTyped();
     } catch (error) {
