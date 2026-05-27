@@ -1210,6 +1210,36 @@ body.dark-theme .project-link:hover {
     resize: vertical;
 }
 
+.form-group input[type="file"] {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--bg-color);
+    cursor: pointer;
+}
+
+.form-group input[type="file"]::file-selector-button {
+    margin-right: var(--spacing-md);
+    padding: 0.4rem 0.85rem;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    background-color: var(--primary-color);
+    color: #fff;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.form-captcha-error {
+    color: var(--error-color);
+    font-size: var(--font-size-sm);
+    margin: 0 0 var(--spacing-md);
+}
+
+body.dark-theme .form-group input[type="file"] {
+    background-color: var(--dark-bg-light);
+    color: var(--dark-text-color);
+}
+
 /* reCAPTCHA Styles */
 .g-recaptcha {
     margin-bottom: var(--spacing-md);
