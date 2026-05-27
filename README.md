@@ -22,4 +22,4 @@ I’m a **Data Analyst** and **Machine Learning Engineer** with expertise in tra
 ---
 
 ## <span style="color: #2c3e50;">**Connect With Me**</span>  
-📫 **Email**: mugisha@study-boundless.com  
+📫 **Email**: memugisha@besglb.com  
